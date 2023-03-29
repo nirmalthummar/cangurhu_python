@@ -1,0 +1,13 @@
+{% load static %}
+{% load url_tag %}
+
+<form class="search-form" method="GET" action="">
+    <div class="input-group">
+        <div class="input-group-prepend bg-transparent">
+            <span class="input-group-text bg-transparent">
+                <img src="{% static 'assets/image/icon-search.png' %}" class="img-fluid"/>
+            </span>
+        </div>
+        <input type="text" name="q" class="form-control cf_input border-left-0" placeholder="Search customer">
+    </div>
+</form>

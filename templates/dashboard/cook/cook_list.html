@@ -1,0 +1,388 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% load url_tag %}
+
+{% block content-header-heading %}Cook Management{% endblock content-header-heading %}
+
+{% block content %}
+
+    <div class="d-flex justify-content-between align-item-center">
+        <ul class="nav  cook-tabs">
+            <li class="nav-item">
+                <a class="nav-link active cook-drop-list" data-toggle="tab" href="#cook-list">Cook List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#new-registrations">New Registrations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fsc-drop-list" data-toggle="tab" href="#review-fsc">Review FSC</a>
+            </li>
+        </ul>
+
+        <div class="dropdown dropleft checkbox-drop cook-drop-list">
+            <a href="#" data-toggle="dropdown" aria-expanded="false"><img src="{% static 'assets/image/filter.png' %}"></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" ><input class='select-style' type='checkbox'
+                        value='option1' id="all_cook" {{ object_list.all_cook }} /> All</a>
+                <a class="dropdown-item" ><input class='select-style' type='checkbox' value='option1' id="pending_cook" {{ object_list.pending_cook }} /> Pending Cook</a>
+                <a class="dropdown-item" ><input class='select-style' type='checkbox'
+                        value='option1' id="approved_cook" {{ object_list.approved_cook }} /> Approved Cook</a>
+                <a class="dropdown-item" ><input class='select-style' type='checkbox'
+                        value='option1' id="pending_fsc" {{ object_list.pending_fsc }} /> Pending FSC</a>
+                <a class="dropdown-item" ><input class='select-style' type='checkbox'
+                        value='option1' id="approved_fsc" {{ object_list.approved_fsc }} /> Approved FSC</a>
+            </div>
+        </div>
+        <div class="dropdown dropleft checkbox-drop cf-drop-list fsc-drop-list">
+            <a href="#" data-toggle="dropdown" aria-expanded="false"><img src="{% static 'assets/image/filter.png' %}"></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox'
+                        value='option1' checked /> Pending Kitchen<br />Premises</a>
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox'
+                        value='option1' checked /> Approved Kitchen<br />Premises</a>
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox'
+                        value='option1' checked /> Passed FSC</a>
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox'
+                        value='option1' checked /> Failed FSC</a>
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox' value='option1' checked /> Inspection Grade <span
+                        class="color-light-blue ml-2">A<span></a>
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox'
+                        value='option1' checked /> Inspection Grade <span
+                        class="color-light-blue ml-2">B<span></a>
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox'
+                        value='option1' checked /> Inspection Grade <span
+                        class="color-light-blue ml-2">C<span></a>
+                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox'
+                        value='option1' checked /> Inspection Grade <span
+                        class="color-light-blue ml-2">D<span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content cook-tab-content">
+        <div class="tab-pane active" id="cook-list">
+            <div class="cook-m-wrapper">
+                <div class="filters-wrap">
+                    <div class="filter-left">
+                                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">All</option>
+                                <option value="">Blocked</option>
+                                <option value="">Active</option>
+                            </select>
+                        </div>
+        </div>
+
+
+                    {% include 'dashboard/includes/search_form.html' %}
+
+                </div>
+
+                <div class="common-table-wrapper">
+                    <table id="cookManagment" class="display" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Cook ID</th>
+                            <th>Name</th>
+                            <th>Email Id</th>
+                            <th>Mobile Number</th>
+                            <th>Menu Catalogue</th>
+                            <th>FSC Status</th>
+                            <th>Profile Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in object_list.queryset %}
+                        <tr>
+                            <td>{{ i.cook.cook_id }}</td>
+                            <td>{{ i.username }}</td>
+                            <td>{{ i.email }}</td>
+                            <td>{{ i.mobile_number }}</td>
+                            <td><a href="{% url 'dashboard:menu-catalog' i.pk %}" class="link">View</a></td>
+                            <td>
+                                {% for f in object_list.fsc_data %}
+                                {% if i.pk == f.cook.user.user_id %}
+                                <a href="{% url 'dashboard:FSC' i.pk %}" class="link">{{f.status}}</a>
+                                {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td class="status-gray">{{ i.cook.status.upper }}</td>
+                            <td class="action-tab">
+                                <a class="action-icon view-info" href="{% url 'dashboard:cook-details' i.pk %}"><img
+                                        src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid"/></a>
+                                {% if i.cook.status == "active" %}
+                                <a class="action-icon delete-info" href="{% url 'dashboard:cook-status' 'deactivate' i.pk %}">
+                                    <img src="{% static 'assets/image/cancel-icon.png' %}" class="img-fluid" /></a>
+                                {% else %}
+                                <a class="action-icon" href="{% url 'dashboard:cook-status' 'activate' i.pk %}">
+                                    <img src="{% static 'assets/image/active-icon.png' %}" class="img-fluid" /></a>
+        
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="new-registrations">
+            <div class="cook-m-wrapper">
+                <div class="filters-wrap">
+                    <div class="filter-left">
+                                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">All</option>
+                                <option value="">Blocked</option>
+                                <option value="">Active</option>
+                            </select>
+                        </div>
+        </div>
+
+                    <form class="search-form">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                    <span class="input-group-text bg-transparent">
+                        <img src="{% static 'assets/image/icon-search.png' %}" class="img-fluid"/>
+                    </span>
+                            </div>
+                            <input type="text" class="form-control cf_input border-left-0"
+                                   placeholder="Search customer">
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="common-table-wrapper">
+
+                    <table id="newRegisterManagment" class="display" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Cook ID</th>
+                            <th>Name</th>
+                            <th>Email Id</th>
+                            <th>Mobile Number</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in object_list.queryset %}
+                        <tr>
+                            <td>{{ i.cook.cook_id }}</td>
+                            <td>{{ i.username }}</td>
+                            <td>{{ i.email }}</td>
+                            <td>{{ i.mobile_number }}</td>
+                            <td>{{i.cook.status}}</td>
+                            <td class="action-tab">
+                                <a class="action-icon view-info" href=""><img
+                                        src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid"/></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="review-fsc">
+            <div class="cook-m-wrapper">
+                <div class="filters-wrap">
+                    <div class="filter-left">
+                                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">All</option>
+                                <option value="">Blocked</option>
+                                <option value="">Active</option>
+                            </select>
+                        </div>
+        </div>
+
+                    <form class="search-form">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                    <span class="input-group-text bg-transparent">
+                        <img src="{% static 'assets/image/icon-search.png' %}" class="img-fluid"/>
+                    </span>
+                            </div>
+                            <input type="text" class="form-control cf_input border-left-0"
+                                   placeholder="Search customer">
+                        </div>
+                    </form>
+
+                </div>
+
+                <table class="table tbl-comm-two review-fsc-table">
+                    <tbody>
+                        {% for i in object_list.queryset %}
+                    <tr class="rst-tr">
+                        <td>
+                            <span class="rst-title">Cook ID</span>
+                            <span class="rst-detail">{{ i.cook.cook_id }}</span>
+                        </td>
+                        <td>
+                            <span class="rst-title">Cook Name</span>
+                            <span class="rst-detail">{{ i.username }}</span>
+                        </td>
+                        <td>
+                            <span class="rst-title">Phone Number</span>
+                            <span class="rst-detail">{{ i.mobile_number }}</span>
+                        </td>
+                        <td>
+                            <span class="rst-title">Inspection Grade</span>
+                            <span class="rst-detail">A</span>
+                        </td>
+                        <td>
+                            <span class="rst-title">Kitchen Premises Status</span>
+                            <span class="rst-detail">Pending</span>
+                        </td>
+                        <td>
+                            <span class="rst-title">Food Handling Certificate Status</span>
+                            <span class="rst-detail">Pending</span>
+                        </td>
+                        <td>
+                            <span class="rst-title">FSC Status</span>
+                            <span class="rst-detail">
+                                {% for f in object_list.fsc_data %}
+                                {% if i.pk == f.cook.user.user_id %}
+                                {{f.status}}
+                                {% endif %}
+                                {% endfor %}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="/Dashboard/cook-food-safety-compliance/" class="btn btn-primary">Review</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+{% endblock content %}

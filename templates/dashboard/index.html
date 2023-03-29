@@ -1,0 +1,524 @@
+{% extends "dashboard/base_site.html" %}
+{% load static %}
+
+
+{% block content-header-notification %}
+
+{% endblock content-header-notification %}
+
+
+{% block content %}
+    <!-- First dashboard Section -->
+    <div class="dash-first dash-common">
+                <div class="filters-wrap">
+                    <div class="filter-left">
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Postal Code</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="common-select-wrap">
+                        <select class="common-select filter-btn" name="state">
+                            <option value="">Today</option>
+                            <option value="">Yesterday</option>
+                            <option value="">This Week</option>
+                            <option value="">Last Week</option>
+                            <option value="">This Month</option>
+                            <option value="">Last Month</option>
+                            <option value="">This Year</option>
+                            <option value="">All Time</option>
+                        </select>
+                    </div>
+
+                </div>
+
+        <div class="service-counter">
+            <div class="serviceItems">
+                <div class="serviceItems_left">
+                    <span class="serviceItemsName">New Orders</span>
+                    <h3>15000</h3>
+                </div>
+                <img src="{% static 'assets/image/cup.png' %}"/>
+            </div>
+            <div class="serviceItems">
+                <div class="serviceItems_left">
+                    <span class="serviceItemsName">Active Customers</span>
+                    <h3>15000</h3>
+                </div>
+                <img src="{% static 'assets/image/user.png' %}"/>
+            </div>
+            <div class="serviceItems">
+                <div class="serviceItems_left">
+                    <span class="serviceItemsName">Active Cooks</span>
+                    <h3>15000</h3>
+                </div>
+                <img src="{% static 'assets/image/chef.png' %}"/>
+            </div>
+            <div class="serviceItems">
+                <div class="serviceItems_left">
+                    <span class="serviceItemsName">Active Drivers</span>
+                    <h3>15000</h3>
+                </div>
+                <img src="{% static 'assets/image/courier.png' %}"/>
+            </div>
+        </div>
+
+        <div class="plain-circle info-cirle-box">
+            <div class="icb-box color-green">
+                <h3 class="icb-price"><b>$</b>23,986</h3>
+                <span class="icb-currency text-uppercase">USD</span>
+                <p class="icb-text text-uppercase mb-0">Total Invoice<br/>Value</p>
+            </div>
+            <div class="icb-box color-green">
+                <h3 class="icb-price"><b>$</b>23,986</h3>
+                <span class="icb-currency text-uppercase">USD</span>
+                <p class="icb-text text-uppercase mb-0">Realized<br/>Revenue</p>
+            </div>
+            <div class="icb-box color-red">
+                <h3 class="icb-price"><b>$</b>23,986</h3>
+                <span class="icb-currency text-uppercase">USD</span>
+                <p class="icb-text text-uppercase mb-0">Cost due to undelivered food</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Second dashboard Section -->
+    <div class="dash-second dash-common">
+                <div class="filters-wrap  justify-content-center">
+                    <div class="filter-left">
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Postal Code</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+        <div class="double-circle info-cirle-box">
+            <div class="double-circle-item">
+         <div class="info-color-box">
+                    <span class="color-box color-orange">New users : 23%</span>
+                    <span class="color-box color-purple">Active users : 47%</span>
+                </div>
+
+                <div class="pos-r">
+                    <div class="progresss progresss-first mx-auto" data-value='90'>
+        <span class="progresss-left">
+                      <span class="progresss-bar border-dark-blue" style="transform: rotate(0deg);"></span>
+        </span>
+                        <span class="progresss-right">
+                      <span class="progresss-bar border-dark-blue" style="transform: rotate(180deg);"></span>
+        </span>
+                        <div class="db-value progresss-value w-100 h-100 rounded-circle">
+                            <div class="h2 db-circle">2342</div>
+                            <p class="icb-text text-uppercase mb-0">Total<br/>Customers</p>
+                        </div>
+
+                    </div>
+                            <div class="progresss progresss-first prog-two mx-auto" data-value='90'>
+                                <span class="progresss-left">
+                                     <span class="progresss-bar border-red" style="transform: rotate(89deg);"></span>
+        </span>
+                        <span class="progresss-right">
+                      <span class="progresss-bar border-red" style="transform: rotate(180deg);"></span>
+        </span>
+                    </div>
+                </div>
+
+                    </div>
+            <div class="double-circle-item">
+                <div class="info-color-box">
+                    <span class="color-box color-orange">New Cooks : 23%</span>
+                    <span class="color-box color-purple">Active Cooks : 47%</span>
+                </div>
+                <div class="pos-r">
+                    <div class="progresss progresss-first mx-auto" data-value='80'>
+      <span class="progresss-left">
+                    <span class="progresss-bar border-purple" style="transform: rotate(0deg);"></span>
+      </span>
+                        <span class="progresss-right">
+                    <span class="progresss-bar border-purple" style="transform: rotate(180deg);"></span>
+      </span>
+                        <div class="db-value progresss-value w-100 h-100 rounded-circle">
+                            <div class="h2 db-circle">2342</div>
+                            <p class="icb-text text-uppercase mb-0">Total<br/>Cooks</p>
+                        </div>
+                    </div>
+                    <div class="progresss progresss-first prog-two mx-auto" data-value='80'>
+      <span class="progresss-left">
+                    <span class="progresss-bar border-orange" style="transform: rotate(89deg);"></span>
+      </span>
+                        <span class="progresss-right">
+                    <span class="progresss-bar border-orange" style="transform: rotate(180deg);"></span>
+      </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="double-circle-item">
+                <div class="info-color-box">
+                    <span class="color-box color-orange">New Delivery Drivers : 23%</span>
+                    <span class="color-box color-purple">Active Delivery Drivers : 47%</span>
+                </div>
+                <div class="pos-r">
+                    <div class="progresss progresss-first mx-auto" data-value='80'>
+      <span class="progresss-left">
+                    <span class="progresss-bar border-purple" style="transform: rotate(0deg);"></span>
+      </span>
+                        <span class="progresss-right">
+                    <span class="progresss-bar border-purple" style="transform: rotate(180deg);"></span>
+      </span>
+                        <div class="db-value progresss-value w-100 h-100 rounded-circle">
+                            <div class="h2 db-circle">2342</div>
+                            <p class="icb-text text-uppercase mb-0">Total<br/>Delivery Drivers</p>
+                        </div>
+                    </div>
+                    <div class="progresss progresss-first prog-two mx-auto" data-value='80'>
+      <span class="progresss-left">
+                    <span class="progresss-bar border-orange" style="transform: rotate(89deg);"></span>
+      </span>
+                        <span class="progresss-right">
+                    <span class="progresss-bar border-orange" style="transform: rotate(180deg);"></span>
+      </span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Thrid dashboard Section -->
+        <div class="dash-third dash-common">
+                    <div class="filters-wrap justify-content-center">
+                        <div class="filter-left">
+
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">Country</option>
+                                    <option value="">Argentina</option>
+                                    <option value="">Albama</option>
+                                    <option value="">Belgium</option>
+                                    <option value="">China</option>
+                                    <option value="">Denmark</option>
+                                    <option value="">Europe</option>
+                                    <option value="">France</option>
+                                    <option value="">Argentina</option>
+                                </select>
+                            </div>
+
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">State</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                </select>
+                            </div>
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">Town</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                </select>
+                            </div>
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">Postal Code</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="double-circle info-cirle-box">
+                        <div class="double-circle-item">
+
+                            <div class="progresss progresss-first mx-auto" data-value='80'>
+                                <span class="progresss-left">
+                                    <span class="progresss-bar border-red" style="transform: rotate(0deg);"></span>
+                                </span>
+                                <span class="progresss-right">
+                                    <span class="progresss-bar border-red" style="transform: rotate(180deg);"></span>
+                                </span>
+                                <div class="db-value progresss-value w-100 h-100 rounded-circle">
+                                    <div class="h2 db-circle color-dak-red">55%</div>
+                                    <p class="icb-text text-uppercase mb-0">% of unassigned delivery orders</p>
+                                </div>
+                            </div>
+                        </div>
+                <div class="double-circle-item">
+
+                            <div class="progresss progresss-first mx-auto" data-value='80'>
+                                <span class="progresss-left">
+                                    <span class="progresss-bar border-blue" style="transform: rotate(0deg);"></span>
+                                </span>
+                                <span class="progresss-right">
+                                    <span class="progresss-bar border-blue" style="transform: rotate(180deg);"></span>
+                                </span>
+                                <div class="db-value progresss-value w-100 h-100 rounded-circle">
+                                    <div class="h2 db-circle color-light-blue">55%</div>
+                                    <p class="icb-text text-uppercase mb-0">% of customer detractors</p>
+                                </div>
+                            </div>
+                        </div>
+                <div class="double-circle-item">
+
+                            <div class="progresss progresss-first mx-auto" data-value='80'>
+                                <span class="progresss-left">
+                                    <span class="progresss-bar border-yellow" style="transform: rotate(0deg);"></span>
+                                </span>
+                                <span class="progresss-right">
+                                    <span class="progresss-bar border-yellow" style="transform: rotate(180deg);"></span>
+                                </span>
+                                <div class="db-value progresss-value w-100 h-100 rounded-circle">
+                                    <div class="h2 db-circle color-yellow">55%</div>
+                                    <p class="icb-text text-uppercase mb-0">% of active couriers on idle</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+        <!-- fourth dashboard Section -->
+        <div class="dash-fourth dash-common">
+                    <div class="filters-wrap justify-content-center">
+                        <div class="filter-left">
+
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">Country</option>
+                                    <option value="">Argentina</option>
+                                    <option value="">Albama</option>
+                                    <option value="">Belgium</option>
+                                    <option value="">China</option>
+                                    <option value="">Denmark</option>
+                                    <option value="">Europe</option>
+                                    <option value="">France</option>
+                                    <option value="">Argentina</option>
+                                </select>
+                            </div>
+
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">State</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                </select>
+                            </div>
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">Town</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                </select>
+                            </div>
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">Postal Code</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                    <option value="">123123</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+            <div class="plain-circle info-cirle-box">
+                <div class="icb-box color-black w-300">
+                            <h3 class="icb-price fs-71 color-light-purple">34</h3>
+                    <p class="icb-text text-uppercase mb-0">Hot<br/>Delivery Zones</p>
+                </div>
+                        <div class="icb-box color-black w-300">
+                            <h3 class="icb-price fs-71 color-light-purple">00</h3>
+                            <p class="icb-text text-uppercase mb-0">Abnormal Delivery<br />Situations</p>
+                        </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- fifth dashboard Section -->
+
+        <div class="dash-fifth dash-common">
+                    <div class="filters-wrap justify-content-center">
+                        <div class="filter-left">
+
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">Country</option>
+                                    <option value="">Argentina</option>
+                                    <option value="">Albama</option>
+                                    <option value="">Belgium</option>
+                                    <option value="">China</option>
+                                    <option value="">Denmark</option>
+                                    <option value="">Europe</option>
+                                    <option value="">France</option>
+                                    <option value="">Argentina</option>
+                                </select>
+                            </div>
+
+                            <div class="common-select-wrap">
+                                <select class="common-select filter-btn" name="state">
+                                    <option value="">State</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                    <option value="">Lorem</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+            <div class="square-box info-square-box">
+                <div class="icb-square">
+                    <h3 class="icb-price color-dak-red">34</h3>
+                    <p class="icb-text text-uppercase mb-0">New Cooks<br/>Pending Approval</p>
+                </div>
+                <div class="icb-square">
+                    <h3 class="icb-price color-dak-red">18</h3>
+                    <p class="icb-text text-uppercase mb-0">New Couriers<br/>Pending Approval</p>
+                </div>
+                <div class="icb-square">
+                    <h3 class="icb-price color-dak-red">03</h3>
+                    <p class="icb-text text-uppercase mb-0">Cooks failed<br/>food safety compliance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+

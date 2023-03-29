@@ -1,0 +1,24 @@
+{% load static %}
+
+<div class="modal" id="logout-modal">
+    <div class="modal-dialog modal-dialog-centered modal-custom-sm">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="card logout-card common_box">
+                    <div class="card-body common_box_body">
+                        <p class="modalTitle text-center">Do Your Really Want To<br/>Logout</p><hr>
+                        <form action="{% url 'dashboard:logout' %}" class="custom_form">
+                            <div class="btn-groups-horizontal text-center mt-1">
+                                <button type="button" class="btn btn-primary btn-thin btn-cancel">No</button>
+                                <button type="submit" class="btn btn-primary btn-thin">Yes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

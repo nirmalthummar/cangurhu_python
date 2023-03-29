@@ -1,0 +1,268 @@
+{% extends "dashboard/base_site.html" %}
+{% load static %}
+
+{% block content-header-heading %}Operational KPIs{% endblock content-header-heading %}
+{% block content %}
+            <div class="operational-kpis-wrapper">
+                <div class="box-shadow-5">
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">66%</span>
+                            <span class="op-k-info text-uppercase text-center">% OF DRIVERS<br>ON ORDER</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">34%</span>
+                            <span class="op-k-info text-uppercase text-center">% OF DRIVERS<br>ON IDLE</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">76Mil</span>
+                            <span class="op-k-info text-uppercase text-center">AVERAGE DELIVERY<br>DISTANCE</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">34</span>
+                            <span class="op-k-info text-uppercase text-center">MOVING DELIVERIES<br>PER HOUR</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-shadow-5">
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">CUSTOMER CHURN<br>RATE</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">$345</span>
+                            <span class="op-k-info text-uppercase text-center">MONTHLY
+                                AVERAGE<br>REVENUE/CUSTOMER</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">CUSTOMER LIFETIME<br>VALUE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-shadow-5">
+
+                    <div class="dropdown date-menu absolute-date">
+                        <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                            <img src="{% static 'assets/image/filter.png' %}" >
+                        </a>
+                        <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                            <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                            <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                            <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                        </div>
+                    </div>
+
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">AVERAGE ORDERS PER<br>USER</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">AVERAGE ORDER<br>DURATION</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-shadow-5">
+
+                    <div class="dropdown date-menu absolute-date">
+                        <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                            <img src="{% static 'assets/image/filter.png' %}">
+                        </a>
+                        <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                            <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                            <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                            <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                        </div>
+                    </div>
+
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">NEW CUSTOMERS</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">NEW COURIERS<br>USERS</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">NEW COOK/<br>RESTAURANTS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-shadow-5">
+
+                    <div class="filters-wrap">
+                        <div class="filter-left">
+                            <div class="dropdown filter-menu">
+                                <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                                    Country
+                                </button>
+                                <div class="dropdown-menu filter-drop-btn">
+                                    <a class="dropdown-item filter-drop-item" href="#">Argentina</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Albama</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Belgium</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">China</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Denmark</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Europe</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">France</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Argentina</a>
+                                </div>
+                            </div>
+                            <div class="dropdown filter-menu">
+                                <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                                    State
+                                </button>
+                                <div class="dropdown-menu filter-drop-btn">
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                </div>
+                            </div>
+                            <div class="dropdown filter-menu">
+                                <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                                    Town
+                                </button>
+                                <div class="dropdown-menu filter-drop-btn">
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                                </div>
+                            </div>
+                            <div class="dropdown filter-menu">
+                                <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                                    All
+                                </button>
+                                <div class="dropdown-menu filter-drop-btn">
+                                    <a class="dropdown-item filter-drop-item" href="#">All</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Blocked</a>
+                                    <a class="dropdown-item filter-drop-item" href="#">Active</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown date-menu absolute-date">
+                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                <img src="{% static 'assets/image/filter.png' %}">
+                            </a>
+                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">UNDELIVERED<br>ORDERS</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">MONETARY LOSS</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">REVENUE</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">GROSS MARGIN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-shadow-5">
+
+                    <div class="dropdown date-menu absolute-date">
+                        <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                            <img src="{% static 'assets/image/filter.png' %}">
+                        </a>
+                        <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                            <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                            <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                            <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                        </div>
+                    </div>
+
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">REDEEMED COUPONS</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">REDEEMED REFERRALS</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">REDEEMED<br>PROMOTIONS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-shadow-5">
+
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">Small</span>
+                            <span class="op-k-info text-uppercase text-center">AVERAGE ORDER<br>SIZE</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">AVERAGE ITEMS<br>PER ORDER</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">REVENUE</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">GROSS MARGIN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-shadow-5">
+
+                    <div class="plain-circle d-flex">
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">Small</span>
+                            <span class="op-k-info text-uppercase text-center">AVERAGE ORDER<br>SIZE</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">AVERAGE ITEMS<br>PER ORDER</span>
+                        </div>
+                        <div class="pl-cs pl-circle-box color-black">
+                            <span class="op-k-percent text-uppercase">345</span>
+                            <span class="op-k-info text-uppercase text-center">REVENUE</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+{% endblock content %}

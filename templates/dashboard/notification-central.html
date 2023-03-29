@@ -1,0 +1,168 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+<!--<?php include('left-sidebar.php')?>-->
+{% block content-header-heading %}Notification Central{% endblock content-header-heading %}
+{% block content %}
+
+<div class="cm-wrapper">
+                <div class="filters-wrap">
+                    <div class="filter-left">
+
+                        <div class="common-select-wrap filter-menu">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap filter-menu">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap filter-menu">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Postal Code</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                           <div class='information-style setting-wrap mr-3'>
+                                <span class="setting"><i class="material-icons mb-0">settings</i></span>
+                                <ul class='SelectdropDown'>
+                                    <li><div class="custom-control custom-switch sm-switch p-0 w-100">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label" for="customSwitch1">All Notification</label>
+                                    </div></li>
+                                    <li><div class="custom-control custom-switch sm-switch p-0 w-100">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                        <label class="custom-control-label" for="customSwitch2">Information</label>
+                                    </div></li>
+                                    <li><div class="custom-control custom-switch sm-switch p-0 w-100">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                                        <label class="custom-control-label" for="customSwitch3">Warning</label>
+                                    </div></li>
+                                    <li><div class="custom-control custom-switch sm-switch p-0 w-100">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch4">
+                                        <label class="custom-control-label" for="customSwitch4">High</label>
+                                    </div></li>
+                                    <li><div class="custom-control custom-switch sm-switch p-0 w-100">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch5">
+                                        <label class="custom-control-label" for="customSwitch5">911 Danger</label>
+                                    </div></li>
+                                </ul>
+                            </div>
+
+                    <div class="common-select-wrap all-notificatoion-wrap">
+                        <select class="common-select filter-btn" name="state">
+                            <option value="">All Notification</option>
+                            <option value="">Information</option>
+                            <option value="">Warning</option>
+                            <option value="">High</option>
+                            <option value="">911 Danger</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="notification-central-wrapper">
+                    <div class="notification-central-row nbl-danger">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="nc-title">Lorem Ispum dolor</h4> <span class="label">Danger 911</span>
+                        </div>
+                        <p class="nc-desc mb-0 line-clamp-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                            sed diam
+                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                            amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                        <div class="text-right">
+                            <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at 10:10 AM
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notification-central-row nbl-high">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="nc-title">Lorem Ispum dolor</h4> <span class="label">Danger 911</span>
+                        </div>
+                        <p class="nc-desc mb-0 line-clamp-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                            sed diam
+                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                            amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                        <div class="text-right">
+                            <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at 10:10 AM
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notification-central-row nbl-warning">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="nc-title">Lorem Ispum dolor</h4> <span class="label">Danger 911</span>
+                        </div>
+                        <p class="nc-desc mb-0 line-clamp-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                            sed diam
+                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                            amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                        <div class="text-right">
+                            <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at 10:10 AM
+                            </p>
+                        </div>
+                    </div>
+                    <div class="notification-central-row nbl-information">
+                        <div class="d-flex justify-content-between">
+                            <h4 class="nc-title">Lorem Ispum dolor</h4> <span class="label">Danger 911</span>
+                        </div>
+                        <p class="nc-desc mb-0 line-clamp-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                            sed diam
+                            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                            amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                        <div class="text-right">
+                            <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at 10:10 AM
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+</div>
+
+
+{% endblock content %}

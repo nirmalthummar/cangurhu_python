@@ -1,0 +1,139 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+{% block content-header-heading %}Order Management{% endblock content-header-heading %}
+{% block content %}
+
+<!-- First dashboard Section -->
+<div class="cm-wrapper">
+                <div class="text-right mb-3">
+                    <div class="dropdown dropleft checkbox-drop">
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}"></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" ><input class='select-style' type='checkbox' value='option1' id="all_order" {{ object_list.all_order }} /> All</a>
+                            <a class="dropdown-item" ><input class='select-style' type='checkbox' value='option1' id="In" {{ object_list.In }}/> In Process</a>
+                            <a class="dropdown-item" ><input class='select-style' type='checkbox' value='option1' id="En" {{ object_list.En }} /> En-Route</a>
+                            <a class="dropdown-item" ><input class='select-style' type='checkbox' value='option1' id="Delivered" {{ object_list.Delivered }} /> Delivered</a>
+                        </div>
+                    </div>
+                </div>
+    <div class="filters-wrap">
+        <div class="filter-left">
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+
+                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Postal Code</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                            </select>
+                        </div>
+        </div>
+
+        <form class="search-form">
+            <div class="input-group">
+                <div class="input-group-prepend bg-transparent">
+                <span class="input-group-text bg-transparent">
+                    <img src="{% static 'assets/image/icon-search.png' %}" class="img-fluid"/>
+                </span>
+                </div>
+                <input type="text" class="form-control cf_input border-left-0" placeholder="Search customer">
+            </div>
+        </form>
+    </div>
+
+    <div class="common-table-wrapper">
+        <table id="customerManagment" class="display" style="width:100%">
+            <thead>
+                <tr>
+<!--                    <th>S.No.</th>-->
+                    <th>Order id</th>
+                    <th>Customer Name</th>
+                    <th>Status</th>
+                    <th>Cook id</th>
+                    <th>Cook Name</th>
+                    <th>Courier Assigned</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for i in object_list.order_data %}
+                <tr>
+                    <td>{{i.order_id}}</td>
+                    <td>{{i.customer.user.username}}</td>
+                    <td>{{i.status}}</td>
+                    <td>
+                        {% for j in object_list.cook_data %}
+                        {% if i.order_id == j.order.order_id %}
+                        {{j.cook.cook_id}}
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for j in object_list.cook_data %}
+                        {% if i.order_id == j.order.order_id %}
+                        {{j.cook.user.username}}
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        {% for k in object_list.courier_data %}
+                        {% if i.order_id == k.order.order_id %}
+                        {{k.courier.user.username}}
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td class="action-tab">
+                        <a class="action-icon view-info" href="{% url 'dashboard:order-details' i.pk %}">
+                            <img src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid"/></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock content %}

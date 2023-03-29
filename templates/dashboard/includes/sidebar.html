@@ -1,0 +1,90 @@
+{% load static %}
+<div class="left-sidebar">
+  <!-- A vertical navbar -->
+  <nav class="navbar sideNavBar">
+    <a class="navbar-brand w-100 m-0" href="#">
+      <img src="{% static 'assets/image/logo.png' %}" class="img-fluid" />
+    </a>
+    <!-- Links -->
+    <ul class="navbar-nav w-100">
+      <li class="nav-item">
+        <a class="nav-link {% if home_active %}active{% else %}{% endif %}" href="{% url 'dashboard:home' %}">
+          <span class="nav-text">Dashboard</span>
+          <i class="fa fa-tachometer" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if customer_active %}active{% else %}{% endif %}" href="{% url 'dashboard:customers-list' %}">
+          <span class="nav-text">Customer Management</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if cook_active %}active{% else %}{% endif %}" href="{% url 'dashboard:cook-list' %}">
+          <span class="nav-text">Cook Management</span>
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if courier_active %}active{% else %}{% endif %}" href="{% url 'dashboard:courier-list' %}">
+          <span class="nav-text">Courier Management</span>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if order_active %}active{% else %}{% endif %}"  href="{% url 'dashboard:order-list' %}">
+          <span class="nav-text">Order Management</span>
+          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if rating_active %}active{% else %}{% endif %}" href="{% url 'dashboard:review-rating' %}">
+          <span class="nav-text">Review & Rating</span>
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if content_active %}active{% else %}{% endif %}" href="{% url 'dashboard:static-content' %}">
+          <span class="nav-text">Static Content Management</span>
+          <i class="fa fa-comment" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if banner_active %}active{% else %}{% endif %}" href="{% url 'dashboard:banner-list' %}">
+          <span class="nav-text">Banner Management</span>
+          <i class="fa fa-picture-o" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if notification_active %}active{% else %}{% endif %}" href="{% url 'dashboard:notification-central' %}">
+          <span class="nav-text">Notification Central</span>
+          <i class="fa fa-bell" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if all_app_active %}active{% else %}{% endif %}" href="{% url 'dashboard:all-apps-central-parameters' %}">
+          <span class="nav-text">All Apps Central Parameters</span>
+          <i class="fa fa-android" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if report_active %}active{% else %}{% endif %}" href="{% url 'dashboard:report-analysis' %}">
+          <span class="nav-text">Report & Analytics</span>
+          <i class="fa fa-flag" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if operational_active %}active{% else %}{% endif %}" href="{% url 'dashboard:operational-KPI' %}">
+          <span class="nav-text">Operational KPIs</span>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if app_config_active %}active{% else %}{% endif %}" href="{% url 'dashboard:app-configurations-parameters' %}">
+          <span class="nav-text">App Configurations Parameters</span>
+          <i class="fa fa-cog" aria-hidden="true"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

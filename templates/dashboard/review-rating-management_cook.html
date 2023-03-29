@@ -1,0 +1,272 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+{% block content-header-heading %}Review & Rating Management{% endblock content-header-heading %}
+{% block content %}
+        <div class="main-content-body">
+
+            <!-- First dashboard Section -->
+            <div class="rrm-wrapper">
+                <div class="filters-wrap">
+                <div class="filter-left">
+
+<div class="common-select-wrap">
+    <select class="common-select filter-btn" name="state">
+        <option value="">Country</option>
+        <option value="">Argentina</option>
+        <option value="">Albama</option>
+        <option value="">Belgium</option>
+        <option value="">China</option>
+        <option value="">Denmark</option>
+        <option value="">Europe</option>
+        <option value="">France</option>
+        <option value="">Argentina</option>
+    </select>
+</div>
+
+<div class="common-select-wrap">
+    <select class="common-select filter-btn" name="state">
+        <option value="">State</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+    </select>
+</div>
+<div class="common-select-wrap">
+    <select class="common-select filter-btn" name="state">
+        <option value="">Town</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+        <option value="">Lorem</option>
+    </select>
+</div>
+<div class="common-select-wrap">
+    <select class="common-select filter-btn" name="state">
+        <option value="">Postal Code</option>
+        <option value="">123123</option>
+        <option value="">123123</option>
+        <option value="">123123</option>
+        <option value="">123123</option>
+        <option value="">123123</option>
+        <option value="">123123</option>
+        <option value="">123123</option>
+    </select>
+</div>
+</div>
+
+                    <div class="filter-right d-flex align-items-center">
+                        <div class="dropdown rating-filter mr-3 dropleft">
+                            <button type="button" class="dropdown-toggle rating-btn" data-toggle="dropdown">
+                                <i class="material-icons">star</i>
+                            </button>
+                            <div class="dropdown-menu filter-drop-btn star-dropdown">
+                                <a class="dropdown-item filter-drop-item" href="#">1 Star</a>
+                                <a class="dropdown-item filter-drop-item" href="#">2 Star</a>
+                                <a class="dropdown-item filter-drop-item" href="#">3 Star</a>
+                                <a class="dropdown-item filter-drop-item" href="#">4 Star</a>
+                                <a class="dropdown-item filter-drop-item" href="#">5 Star</a>
+                            </div>
+                        </div>
+                        <div class="dropleft">
+                            <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                    src="{% static 'assets/image/filter.png'%}" /></a>
+                            <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                                <div class="card selectDate-card p-0 bg-transparent">
+                                    <div class="card-body selectDate-body bg-transparent">
+                                        <div id="date-range"></div>
+                                        <button type="submit"
+                                            class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="rrm-flex">
+                    <div class="rrm-col rrm-first box-shadow-3 dishtab-show">
+                        <div class="rrm-starrating">
+                            <h2>4.8 <i class="material-icons">star</i></h2>
+                            <p class="mb-0">886 Rating</p>
+                        </div>
+                        <div class="rrm-progressbar">
+                            <ul class="rrm-progressbar-ul">
+                                <li>
+                                    <span class="rrm-numStar">5 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width:70%"></div>
+                                    </div>
+                                    <span class="rrm-numbers">7000</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">4 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">200</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">3 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">300</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">2 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">20</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">1 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">10</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rrm-col rrm-second box-shadow-3">
+                        <ul class="nav rrm-tabs-link">
+                            <li class="nav-item">
+                                <a class="nav-link text-center dish-tab" href="/Dashboard/ReviewRating/">Dish</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-center" href="/Dashboard/ReviewRatingCook/"">Cook</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="/Dashboard/ReviewRatingCourier/"">Courier</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="rrm-tabswrapper">
+                    <div class="tab-content rrm-tab-content">
+                        <div class="tab-pane active" id="cook">
+                            <div class="rrm-tab-item">
+                                <div class="rrm-box">
+                                    <div class="rrm-img-box">
+                                        <img src="{% static 'assets/image/user-i.png'%}" />
+                                        <div class="name-with-rating">
+                                            <p class="mb-0">Carlos Ward</p>
+                                            <div class="rating-group">
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star_half</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="rrm-date">20 April</span>
+                                </div>
+                                <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or
+                                    Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime On Lorem
+                                    Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is Sometime
+                                    This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                            </div>
+                            <div class="rrm-tab-item">
+                                <div class="rrm-box">
+                                    <div class="rrm-img-box">
+                                        <img src="{% static 'assets/image/user-i.png'%}" />
+                                        <div class="name-with-rating">
+                                            <p class="mb-0">Carlos Ward</p>
+                                            <div class="rating-group">
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star_half</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="rrm-date">20 April</span>
+                                </div>
+                                <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or
+                                    Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime On Lorem
+                                    Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is Sometime
+                                    This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                            </div>
+                            <div class="rrm-tab-item">
+                                <div class="rrm-box">
+                                    <div class="rrm-img-box">
+                                        <img src="{% static 'assets/image/user-i.png'%}" />
+                                        <div class="name-with-rating">
+                                            <p class="mb-0">Carlos Ward</p>
+                                            <div class="rating-group">
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star_half</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="rrm-date">20 April</span>
+                                </div>
+                                <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or
+                                    Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime On Lorem
+                                    Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is Sometime
+                                    This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                            </div>
+                            <div class="rrm-tab-item">
+                                <div class="rrm-box">
+                                    <div class="rrm-img-box">
+                                        <img src="{% static 'assets/image/user-i.png'%}" />
+                                        <div class="name-with-rating">
+                                            <p class="mb-0">Carlos Ward</p>
+                                            <div class="rating-group">
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star</i>
+                                                <i class="material-icons">star_half</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="rrm-date">20 April</span>
+                                </div>
+                                <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or
+                                    Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime On Lorem
+                                    Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is Sometime
+                                    This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+{% endblock content %}

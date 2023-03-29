@@ -1,0 +1,332 @@
+{% extends "dashboard/base_site.html" %}
+{% load static %}
+
+{% block content-header-heading %}Customer Management{% endblock content-header-heading %}
+{% block content %}
+<!--  <div class="main-content-header">-->
+<!--    <h2 class="mch-heading mb-0">Communicate with customer</h2>-->
+<!--    <div class="mch-right-items">-->
+<!--        <a class="notification-bell">-->
+<!--          <img src="{% static '/assets/image/notification-bell.png' %}" class="img-fluid" />-->
+<!--        </a>-->
+<!--        <div class="dropdown user-menu">-->
+<!--          <button type="button" class="dropdown-toggle user-btn" data-toggle="dropdown">-->
+<!--            <img src="{% static 'assets/image/user-i.png' %}" class="img-fluid" />-->
+<!--          </button>-->
+<!--          <div class="dropdown-menu user-dropmenu">-->
+<!--          <a class="dropdown-item" href="/Dashboard/logout/" data-toggle="modal" data-target="#logout-modal">Logout</a>-->
+<!--          </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+  <!-- First dashboard Section -->
+    <div class="communicate-wrapper">
+
+    <div class="commonRow">
+      {% if iter %}
+        {% for i in user %}
+        <div class="cust-3">
+          <a href="{% url 'dashboard:customers-detail' user.pk %}" class="btn btn-primary btn-thin">Back</a>
+        </div>
+      {% endfor %}
+      {% else %}
+
+      <div class="cust-3">
+          <a href="{% url 'dashboard:customers-detail' user.pk %}" class="btn btn-primary btn-thin">Back</a>
+        </div>
+
+      {% endif %}
+        <div class="cust-5">
+        <ul class="nav tabs-menu">
+            <li class="nav-item">
+                <a class="active" data-toggle="tab" href="#communicate">Communicate</a>
+            </li>
+            <li class="nav-item">
+                <a class="" data-toggle="tab" href="#view-last-order">View Last order</a>
+            </li>
+            </ul>
+        </div>
+    </div>
+    <div class="tab-content tabs-area">
+        <div class="tab-pane active" id="communicate">
+            <div class="card tabs-area-card">
+                <div class="card-header bg-white tac-head">
+                  <div class="img-with-name">
+                    <img src="{% static 'assets/image/cust-img.png' %}" />
+                    <span class="name-with-state">
+                        <p class="mb-0">Customer_name</p>
+                        <p class="mb-0"><span class="dot dot-online"></span> Online</p>
+                    </span>
+                  </div>
+                  <a href="#"><img src="{% static 'assets/image/phone-outline.png' %}" /></a>
+                </div>
+                <div class="card-body tac-body">
+                <div class="chat-box bg-white">
+                      <!-- Sender Message-->
+                      <div class="media  msg-receaver"><img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="30" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light-grey chat-text mb-2">
+                            <p class="text-small mb-0">Lorem ipsum dolor siametor amet, consetetur adipscing elitr? 😁</p>
+                          </div>
+                          <p class="small text-muted">8 : 07</p>
+                        </div>
+                      </div>
+
+                      <!-- Reciever Message-->
+                      <div class="media msg-sender">
+                        <div class="media-body">
+                          <div class="bg-dark-grey chat-text mb-2">
+                            <p class="text-small mb-0">Consetetur adipscing elitr, sedam nonumy eirmod.</p>
+                          </div>
+                          <p class="small text-muted d-inline mr-1">8:10</p>   <img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="12" class="rounded-circle">
+                        </div>
+
+                      </div>
+
+                      <!-- Sender Message-->
+                      <div class="media msg-receaver"><img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="30" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light-grey chat-text mb-2">
+                            <p class="text-small mb-0">Test, which is a new approach to have</p>
+                          </div>
+                          <p class="small text-muted">8 : 11</p>
+                        </div>
+                      </div>
+
+                      <!-- Reciever Message-->
+                      <div class="media msg-sender">
+                        <div class="media-body">
+                          <div class="bg-dark-grey chat-text mb-2">
+                            <p class="text-small mb-0">Apollo University, Delhi, India Test</p>
+                          </div>
+                          <p class="small text-muted d-inline mr-1">12:00 PM | Aug 13</p>   <img src="{% static 'assets/image/cust-img.png" alt="user" width="12" class="rounded-circle">
+                        </div>
+
+                      </div>
+
+                      <!-- Sender Message-->
+                      <div class="media msg-receaver"><img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="30" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light-grey chat-text mb-2">
+                            <p class="text-small mb-0">Test, which is a new approach</p>
+                          </div>
+                          <p class="small text-muted">12:00 PM | Aug 13</p>
+                        </div>
+                      </div>
+
+                      <!-- Reciever Message-->
+                      <div class="media msg-sender">
+                        <div class="media-body">
+                          <div class="bg-dark-grey chat-text mb-2">
+                            <p class="text-small mb-0">Apollo University, Delhi, India Test</p>
+                          </div>
+                          <p class="small text-muted d-inline mr-1">12:00 PM | Aug 13</p>   <img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="12" class="rounded-circle">
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <!-- Typing area -->
+                    <form action="#" class="chat-box-form">
+                      <div class="input-group">
+                      <div class="input-group-prepend">
+                          <button id="button-addon2" type="submit" class="btn btn-link"> <i class="material-icons">tag_faces</i></button>
+                        </div>
+                      <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+                        <div class="input-group-append">
+                          <button id="button-addon2" type="submit" class="btn"> <img src="{% static 'assets/image/Send.png' %}" /></button>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="view-last-order">
+
+              <div class="view-last-order-wrapper">
+                <!-- vlow first -->
+                <div class="vlow vlow-1">
+                  <div class="vlow-img">
+                    <img src="{% static 'assets/image/food-image.jpg' %}" />
+                  </div>
+                  <div class="vlow-content">
+                    <div class="vlow-title">
+                      <h4>ITALIAN BACON WITH GRILLED LEAF</h4>
+                      <a href="#" class="btn btn-outline-pri">Extra Bacon</a>
+                    </div>
+                    <div class="vlow-order-info">
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Order Status</p>
+                        <p class="vlow-order-detil mb-0">Delivered</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Original Quantity</p>
+                        <p class="vlow-order-detil mb-0">3</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Updated Quantity</p>
+                        <p class="vlow-order-detil mb-0">3</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Order ID</p>
+                        <p class="vlow-order-detil mb-0">#267</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Cook/Restaurant</p>
+                        <p class="vlow-order-detil mb-0">Magic Panda</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Date</p>
+                        <p class="vlow-order-detil mb-0">21-Mar-2022</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Price</p>
+                        <p class="vlow-order-detil mb-0">$10</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Updated Large</p>
+                        <p class="vlow-order-detil mb-0">$60</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Courier Name</p>
+                        <p class="vlow-order-detil mb-0">Andrew</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Earnings of Courier</p>
+                        <p class="vlow-order-detil mb-0">$45</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Earnings of Cook</p>
+                        <p class="vlow-order-detil mb-0">$65</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- vlow second -->
+                <div class="vlow vlow-2 border-gray">
+                  <div class="order-detailed">
+                    <p class="vlow-order-title mb-0">Nutritional Information</p>
+                    <p class="vlow-order-detil mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+                  </div>
+                  <div class="order-detailed">
+                    <p class="vlow-order-title mb-0">Cultural Facts About The Dish</p>
+                    <p class="vlow-order-detil mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+                  </div>
+                  <div class="order-detailed">
+                    <p class="vlow-order-title mb-0">Commercial Description</p>
+                    <p class="vlow-order-detil mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+                  </div>
+                </div>
+                <!-- vlow third -->
+                <div class="vlow vlow-3">
+                  <div class="vlow-inv-time vlow-invoice">
+                    <div class="vlow-title border-0">
+                      <h4 class="text-uppercase">INVOICE DETAILS</h4>
+                      </div>
+                      <table class="table vlow-invoice-table border-0">
+                        <thead>
+                          <tr>
+                            <th class="text-uppercase">Item</th>
+                            <th class="text-uppercase">Qty</th>
+                            <th class="text-uppercase">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Pizza Pepperoni</td>
+                            <td>2</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td>Spaghetti con Carne</td>
+                            <td>1</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td>Half Chicken with Fries</td>
+                            <td>1</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td>Extra Fries</td>
+                            <td>1</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td colspan="5"></td>
+                          </tr>
+
+                          <tr>
+                            <td>Delivery & Chef Fees</td>
+                            <td>20%</td>
+                            <td><span>$</span>4.2</td>
+                          </tr>
+                          <tr>
+                            <td>Sales Tax</td>
+                            <td>13%</td>
+                            <td><span>$</span>2.2</td>
+                          </tr>
+                          <tr>
+                            <td colspan="3"></td>
+                          </tr>
+                        </tbody>
+                        <tfoot class="border-top">
+                          <tr>
+                            <td colspan="2">Total</td>
+                            <td><span>$</span>50.2</td>
+                          </tr>
+                          <tr>
+                            <td colspan="3">Instruction to cook : <span>Extra pepperoni, no bacon</span></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                  </div>
+                  <div class="vlow-inv-time vlow-timeline">
+                    <div class="vlow-timeline-wrapper">
+                      <h4>Timeline</h4>
+                      <ul class="vlow-timeline-ul">
+                        <li class="vlow-timeline-li order-rec">
+                            <p class="vlow-timeline-title mb-0">Order Received</p>
+                            <p class="vlow-timeline-date mb-0">Today . 4:30 PM</p>
+                        </li>
+                        <li class="vlow-timeline-li active-order">
+                            <p class="vlow-timeline-title mb-0">In The Kitchen . <span class="color-orange">Cooking <img src="{% static 'assets/image/mask.png' %}" /></span></p>
+                            <p class="vlow-timeline-desc">Finished preparing ingredients</p>
+                            <p class="vlow-timeline-date mb-0">4:30 PM . Est. End Of Cooking</p>
+                          </li>
+                          <li class="vlow-timeline-li active-order">
+                            <p class="vlow-timeline-title mb-0">Pick-Up</p>
+                            <p class="vlow-timeline-date mb-0">4:45 PM . Est. Pick-up time</p>
+                          </li>
+                          <li class="vlow-timeline-li">
+                            <p class="vlow-timeline-title mb-0">En Route</p>
+                            <p class="vlow-timeline-date mb-0">4:55 PM . Est. En Route</p>
+                          </li>
+                          <li class="vlow-timeline-li">
+                            <p class="vlow-timeline-title mb-0">Delivered</p>
+                            <p class="vlow-timeline-date mb-0">5:50 PM . Est. Delivery Time</p>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</div>
+
+{% endblock content %}

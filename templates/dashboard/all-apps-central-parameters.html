@@ -1,0 +1,360 @@
+{% extends "dashboard/base_site.html" %}
+{% load static %}
+{% block content-header-heading %}All Apps Central Parameters{% endblock content-header-heading %}
+<!--<?php include('left-sidebar.php')?>-->
+{% block content %}
+            <div class="cooktabs-flex">
+                <ul class="nav  cook-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#payment-cooks">Payments to Cooks &
+                            Couriers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#customer-support">Customer Support</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content courier-new-list-tab-content">
+                <div class="tab-pane active" id="payment-cooks">
+                    <div class="cook-m-wrapper">
+                        <div class="filters-wrap">
+                            <div class="filter-left">
+
+                                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">All</option>
+                                <option value="">Blocked</option>
+                                <option value="">Active</option>
+                            </select>
+                        </div>
+        </div>
+
+
+                            <form class="search-form">
+                                <div class="input-group">
+                                    <div class="input-group-prepend bg-transparent">
+                                        <span class="input-group-text bg-transparent">
+                                            <img src="{% static 'assets/image/icon-search.png'%}" class="img-fluid" />
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control cf_input border-left-0"
+                                        placeholder="Search customer">
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="common-table-wrapper">
+                            <table id="cookManagment" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Cook Name</th>
+                                        <th>% for Cook</th>
+                                        <th>Courier Name</th>
+                                        <th>% for Courier</th>
+                                        <th>Admin Reserved</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>2%</td>
+                                        <td class="action-tab">
+                                            <a class="action-icon view-info" href="" data-toggle="modal"
+                                                data-target="#edit-payment-percentage-modal"><img
+                                                    src="{% static 'assets/image/edit.png' %}"  class="img-fluid" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>2%</td>
+                                        <td class="action-tab">
+                                            <a class="action-icon view-info" href="#" data-toggle="modal"
+                                                data-target="#edit-payment-percentage-modal"><img
+                                                    src="{% static 'assets/image/edit.png' %}"  class="img-fluid" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>2%</td>
+                                        <td class="action-tab">
+                                            <a class="action-icon view-info" href="#" data-toggle="modal"
+                                                data-target="#edit-payment-percentage-modal"><img
+                                                    src="{% static 'assets/image/edit.png' %}"  class="img-fluid" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>2%</td>
+                                        <td class="action-tab">
+                                            <a class="action-icon view-info" href="#" data-toggle="modal"
+                                                data-target="#edit-payment-percentage-modal"><img
+                                                    src="{% static 'assets/image/edit.png' %}"  class="img-fluid" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>2%</td>
+                                        <td class="action-tab">
+                                            <a class="action-icon view-info" href="#" data-toggle="modal"
+                                                data-target="#edit-payment-percentage-modal"><img
+                                                    src="{% static 'assets/image/edit.png' %}"  class="img-fluid" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>2%</td>
+                                        <td class="action-tab">
+                                            <a class="action-icon view-info" href="#" data-toggle="modal"
+                                                data-target="#edit-payment-percentage-modal"><img
+                                                    src="{% static 'assets/image/edit.png' %}"  class="img-fluid" /></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>Jhonthan</td>
+                                        <td>49%</td>
+                                        <td>2%</td>
+                                        <td class="action-tab">
+                                            <a class="action-icon view-info" href="#" data-toggle="modal"
+                                                data-target="#edit-payment-percentage-modal"><img
+                                                    src="{% static 'assets/image/edit.png' %}"  class="img-fluid" /></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="customer-support">
+                    <div class="cook-m-wrapper">
+                        <div class="filters-wrap">
+                            <div class="filter-left">
+                                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">All</option>
+                                <option value="">Blocked</option>
+                                <option value="">Active</option>
+                            </select>
+                        </div>
+        </div>
+
+
+                        </div>
+
+                        <div class="notification-central-wrapper">
+                            <div class="notification-central-row">
+                                <div class="cust-8">
+                                    <h4 class="nc-title">Lorem Ispum dolor</h4>
+                                    <p class="nc-desc mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                                </div>
+                                <div class="cust-4">
+                                    <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at
+                                        10:10 AM</p>
+                                </div>
+                                <div class="cust-12">
+                                    <a class="btn btn-primary btn-reply" href="/Dashboard/edit-customer-support/">Reply</a>
+                                </div>
+                            </div>
+                            <div class="notification-central-row">
+                                <div class="cust-8">
+                                    <h4 class="nc-title">Lorem Ispum dolor</h4>
+                                    <p class="nc-desc mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                                </div>
+                                <div class="cust-4">
+                                    <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at
+                                        10:10 AM</p>
+                                </div>
+                                <div class="cust-12">
+                                    <a class="btn btn-primary btn-reply" href="edit-customer-support.php">Reply</a>
+                                </div>
+                            </div>
+                            <div class="notification-central-row">
+                                <div class="cust-8">
+                                    <h4 class="nc-title">Lorem Ispum dolor</h4>
+                                    <p class="nc-desc mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                                </div>
+                                <div class="cust-4">
+                                    <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at
+                                        10:10 AM</p>
+                                </div>
+                                <div class="cust-12">
+                                    <a class="btn btn-primary btn-reply" href="edit-customer-support.php">Reply</a>
+                                </div>
+                            </div>
+                            <div class="notification-central-row">
+                                <div class="cust-8">
+                                    <h4 class="nc-title">Lorem Ispum dolor</h4>
+                                    <p class="nc-desc mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                                </div>
+                                <div class="cust-4">
+                                    <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at
+                                        10:10 AM</p>
+                                </div>
+                            </div>
+                            <div class="notification-central-row">
+                                <div class="cust-8">
+                                    <h4 class="nc-title">Lorem Ispum dolor</h4>
+                                    <p class="nc-desc mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                                </div>
+                                <div class="cust-4">
+                                    <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at
+                                        10:10 AM</p>
+                                </div>
+                                <div class="cust-12">
+                                    <a class="btn btn-primary btn-reply" href="edit-customer-support.php">Reply</a>
+                                </div>
+                            </div>
+                            <div class="notification-central-row">
+                                <div class="cust-8">
+                                    <h4 class="nc-title">Lorem Ispum dolor</h4>
+                                    <p class="nc-desc mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+                                        diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                                        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+                                </div>
+                                <div class="cust-4">
+                                    <p class="nc-date mb-0"><i class="material-icons">access_time</i> 13 Sep 2020 at
+                                        10:10 AM</p>
+                                </div>
+                                <div class="cust-12">
+                                    <a class="btn btn-primary btn-reply" href="edit-customer-support.php">Reply</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+<!--<?php include('footer.php')?>-->

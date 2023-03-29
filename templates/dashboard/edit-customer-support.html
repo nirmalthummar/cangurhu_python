@@ -1,0 +1,58 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+
+<div class="columnWrapper">
+
+{% block content %}
+   {% include "dashboard/left-sidebar.html" %}
+<div id="mainPart" class="main-content">
+  <div class="main-content-header">
+    <h2 class="mch-heading mb-0">All Apps Central Parameters</h2>
+    <div class="mch-right-items">
+        <a class="notification-bell">
+          <img src="{% static 'assets/image/notification-bell.png' %}" class="img-fluid" />
+        </a>
+        <div class="dropdown user-menu">
+          <button type="button" class="dropdown-toggle user-btn" data-toggle="dropdown">
+            <img src="{% static 'assets/image/user-i.png' %}" class="img-fluid" />
+          </button>
+          <div class="dropdown-menu user-dropmenu">
+          <a class="dropdown-item" href="/Dashboard/logout/" data-toggle="modal" data-target="#logout-modal">Logout</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content-body">
+
+
+     <div class="notification-central-wrapper mt-0">
+        <div class="notification-central-row border-0 pt-0">
+            <div class="cust-8">
+                <h4 class="nc-title">Jhonthan <span class="nc-desig">(Cook)</span></h4>
+                <p class="nc-desc mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
+                <p class="nc-desc mb-0 mt-1">Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="cust-4">
+                <p class="nc-date mb-0 mt-4"><i class="material-icons">access_time</i> 13 Sep 2020 at 10:10 AM</p>
+            </div>
+            <div class="cust-12">
+                <form class="customer-support-form">
+                    <textarea class="form-control"></textarea>
+
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary btn-reply" href="edit-customer-support.php">Reply</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+</div>
+
+{% endblock content %}

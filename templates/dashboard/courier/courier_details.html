@@ -1,0 +1,267 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% get_media_prefix as MEDIA_URL %}
+{% block content-header-heading %}View Courier{% endblock content-header-heading %}
+{% block content %}
+    <!-- First dashboard Section -->
+    <div class="viewCust-wrapper">
+
+                <div class="commonRow">
+                    <div class="cust-3">
+                        <!--            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>-->
+                        <a href="/Dashboard/Couriers/" class="btn btn-primary btn-thin">Back</a>
+                    </div>
+                    {% for object in courier_data %}
+                    <div class="cust-6">
+                        <div class="user-box text-center">
+                            <ul class="user-box-ul">
+                                <li><p><span>Status</span> : {{object.courier.status}}</p></li>
+                                <li><p><span>Availability</span> : Unavailable</p></li>
+                            </ul>
+                            <div class="user-box-img mx-auto">
+                                <img src="{% get_media_prefix %}{{object.courier.image}}"/>
+                            </div>
+                            <div class="user-box-content">
+                                <h4 class="user-box-name">{{ object.username }}</h4>
+                                {% comment %} <a href="javascript:void(0)" class="btn btn-cancel"> {% endcomment %}
+                                {% if object.courier.status == "active" %}
+                                <a class="btn btn-secondary btn-danger btn-thin" href="{% url 'dashboard:courier-status' 'deactivateID' object.pk %}">Block</a>
+                                {% else %}
+                                <a class="btn btn-secondary btn-primary btn-thin" href="{% url 'dashboard:courier-status' 'activateID' object.pk %}">Unblock</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cust-3">
+                        <div class="btn-groups">
+                                           <a href="/Dashboard/view-courier-communicate/" class="btn btn-secondary btn-thin"><img src="{% static 'assets/image/icon-chat.png' %}" />Communicate</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-shadow-3">
+                    <div class="user-box-details">
+                        <div class="ubd-item">
+                            <p class="ubd-name">Courier ID</p>
+                            <p class="ubd-info">{{ object.courier.courier_id}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Mobile Number</p>
+                            <p class="ubd-info">{{ object.mobile_number }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Email id</p>
+                            <p class="ubd-info">{{ object.email }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Country</p>
+                            <p class="ubd-info">{{ object.courier.country.country_name }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Date Of Birth</p>
+                            <p class="ubd-info">{{ object.courier.dob }}</p>
+                        </div>
+                        {% for a in courier_address_data %}
+                        <div class="ubd-item">
+                            <p class="ubd-name">House/ Flat No</p>
+                            <p class="ubd-info">{{a.house_no}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Address</p>
+                            <p class="ubd-info">{{a.address}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Landmark</p>
+                            <p class="ubd-info">{{a.landmark}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">State / Province / Region</p>
+                            <p class="ubd-info">{{a.state}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Postal Code / Zip Code / Pincode</p>
+                            <p class="ubd-info">{{a.zipcode}}</p>
+                        </div>
+                        {% endfor %}
+                        <div class="ubd-item">
+                            <p class="ubd-name">Bank Account</p>
+                            <p class="ubd-info">XXXXXXXXXXXXX</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Work Permit</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}"
+                                                     class="img-fluid mr-2"/>{{ object.courier.govt_cert }}
+                                <a class="download-icon" href="{% get_media_prefix %}{{object.courier.work_permit}}"
+                                   download><img src="{% static 'assets/image/download.png' %}" class="img-fluid"/></a>
+                            </p>
+
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Government Issued Id</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}"
+                                                     class="img-fluid mr-2"/>{{ object.courier.govt_cert }}
+                                <a class="download-icon" href="{% get_media_prefix %}{{ object.courier.govt_cert }}"
+                                   download><img src="{% static 'assets/image/download.png' %}" class="img-fluid"/></a>
+                            </p>
+
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Driver License</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}"
+                                                     class="img-fluid mr-2"/>{{object.courier.driving_licence}}
+                                <a class="download-icon" href="{% get_media_prefix %}{{ object.courier.driving_license }}"
+                                   download><img src="{% static 'assets/image/download.png' %}" class="img-fluid"/></a>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-shadow-3">
+                    <div class="common-head">
+                        <h4 class="text-uppercase">VEHICLE DETAILS</h4>
+                    </div>
+                    <div class="user-box-details">
+                        <div class="ubd-item">
+                            <p class="ubd-name">Vehicle</p>
+                            <p class="ubd-info">{{ object.courier.vehicle_type }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Vehicle Registration</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}"
+                                                     class="img-fluid mr-2"/>{{ object.courier.vehicle_registration }}
+                                <a class="download-icon" href="{% get_media_prefix %}{{ object.courier.vehicle_registration }}"><img
+                                        src="{% static 'assets/image/download.png' %}" class="img-fluid"/></a></p>
+
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Vehicle Insurance</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}"
+                                                     class="img-fluid mr-2"/>{{ object.courier.vehicle_insurance }}
+                                <a class="download-icon" href="{% get_media_prefix %}{{ object.courier.vehicle_insurance }}"><img
+                                        src="{% static 'assets/image/download.png' %}" class="img-fluid"/></a></p>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="box-shadow-3">
+                    <div class="common-head dropleft">
+                        <h4 class="text-uppercase">COURIER DETAILS</h4>
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}"/></a>
+                        <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                            <div class="card selectDate-card p-0 bg-transparent">
+                                <div class="card-body selectDate-body bg-transparent">
+                                    <div id="date-range-2"></div>
+                                    <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="common-table-wrapper m-0">
+                        <table id="customerManagment" class="display" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Total Distance</th>
+                                <th>Total Courier Pay</th>
+                                <th>Payment Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in order_data %}
+                            <tr>
+                                <td>{{i.order.order_id}}</td>
+                                <td>24 Mile</td>
+                                <td>$123</td>
+                                <td>${{i.order_data.grand_total}}</td>
+                                <td>{{i.order.date}}</td>
+                                <td>{{i.courier_status}}</td>
+                                <td class="action-tab">
+                                    <a class="action-icon view-info" href="{% url 'dashboard:courier-order-details' user.pk %}"><img
+                                            src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid"/></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="box-shadow-3">
+                    <div class="common-head dropleft">
+                        <h4 class="text-uppercase">COURIER FACIAL RECOGNITION TRACK</h4>
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}"/></a>
+                        <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                            <div class="card selectDate-card p-0 bg-transparent">
+                                <div class="card-body selectDate-body bg-transparent">
+                                    <div id="date-range"></div>
+                                    <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="common-table-wrapper m-0">
+                        <table id="coolTransData" class="display" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Last Attempt Status</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>No. of Failed Attempts</th>
+                                <th>Similarity Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Passed</td>
+                                <td>12-Mar-2022</td>
+                                <td>05:21 PM</td>
+                                <td>123</td>
+                                <td>234</td>
+                            </tr>
+                            <tr>
+                                <td>Passed</td>
+                                <td>12-Mar-2022</td>
+                                <td>05:21 PM</td>
+                                <td>123</td>
+                                <td>234</td>
+                            </tr>
+                            <tr>
+                                <td>Passed</td>
+                                <td>12-Mar-2022</td>
+                                <td>05:21 PM</td>
+                                <td>123</td>
+                                <td>234</td>
+                            </tr>
+                            <tr>
+                                <td>Failed</td>
+                                <td>12-Mar-2022</td>
+                                <td>05:21 PM</td>
+                                <td>123</td>
+                                <td>234</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+{% endblock content %}
+
+
+
+

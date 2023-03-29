@@ -1,0 +1,113 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% block content-header-heading %}Cook Food Safety Compliance{% endblock content-header-heading %}
+
+{% block content %}
+
+
+
+  <!-- First dashboard Section -->
+    <div class="view-fsc-wrapper">
+
+    <div class="commonRow">
+        <div class="cust-3">
+<!--            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>-->
+            <a href="/Dashboard/cook-food-safety-compliance/" class="btn btn-primary btn-thin">Back</a>
+        </div>
+
+        <div class="cust-6">
+               <div class="user-box text-center">
+
+                   <div class="user-box-cook">
+                       <span class="d-block">Cook</span>
+                       <h1 class="text-capitalize">Hells Kitchen ABCD</h1>
+                   </div>
+                   <ul class="user-box-general-info">
+                       <li>
+                            <span class="ubgi-title text-capitalize">Country</span>
+                            <span class="ubgi-detail text-capitalize">Canada</span>
+                       </li>
+                       <li>
+                            <span class="ubgi-title text-capitalize">Province / State</span>
+                            <span class="ubgi-detail text-capitalize">Ontario</span>
+                       </li>
+                       <li>
+                            <span class="ubgi-title text-capitalize">Regulation Applicability</span>
+                            <span class="ubgi-detail text-capitalize">Active</span>
+                       </li>
+                       <li>
+                            <span class="ubgi-title text-capitalize">Rule ID</span>
+                            <span class="ubgi-detail text-capitalize">FSC - 3424</span>
+                       </li>
+                       <li>
+                            <span class="ubgi-title text-capitalize">Cook ID</span>
+                            <span class="ubgi-detail text-capitalize">234242424</span>
+                       </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="cust-3">
+       </div>
+    </div>
+    <div class="box-shadow-3">
+        <div class="user-box-details">
+            <div class="ubd-item">
+                <p class="ubd-name">Regulation Part</p>
+                <p class="ubd-info">Cleaning & Sanitization</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Attribute</p>
+                <p class="ubd-info">Cleanliness</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Document</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2"> FSMC.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid"></a></p>
+
+            </div>
+        </div>
+        <div class="ai-object-status border-gray">
+            <div class="common-head">
+                <h4 class="text-uppercase">A.I. OBJECT STATUS</h4>
+            </div>
+                <ul class="list-group ai-ul">
+                    <li class="list-group-item ai-li">
+                        <span class="ai-title">Kitchen Floor</span>
+                        <span class="ai-status text-uppercase activee">Passed</span>
+                    </li>
+                    <li class="list-group-item ai-li">
+                        <span class="ai-title">Ceiling</span>
+                        <span class="ai-status text-uppercase failed">Failed</span>
+                    </li>
+                    <li class="list-group-item ai-li">
+                        <span class="ai-title">Splash Walls</span>
+                        <span class="ai-status text-uppercase activee">Passed</span>
+                    </li>
+                    <li class="list-group-item ai-li">
+                        <span class="ai-title">Counter Top</span>
+                        <span class="ai-status text-uppercase activee">Passed</span>
+                    </li>
+
+                    <li class="list-group-item ai-li">
+                        <span class="ai-title">Cooking Range Surface</span>
+                        <span class="ai-status text-uppercase failed">Failed</span>
+                    </li>
+                    <li class="list-group-item ai-li">
+                        <span class="ai-title">Space between Cooking Range</span>
+                        <span class="ai-status text-uppercase activee">Passed</span>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+</div>
+</div>
+
+
+{% endblock content %}

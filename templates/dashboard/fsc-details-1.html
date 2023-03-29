@@ -1,0 +1,253 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+<div class="columnWrapper">
+
+<!--<?php include('left-sidebar.php')?>-->
+{% block content %}
+   {% include "dashboard/left-sidebar.html" %}
+
+<div id="mainPart" class="main-content">
+  <div class="main-content-header">
+    <h2 class="mch-heading mb-0">View Cook</h2>
+    <div class="mch-right-items">
+        <a class="notification-bell">
+          <img src="{% static 'assets/image/notification-bell.png' %}" class="img-fluid" />
+        </a>
+        <div class="dropdown user-menu">
+          <button type="button" class="dropdown-toggle user-btn" data-toggle="dropdown">
+            <img src="{% static 'assets/image/user-i.png' %}" class="img-fluid" />
+          </button>
+          <div class="dropdown-menu user-dropmenu">
+          <a class="dropdown-item" href="/Dashboard/logout/" data-toggle="modal" data-target="#logout-modal">Logout</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content-body">
+
+  <!-- First dashboard Section -->
+    <div class="foodSafety-wrapper">
+
+    <div class="commonRow">
+        <div class="cust-3">
+            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>
+        </div>
+        <div class="cust-6">
+               <div class="user-box text-center">
+                   <div class="user-box-img mx-auto">
+                       <img src="{% static 'assets/image/user-image.png' %}" />
+                   </div>
+                   <div class="user-box-content">
+                       <h4 class="user-box-name">John Deo</h4>
+                   </div>
+                   <ul class="user-box-general-info">
+                       <li>
+                            <span class="ubgi-title text-capitalize">Cook Name</span>
+                            <span class="ubgi-detail text-capitalize">Jhonathan</span>
+                       </li>
+                       <li>
+                            <span class="ubgi-title text-capitalize">Phone Number</span>
+                            <span class="ubgi-detail text-capitalize">+1 12345 5471</span>
+                       </li>
+                       <li>
+                            <span class="ubgi-title text-capitalize">Email</span>
+                            <span class="ubgi-detail text-capitalize">jhon@mail.com</span>
+                       </li>
+                       <li>
+                            <span class="ubgi-title text-capitalize">Cook ID</span>
+                            <span class="ubgi-detail text-capitalize">3425345345</span>
+                       </li>
+                    </ul>
+                </div>
+        </div>
+        <div class="cust-3">
+
+        </div>
+    </div>
+    <div class="box-shadow-3">
+        <div class="common-head justify-content-center">
+            <h4>FOOD SAFETY COMPLIANCE : KITCHEN PREMISES</h4>
+        </div>
+
+        <div class="fsc-wrapper">
+             <div class="fsc-images-wrap">
+                 <h5 class="fsc-head">Cleaning & Sanitizing</h5>
+                 <ul class="fsc-ul">
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                </ul>
+                <p class="fsc-status uppercase activee">Passed</p>
+             </div>
+             <div class="fsc-button">
+                 <a href="fsc-details-1.php" class="btn fsc-view btn-primary">View</a>
+             </div>
+        </div>
+<hr>
+
+        <div class="fsc-wrapper">
+             <div class="fsc-images-wrap">
+                 <h5 class="fsc-head">Kitchen Maintenance</h5>
+                 <ul class="fsc-ul">
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                </ul>
+                <p class="fsc-status uppercase failed">Failed</p>
+             </div>
+             <div class="fsc-button">
+                 <a href="fsc-details-1.php" class="btn fsc-view btn-primary">View</a>
+             </div>
+        </div>
+        <hr>
+        <div class="fsc-wrapper">
+             <div class="fsc-images-wrap">
+                 <h5 class="fsc-head">Sanitary Facilities</h5>
+                 <ul class="fsc-ul">
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                </ul>
+                <p class="fsc-status uppercase pending">Pending</p>
+             </div>
+             <div class="fsc-button">
+                 <a href="fsc-details-1.php" class="btn fsc-view btn-primary">View</a>
+             </div>
+        </div>
+        <hr>
+        <div class="fsc-wrapper">
+             <div class="fsc-images-wrap">
+                 <h5 class="fsc-head">Food Handling</h5>
+                 <ul class="fsc-ul">
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                     <li class="fsc-li">
+                         <img class="img-fluid fsc-image" src="{% static 'assets/image/cook-place.jpg' %}" />
+                     </li>
+                </ul>
+                <p class="fsc-status uppercase activee">Passed</p>
+             </div>
+             <div class="fsc-button">
+                 <a href="fsc-details-1.php" class="btn fsc-view btn-primary">View</a>
+             </div>
+        </div>
+    </div>
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+{% endblock content %}

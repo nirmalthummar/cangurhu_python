@@ -1,0 +1,415 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+{% block content-header-heading %}Review & Rating Management{% endblock content-header-heading %}
+{% block content %}
+    <!-- First dashboard Section -->
+    <div class="rrm-wrapper">
+        <div class="filters-wrap">
+            <div class="filter-left">
+                <div class="dropdown filter-menu">
+                    <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                        Country
+                    </button>
+                    <div class="dropdown-menu filter-drop-btn">
+                        <a class="dropdown-item filter-drop-item" href="#">Argentina</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Albama</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Belgium</a>
+                        <a class="dropdown-item filter-drop-item" href="#">China</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Denmark</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Europe</a>
+                        <a class="dropdown-item filter-drop-item" href="#">France</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Argentina</a>
+                    </div>
+                </div>
+                <div class="dropdown filter-menu">
+                    <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                        State
+                    </button>
+                    <div class="dropdown-menu filter-drop-btn">
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                    </div>
+                </div>
+                <div class="dropdown filter-menu">
+                    <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                        Town
+                    </button>
+                    <div class="dropdown-menu filter-drop-btn">
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                        <a class="dropdown-item filter-drop-item" href="#">Lorem</a>
+                    </div>
+                </div>
+                <div class="dropdown filter-menu">
+                    <button type="button" class="dropdown-toggle filter-btn" data-toggle="dropdown">
+                        Postal Code
+                    </button>
+                    <div class="dropdown-menu filter-drop-btn">
+                        <a class="dropdown-item filter-drop-item" href="#">123456</a>
+                        <a class="dropdown-item filter-drop-item" href="#">123456</a>
+                        <a class="dropdown-item filter-drop-item" href="#">123456</a>
+                        <a class="dropdown-item filter-drop-item" href="#">123456</a>
+                        <a class="dropdown-item filter-drop-item" href="#">123456</a>
+                        <a class="dropdown-item filter-drop-item" href="#">123456</a>
+                        <a class="dropdown-item filter-drop-item" href="#">123456</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-right d-flex align-items-center">
+                <div class="dropdown rating-filter mr-3 dropleft" style="display: flex;">
+                    <button type="button" class="dropdown-toggle rating-btn" data-toggle="dropdown">
+                        <i class="material-icons">star</i>
+                    </button>
+                    <div class="dropdown-menu filter-drop-btn star-dropdown">
+                        <a class="dropdown-item filter-drop-item" href="#">1 Star</a>
+                        <a class="dropdown-item filter-drop-item" href="#">2 Star</a>
+                        <a class="dropdown-item filter-drop-item" href="#">3 Star</a>
+                        <a class="dropdown-item filter-drop-item" href="#">4 Star</a>
+                        <a class="dropdown-item filter-drop-item" href="#">5 Star</a>
+                    </div>
+                </div>
+                <div class="dropleft">
+                    <a href="#" data-toggle="dropdown" aria-expanded="false"><img src="{% static 'assets/image/filter.png' %}"></a>
+                    <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                        <div class="card selectDate-card p-0 bg-transparent">
+                            <div class="card-body selectDate-body bg-transparent">
+                                <div id="date-range"><div class="datepicker datepicker-inline"><div class="datepicker-days" style="">
+                                    <table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">June 2022</th><th class="next">»</th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td class="old day" data-date="1653782400000">29</td><td class="old day" data-date="1653868800000">30</td><td class="old day" data-date="1653955200000">31</td><td class="day" data-date="1654041600000">1</td><td class="day" data-date="1654128000000">2</td><td class="day" data-date="1654214400000">3</td><td class="day" data-date="1654300800000">4</td></tr><tr><td class="day" data-date="1654387200000">5</td><td class="day" data-date="1654473600000">6</td><td class="day" data-date="1654560000000">7</td><td class="day" data-date="1654646400000">8</td><td class="day" data-date="1654732800000">9</td><td class="day" data-date="1654819200000">10</td><td class="day" data-date="1654905600000">11</td></tr><tr><td class="today day" data-date="1654992000000">12</td><td class="day" data-date="1655078400000">13</td><td class="day" data-date="1655164800000">14</td><td class="day" data-date="1655251200000">15</td><td class="day" data-date="1655337600000">16</td><td class="day" data-date="1655424000000">17</td><td class="day" data-date="1655510400000">18</td></tr><tr><td class="day" data-date="1655596800000">19</td><td class="day" data-date="1655683200000">20</td><td class="day" data-date="1655769600000">21</td><td class="day" data-date="1655856000000">22</td><td class="day" data-date="1655942400000">23</td><td class="day" data-date="1656028800000">24</td><td class="day" data-date="1656115200000">25</td></tr><tr><td class="day" data-date="1656201600000">26</td><td class="day" data-date="1656288000000">27</td><td class="day" data-date="1656374400000">28</td><td class="day" data-date="1656460800000">29</td><td class="day" data-date="1656547200000">30</td><td class="new day" data-date="1656633600000">1</td><td class="new day" data-date="1656720000000">2</td></tr><tr><td class="new day" data-date="1656806400000">3</td><td class="new day" data-date="1656892800000">4</td><td class="new day" data-date="1656979200000">5</td><td class="new day" data-date="1657065600000">6</td><td class="new day" data-date="1657152000000">7</td><td class="new day" data-date="1657238400000">8</td><td class="new day" data-date="1657324800000">9</td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2022</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span><span class="month">Apr</span><span class="month">May</span><span class="month focused">Jun</span><span class="month">Jul</span><span class="month">Aug</span><span class="month">Sep</span><span class="month">Oct</span><span class="month">Nov</span><span class="month">Dec</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2020-2029</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="year old">2019</span><span class="year">2020</span><span class="year">2021</span><span class="year focused">2022</span><span class="year">2023</span><span class="year">2024</span><span class="year">2025</span><span class="year">2026</span><span class="year">2027</span><span class="year">2028</span><span class="year">2029</span><span class="year new">2030</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-decades" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2000-2090</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="decade old">1990</span><span class="decade">2000</span><span class="decade">2010</span><span class="decade focused">2020</span><span class="decade">2030</span><span class="decade">2040</span><span class="decade">2050</span><span class="decade">2060</span><span class="decade">2070</span><span class="decade">2080</span><span class="decade">2090</span><span class="decade new">2100</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div><div class="datepicker-centuries" style="display: none;"><table class="table-condensed"><thead><tr><th colspan="7" class="datepicker-title" style="display: none;"></th></tr><tr><th class="prev">«</th><th colspan="5" class="datepicker-switch">2000-2900</th><th class="next">»</th></tr></thead><tbody><tr><td colspan="7"><span class="century old">1900</span><span class="century focused">2000</span><span class="century">2100</span><span class="century">2200</span><span class="century">2300</span><span class="century">2400</span><span class="century">2500</span><span class="century">2600</span><span class="century">2700</span><span class="century">2800</span><span class="century">2900</span><span class="century new">3000</span></td></tr></tbody><tfoot><tr><th colspan="7" class="today" style="display: none;">Today</th></tr><tr><th colspan="7" class="clear" style="display: none;">Clear</th></tr></tfoot></table></div></div></div>
+                                <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rrm-flex">
+            <div class="rrm-col rrm-first box-shadow-3 dishtab-show" style="display: block;">
+                <div class="rrm-starrating">
+                    <h2>4.8 <i class="material-icons">star</i></h2>
+                    <p class="mb-0">886 Rating</p>
+                </div>
+                <div class="rrm-progressbar">
+                    <ul class="rrm-progressbar-ul">
+                        <li>
+                            <span class="rrm-numStar">5 <i class="material-icons">star</i></span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width:70%"></div>
+                            </div>
+                            <span class="rrm-numbers">7000</span>
+                        </li>
+                        <li>
+                            <span class="rrm-numStar">4 <i class="material-icons">star</i></span>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="rrm-numbers">200</span>
+                        </li>
+                        <li>
+                            <span class="rrm-numStar">3 <i class="material-icons">star</i></span>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="rrm-numbers">300</span>
+                        </li>
+                        <li>
+                            <span class="rrm-numStar">2 <i class="material-icons">star</i></span>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="rrm-numbers">20</span>
+                        </li>
+                        <li>
+                            <span class="rrm-numStar">1 <i class="material-icons">star</i></span>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="rrm-numbers">10</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rrm-col rrm-second box-shadow-3">
+                <ul class="nav rrm-tabs-link">
+                    <li class="nav-item">
+                        <a class="nav-link text-center dish-tab" data-toggle="tab" href="#dish">Dish</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center active" data-toggle="tab" href="#cook">Cook</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center" data-toggle="tab" href="#courier">Courier</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="rrm-tabswrapper">
+            <div class="tab-content rrm-tab-content">
+                <div class="tab-pane" id="dish">
+                    <div class="box-shadow-4">
+                        <div class="box-first">
+                            <h5 class="text-grade text-uppercase">Taste grading</h5>
+                            <div class="plain-circle d-flex gradeing-box">
+                                <div class="pl-cs pl-circle-box color-black border-red">
+                                    <img src="{% static 'assets/image/disappointed.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-yellow">
+                                    <img src="{% static 'assets/image/neutral.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                    <img src="{% static 'assets/image/happy.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-green">
+                                    <img src="{% static 'assets/image/savouring-delicious-food.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="box-second">
+                            <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                            <div class="plain-circle d-flex gradeing-box">
+                                <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                    <canvas id="myPieChart" style="width: 174px; display: block; box-sizing: border-box; height: 174px;" width="348" height="348"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-shadow-4">
+                        <div class="box-first">
+                            <h5 class="text-grade text-uppercase">USE OF INGREDIENTS</h5>
+                            <div class="plain-circle d-flex gradeing-box">
+                                <div class="pl-cs pl-circle-box color-black border-red">
+                                    <img src="{% static 'assets/image/disappointed.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-yellow">
+                                    <img src="{% static 'assets/image/neutral.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                    <img src="{% static 'assets/image/happy.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-green">
+                                    <img src="{% static 'assets/image/savouring-delicious-food.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="box-second">
+                            <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                            <div class="plain-circle d-flex gradeing-box">
+                                <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                    <canvas id="myPieChart2" style="width: 174px; display: block; box-sizing: border-box; height: 174px;" width="348" height="348"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-shadow-4">
+                        <div class="box-first">
+                            <h5 class="text-grade text-uppercase">PRESENTATION / ORIGANILITY</h5>
+                            <div class="plain-circle d-flex gradeing-box">
+                                <div class="pl-cs pl-circle-box color-black border-red">
+                                    <img src="{% static 'assets/image/disappointed.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-yellow">
+                                    <img src="{% static 'assets/image/neutral.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                    <img src="{% static 'assets/image/happy.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                </div>
+                                <div class="pl-cs pl-circle-box color-black border-green">
+                                    <img src="{% static 'assets/image/savouring-delicious-food.svg' %}" class="img-fluid size-40">
+                                    <span class="pl-circle-no text-uppercase">50</span>
+                                    <span class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="box-second">
+                            <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                            <div class="plain-circle d-flex gradeing-box">
+                                <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                    <canvas id="myPieChart3" style="width: 174px; display: block; box-sizing: border-box; height: 174px;" width="348" height="348"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade active show" id="cook">
+                    {% for i in '1234'|make_list %}
+                    <div class="rrm-tab-item">
+                        <div class="rrm-box">
+                            <div class="rrm-img-box">
+                                <img src="{% static 'assets/image/user-i.png' %}">
+                                <div class="name-with-rating">
+                                    <p class="mb-0">Carlos Ward</p>
+                                    <div class="rating-group">
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star_half</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="rrm-date">20 April</span>
+                        </div>
+                        <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or
+                            Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime On Lorem
+                            Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is Sometime
+                            This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="courier">
+                    {% for i in '1234'|make_list %}
+                    <div class="rrm-tab-item">
+                        <div class="rrm-box">
+                            <div class="rrm-img-box">
+                                <img src="{% static 'assets/image/user-i.png' %}">
+                                <div class="name-with-rating">
+                                    <p class="mb-0">Carlos Ward</p>
+                                    <div class="rating-group">
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star_half</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="rrm-date">20 April</span>
+                        </div>
+                        <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or
+                            Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime On Lorem
+                            Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is Sometime
+                            This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock content %}
+
+{% block js %}
+<script>
+jQuery(function() {
+
+    jQuery(".progresss").each(function() {
+
+        var value = jQuery(this).attr('data-value');
+        var left = jQuery(this).find('.progresss-left .progresss-bar');
+        var right = jQuery(this).find('.progresss-right .progresss-bar');
+
+        if (value > 0) {
+            if (value <= 50) {
+                right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+            } else {
+                right.css('transform', 'rotate(180deg)')
+                left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+            }
+        }
+
+    })
+
+    function percentageToDegrees(percentage) {
+        return percentage / 100 * 360
+    }
+});
+</script>
+<script>
+var xValues = ["Bad", "Okay", "Good", "Very Good"];
+var yValues = [10, 20, 20, 50];
+var barColors = [
+    "#B40000",
+    "#E1B31F",
+    "#7C9204",
+    "#249204"
+];
+var settings = {
+    type: "pie",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                display: false,
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Pie Chart'
+            }
+        }
+    },
+}
+new Chart("myPieChart", settings);
+new Chart("myPieChart2", settings);
+new Chart("myPieChart3", settings);
+
+
+var xValues = ["★1", "★2", "★3", "★4", "★5"];
+var yValues = [55, 49, 44, 24, 15];
+var barColors = ["#000000", "#000000","#000000","#000000","#000000"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: false
+    }
+  }
+});
+</script>
+{% endblock js %}

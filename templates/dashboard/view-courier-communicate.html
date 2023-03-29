@@ -1,0 +1,141 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+<div class="columnWrapper">
+
+<!--<?php include('left-sidebar.php')?>-->
+{% block content %}
+   {% include "dashboard/left-sidebar.html" %}
+<div id="mainPart" class="main-content">
+  <div class="main-content-header">
+    <h2 class="mch-heading mb-0">Communicate with courier</h2>
+    <div class="mch-right-items">
+        <a class="notification-bell">
+          <img src="{% static 'assets/image/notification-bell.png' %}" class="img-fluid" />
+        </a>
+        <div class="dropdown user-menu">
+          <button type="button" class="dropdown-toggle user-btn" data-toggle="dropdown">
+            <img src="{% static 'assets/image/user-i.png' %}" class="img-fluid" />
+          </button>
+          <div class="dropdown-menu user-dropmenu">
+          <a class="dropdown-item" href="/Dashboard/logout/" data-toggle="modal" data-target="#logout-modal">Logout</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content-body">
+
+  <!-- First dashboard Section -->
+    <div class="communcaiteWithCook-wrapper">
+
+    <div class="commonRow">
+        <div class="cust-3">
+<!--            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>-->
+
+            <a href="/Dashboard/courier-details/" class="btn btn-primary btn-thin">Back</a>
+        </div>
+    </div>
+    <div class="card tabs-area-card">
+                <div class="card-header bg-white tac-head">
+                  <div class="img-with-name">
+                    <img src="{% static 'assets/image/cust-img.png' %}" />
+                    <span class="name-with-state">
+                        <p class="mb-0">Customer_name</p>
+                        <p class="mb-0"><span class="dot dot-online"></span> Online</p>
+                    </span>
+                  </div>
+                  <a href="#"><img src="{% static 'assets/image/phone-outline.png' %}" /></a>
+                </div>
+                <div class="card-body tac-body">
+                <div class="chat-box bg-white">
+                      <!-- Sender Message-->
+                      <div class="media  msg-receaver"><img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="30" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light-grey chat-text mb-2">
+                            <p class="text-small mb-0">Lorem ipsum dolor siametor amet, consetetur adipscing elitr? 😁</p>
+                          </div>
+                          <p class="small text-muted">8 : 07</p>
+                        </div>
+                      </div>
+
+                      <!-- Reciever Message-->
+                      <div class="media msg-sender">
+                        <div class="media-body">
+                          <div class="bg-dark-grey chat-text mb-2">
+                            <p class="text-small mb-0">Consetetur adipscing elitr, sedam nonumy eirmod.</p>
+                          </div>
+                          <p class="small text-muted d-inline mr-1">8:10</p>   <img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="12" class="rounded-circle">
+                        </div>
+
+                      </div>
+
+                      <!-- Sender Message-->
+                      <div class="media msg-receaver"><img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="30" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light-grey chat-text mb-2">
+                            <p class="text-small mb-0">Test, which is a new approach to have</p>
+                          </div>
+                          <p class="small text-muted">8 : 11</p>
+                        </div>
+                      </div>
+
+                      <!-- Reciever Message-->
+                      <div class="media msg-sender">
+                        <div class="media-body">
+                          <div class="bg-dark-grey chat-text mb-2">
+                            <p class="text-small mb-0">Apollo University, Delhi, India Test</p>
+                          </div>
+                          <p class="small text-muted d-inline mr-1">12:00 PM | Aug 13</p>   <img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="12" class="rounded-circle">
+                        </div>
+
+                      </div>
+
+                      <!-- Sender Message-->
+                      <div class="media msg-receaver"><img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="30" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light-grey chat-text mb-2">
+                            <p class="text-small mb-0">Test, which is a new approach</p>
+                          </div>
+                          <p class="small text-muted">12:00 PM | Aug 13</p>
+                        </div>
+                      </div>
+
+                      <!-- Reciever Message-->
+                      <div class="media msg-sender">
+                        <div class="media-body">
+                          <div class="bg-dark-grey chat-text mb-2">
+                            <p class="text-small mb-0">Apollo University, Delhi, India Test</p>
+                          </div>
+                          <p class="small text-muted d-inline mr-1">12:00 PM | Aug 13</p>   <img src="{% static 'assets/image/cust-img.png' %}" alt="user" width="12" class="rounded-circle">
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <!-- Typing area -->
+                    <form action="#" class="chat-box-form">
+                      <div class="input-group">
+                      <div class="input-group-prepend">
+                          <button id="button-addon2" type="submit" class="btn btn-link"> <i class="material-icons">tag_faces</i></button>
+                        </div>
+                      <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+                        <div class="input-group-append">
+                          <button id="button-addon2" type="submit" class="btn"> <img src="{% static 'assets/image/Send.png' %}" /></button>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                </div>
+
+
+  </div>
+
+
+
+</div>
+
+</div>
+
+{% endblock content %}

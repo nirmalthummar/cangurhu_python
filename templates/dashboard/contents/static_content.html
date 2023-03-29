@@ -1,0 +1,32 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+{% block content-header-heading %}Static Content Management{% endblock content-header-heading %}
+{% block content %}
+<!-- First dashboard Section -->
+<div class="static-cont-manag-wrapper">
+
+    <!-- Nav tabs -->
+    {% include 'dashboard/contents/tabs.html' %}
+
+    <!-- Tab panes -->
+    <div class="tab-content scm-tabs">
+        <!--   Term and Condition   -->
+        <div class="tab-pane scm-pane scm-ul active" id="term-cond">
+            <div class="btn-groups-horizontal text-right">
+                <a class="btn btn-primary btn-thin" href="{% url 'dashboard:term-condition' term.pk %}">Edit</a>
+            </div>
+            {{ term.term_body_text|safe }}
+        </div>
+
+        <!--   Privacy Policy   -->
+        <div class="tab-pane scm-pane scm-ul fade" id="privacy-policy">
+            <div class="btn-groups-horizontal text-right">
+                <a class="btn btn-primary btn-thin" href="{% url 'dashboard:privacy-policy' policy.pk %}">Edit</a>
+            </div>
+            {{ policy.policy_body_text|safe }}
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

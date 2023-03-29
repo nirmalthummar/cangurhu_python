@@ -1,0 +1,1509 @@
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cangurhu</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&family=Poppins:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link href="{% static 'assets/css/lightbox.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{% comment %} <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> {% endcomment %}
+{% comment %} <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"> {% endcomment %}
+
+<style>
+    .banner-manag-item img {
+    border-radius: 15px;
+    width: 100%;
+    height : 194px;
+    object-fit: cover;
+}
+</style>
+
+</head>
+<body>
+    <div class="columnWrapper">
+        <!--  Sidebar  -->
+        {% include "dashboard/includes/sidebar.html" %}
+        <div id="mainPart" class="main-content">
+            <div class="main-content-header">
+                <h2 class="mch-heading mb-0">
+                    {% block content-header-heading %}Dashboard{% endblock content-header-heading %}
+                </h2>
+
+                <div class="mch-right-items">
+                    {% block content-header-items %}
+
+                        <a class="notification-bell">
+                            <img src="{% static 'assets/image/notification-bell.png' %}" style="width:25;"/>
+                        </a>
+<!--                    <div class="notification-bell-wrapper">-->
+<!--    <a class="notification-bell">-->
+<!--        <img src="{% static 'assets/image/notification-bell.png' %}" class="img-fluid"/>-->
+<!--    </a>-->
+    <div class="m-0 notification-bell-dm" style="display:none">
+        <div class="card border-0">
+            <div class="card-header border-0 bg-transparent">
+                <h3>Information</h3>
+                <div class="custom-select selectDropStyle">
+                    <select>
+                        <option value="0">Information</option>
+                        <option value="1">Information</option>
+                        <option value="2">Warning</option>
+                        <option value="3">Red & High Priority</option>
+                        <option value="4">911 Danger</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-body border-0 bg-transparent">
+                <div class="notification-bell-list">
+                    <div class="notification-bell-head">
+                        <h4>Lorem Ispum dolor</h4>
+                        <span class="color-red">High Priority</span>
+                    </div>
+                    <p class="notification-bell-desc mb-2">Lorem ipsum dolor sit amet, consetetur
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam nonumy.</p>
+                    <p class="notification-bell-time mb-0"><i class="material-icons">access_time</i> 13
+                        Sep 2020 at 10:10 AM</p>
+                </div>
+                <div class="notification-bell-list">
+                    <div class="notification-bell-head">
+                        <h4>Lorem Ispum dolor</h4>
+                        <span class="color-red">911</span>
+                    </div>
+                    <p class="notification-bell-desc mb-2">Lorem ipsum dolor sit amet, consetetur
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam nonumy.</p>
+                    <p class="notification-bell-time mb-0"><i class="material-icons">access_time</i> 13
+                        Sep 2020 at 10:10 AM</p>
+                </div>
+                <div class="notification-bell-list">
+                    <div class="notification-bell-head">
+                        <h4>Lorem Ispum dolor</h4>
+                        <span class="color-red">High Priority</span>
+                    </div>
+                    <p class="notification-bell-desc mb-2">Lorem ipsum dolor sit amet, consetetur
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam nonumy.</p>
+                    <p class="notification-bell-time mb-0"><i class="material-icons">access_time</i> 13
+                        Sep 2020 at 10:10 AM</p>
+                </div>
+                <div class="notification-bell-list">
+                    <div class="notification-bell-head">
+                        <h4>Lorem Ispum dolor</h4>
+                        <span class="color-red">911</span>
+                    </div>
+                    <p class="notification-bell-desc mb-2">Lorem ipsum dolor sit amet, consetetur
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                        Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam nonumy.</p>
+                    <p class="notification-bell-time mb-0"><i class="material-icons">access_time</i> 13
+                        Sep 2020 at 10:10 AM</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    {% block content-header-notification %}
+
+                        {% endblock content-header-notification %}
+
+                        {% block content-header-dropdown %}
+                        <div class="dropdown user-menu">
+                            <button type="button" class="dropdown-toggle user-btn" data-toggle="dropdown">
+                                <img src="{% static 'assets/image/user-i.png' %}" style = "width:68;position:relative;left:-15px;top:-9px"/>
+                            </button>
+                            <div class="dropdown-menu user-dropmenu">
+                                <a class="dropdown-item" href="{% url 'dashboard:logout' %}" data-toggle="modal"  data-target="#logout-modal">Logout</a>
+                            </div>
+                        </div>
+                        {% endblock content-header-dropdown %}
+                    {% endblock content-header-items %}
+                </div>
+            </div>
+            <div class="main-content-body">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </div>
+
+    {% include 'dashboard/includes/modals/logout.html' %}
+    {% include 'dashboard/includes/modals/add_fsc_img_freq.html' %}
+<script src="{% static 'assets/js/lightbox-plus-jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<script>
+    jQuery(function() {
+
+    jQuery(".progresss").each(function() {
+
+        var value = jQuery(this).attr('data-value');
+        var left = jQuery(this).find('.progresss-left .progresss-bar');
+        var right = jQuery(this).find('.progresss-right .progresss-bar');
+
+        if (value > 0) {
+            if (value <= 50) {
+                right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+            } else {
+                right.css('transform', 'rotate(180deg)')
+                left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+            }
+        }
+
+    })
+
+    function percentageToDegrees(percentage) {
+
+        return percentage / 100 * 360
+
+    }
+
+});
+
+
+jQuery(document).ready(function() {
+    jQuery('textarea#summernote,textarea#summernote2').summernote({
+        height: 550, //set editable area's height
+        dialogsInBody: true
+    });
+});
+
+
+jQuery('.custom-radio-box input').on('click', function() {
+    if (jQuery(this).val() == 'Country Specific') {
+        jQuery('.form-group.filters-wrap').css('display', 'flex')
+    } else {
+        jQuery('.form-group.filters-wrap').css('display', 'none')
+    }
+})
+
+
+jQuery('#date-range,#date-range-2,#date-range-3,#date-range-4').datepicker({
+    todayHighlight: true
+});
+jQuery('a.filterDrop').on('click', function() {
+    jQuery(this).siblings('ul.filter-list-Box').toggle();
+})
+jQuery(document).mouseup(function(e) {
+    var container = jQuery("ul.filter-list-Box");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        container.hide();
+    }
+});
+
+
+// jQuery('.dishtab-show').css('display', 'none');
+// jQuery('ul.nav.rrm-tabs-link li a').on('click', function() {
+//     if (jQuery(this).hasClass('dish-tab')) {
+//         jQuery('.dishtab-show').css('display', 'none');
+//         jQuery('.rating-filter').css('display', 'none');
+//     } else {
+//         jQuery('.dishtab-show').css('display', 'block');
+//         jQuery('.rating-filter').css('display', 'flex');
+//     }
+// })
+
+jQuery(document).ready(function() {
+    jQuery('.js-example-basic-single').select2({
+        minimumResultsForSearch: -1
+    });
+});
+jQuery('a.notification-bell').on('click', function() {
+    jQuery('.notification-bell-dm').toggle()
+})
+
+jQuery(".hide-show-pass").click(function() {
+    jQuery(this).children().toggleClass("fa-eye fa-eye-slash");
+    input = jQuery(this).parent().find("input");
+    if (input.attr("type") == "password") {
+        input.attr("type", "text");
+    } else {
+        input.attr("type", "password");
+    }
+});
+
+jQuery(function() {
+    let pageName = location.pathname.split('/').slice(-1)[0];
+    let currentLink = jQuery('.navbar-nav > .nav-item > .nav-link[href="' + pageName + '"]');
+    if (pageName) {
+        if (currentLink) {
+            jQuery('.navbar-nav > .nav-item > .nav-link').removeClass('active');
+            currentLink.addClass('active');
+        }
+    }
+});
+
+
+jQuery(function() {
+var x, i, j, l, ll, selElmnt, a, b, c;
+/*look for any elements with the class "custom-select":*/
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+    selElmnt = x[i].getElementsByTagName("select")[0];
+    ll = selElmnt.length;
+    /*for each element, create a new DIV that will act as the selected item:*/
+    a = document.createElement("DIV");
+    a.setAttribute("class", "select-selected");
+    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+    x[i].appendChild(a);
+    /*for each element, create a new DIV that will contain the option list:*/
+    b = document.createElement("DIV");
+    b.setAttribute("class", "select-items select-hide");
+    for (j = 1; j < ll; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+            /*when an item is clicked, update the original select box,
+            and the selected item:*/
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    yl = y.length;
+                    for (k = 0; k < yl; k++) {
+                        y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+    }
+    x[i].appendChild(b);
+    a.addEventListener("click", function(e) {
+        /*when the select box is clicked, close any other select boxes,
+        and open/close the current select box:*/
+        e.stopPropagation();
+        closeAllSelect(this);
+        this.nextSibling.classList.toggle("select-hide");
+        this.classList.toggle("select-arrow-active");
+    });
+}
+
+function closeAllSelect(elmnt) {
+    /*a function that will close all select boxes in the document,
+    except the current select box:*/
+    var x, y, i, xl, yl, arrNo = [];
+    x = document.getElementsByClassName("select-items");
+    y = document.getElementsByClassName("select-selected");
+    xl = x.length;
+    yl = y.length;
+    for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+            arrNo.push(i)
+        } else {
+            y[i].classList.remove("select-arrow-active");
+        }
+    }
+    for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+            x[i].classList.add("select-hide");
+        }
+    }
+}
+/*if the user clicks anywhere outside the select box,
+then close all select boxes:*/
+document.addEventListener("click", closeAllSelect);
+});
+
+jQuery(function() {
+var xValues = ["Bad", "Okay", "Good", "Very Good"];
+var yValues = [10, 20, 20, 50];
+var barColors = [
+    "#B40000",
+    "#E1B31F",
+    "#7C9204",
+    "#249204"
+];
+var settings = {
+    type: "pie",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom',
+                display: false,
+            },
+            title: {
+                display: false,
+                text: 'Chart.js Pie Chart'
+            }
+        }
+    },
+}
+new Chart("myPieChart", settings);
+new Chart("myPieChart2", settings);
+new Chart("myPieChart3", settings);
+});
+jQuery(function() {
+var xValues = ["â˜…1", "â˜…2", "â˜…3", "â˜…4", "â˜…5"];
+var yValues = [55, 49, 44, 24, 15];
+var barColors = ["#000000", "#000000","#000000","#000000","#000000"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: false
+    }
+  }
+});
+});
+
+
+jQuery('.information-style').on('click',function(){
+    jQuery('.SelectdropDown').toggle();
+})
+
+
+jQuery(document).ready(function() {
+    jQuery('.select-country,.select-state,.select-city,.select-town,.select-order,.select-action,.select-obj-attr,.select-media-type,.select-fsc-sec,.select-vehicle-type,.select-currency,.select-status').select2({
+        minimumResultsForSearch: -1,
+        // dropdownParent: jQuery('#addCountry')
+    });
+});
+jQuery('.common-select').select2({
+        minimumResultsForSearch: -1,
+        // dropdownParent: jQuery('#addCountry')
+    });
+
+jQuery(document).ready(function() {
+    jQuery('.cook-drop-list').css('display','inline-block');
+    jQuery('.cook-tabs a.nav-link').on('click',function(){
+        if(jQuery(this).hasClass('cook-drop-list')){
+            jQuery('.cf-drop-list').css('display','none');
+            jQuery('.cook-drop-list').css('display','inline-block');
+        }else if(jQuery(this).hasClass('fsc-drop-list')){
+            jQuery('.cf-drop-list').css('display','none');
+            jQuery('.fsc-drop-list').css('display','inline-block');
+        }else{
+            jQuery('.cf-drop-list').css('display','none');
+        }
+    });
+});
+
+jQuery(document).ready(function() {
+    jQuery('.courier-drop-list').css('display', 'inline-block')
+    jQuery('.cook-tabs a.nav-link').on('click', function() {
+        if (jQuery(this).hasClass('show-upload')) {
+            jQuery('.upload-doc').css('display', 'block')
+        } else if(jQuery(this).hasClass('courier-drop')){
+            jQuery('.courier-drop-list').css('display', 'inline-block')
+        }else{
+            jQuery('.courier-drop-list').css('display', 'none')
+            jQuery('.upload-doc').css('display', 'none')
+        }
+    });
+});
+
+
+
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $('#time').combodate({
+    timeFormat:"h:mm p",
+    interval: 1,
+    });
+});
+</script>
+    <script>
+        function removeParam(key, sourceURL) {
+    var rtn = sourceURL.split("?")[0],
+        param,
+        params_arr = [],
+        queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+    if (queryString !== "") {
+        params_arr = queryString.split("&");
+        for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+            param = params_arr[i].split("=")[0];
+            if (param === key) {
+                params_arr.splice(i, 1);
+            }
+        }
+        if (params_arr.length) rtn = rtn + "?" + params_arr.join("&");
+    }
+    return rtn;
+}
+    </script>
+<!--<script>-->
+<!--$('#block').click(function() {-->
+<!--	var isSomethingTrue = true;-->
+<!--	var originalURL = window.location.href-->
+<!--	let url = new URL(originalURL);-->
+
+<!--    if(jQuery('#block').is(':checked')){-->
+<!--    alert(url)-->
+<!--&lt;!&ndash;    	window.location.href='?blo=1'&ndash;&gt;-->
+<!--            url.searchParams.append('block', 1);-->
+<!--            const newUrl = url.toString();-->
+<!--            alert(newUrl)-->
+<!--    }else{-->
+
+<!--    var originalURL = window.location.href-->
+<!--    alert(originalURL)-->
+<!--    var alteredURL = removeParam("blo", originalURL);-->
+<!--    alert(alteredURL)-->
+
+<!--&lt;!&ndash;    alert(window.location.href.split('?')[0]);&ndash;&gt;-->
+<!--&lt;!&ndash;    	window.location = window.location.href.split("?")[0];&ndash;&gt;-->
+<!--&lt;!&ndash;            window.location.href= window.location.href.replace(/^([^\?]+)(\??.*)$/gi,"$1");&ndash;&gt;-->
+<!--&lt;!&ndash;      var params = new URLSearchParams(window.location.href.search);&ndash;&gt;-->
+
+<!--&lt;!&ndash;      params.delete('status=1');&ndash;&gt;-->
+<!--&lt;!&ndash;        window.location.href.replace('&status=1','')&ndash;&gt;-->
+
+<!--&lt;!&ndash;    let url = new URL('https://example.com?foo=1&bar=2&foo=3');&ndash;&gt;-->
+<!--&lt;!&ndash;    let params = new URL(window.location.href);&ndash;&gt;-->
+<!--&lt;!&ndash;        alert(params)&ndash;&gt;-->
+<!--&lt;!&ndash;params.searchParams.set('status=1', 'status=5');&ndash;&gt;-->
+<!--&lt;!&ndash;    params.delete('status'); //Query string is now: 'bar=2'&ndash;&gt;-->
+<!--&lt;!&ndash;    alert(params)&ndash;&gt;-->
+
+<!--// Delete the foo parameter.-->
+
+<!--&lt;!&ndash;    const values=window.location.search;&ndash;&gt;-->
+<!--&lt;!&ndash;    alert(values)&ndash;&gt;-->
+<!--&lt;!&ndash;    const urlparams=new URLSearchParams(values);&ndash;&gt;-->
+<!--&lt;!&ndash;    const block=urlparams.get('block')&ndash;&gt;-->
+<!--&lt;!&ndash;    const urlparams.get('active')&ndash;&gt;-->
+
+
+
+<!--    }-->
+<!--});-->
+<!--</script>-->
+
+
+
+<!-- COOK MANAGEMENT FILTER SCRIPT-->
+<script>
+    $('#all_cook').change(function() {
+
+        if (this.checked) {
+        window.location.href = '/Dashboard/Cooks/'
+        }
+         else {
+            let text = window.location.href;
+            if (location.search === '?status=0'){
+                window.location.href = "/Dashboard/Cooks/"
+            }
+            if(location.search.includes('status=0')){
+                var text2 = location.search;
+                var result = text2.replace("status=0", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+<script>
+    $('#pending_cook').change(function() {
+
+        if (this.checked) {
+        alert("i am her")
+            if(location.search.includes('status=2'))
+            {
+                 if(location.search.includes('status=3'))
+                    {
+                        if(location.search.includes('status=4'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                        else
+                            {
+                            window.location.href = '?status=1&status=2&status=3'
+                            }
+                    }
+
+                 else if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=1&status=2&status=4'
+                    }
+                 else
+                    {
+                    window.location.href = '?status=1&status=2'
+                    }
+            }
+            else if(location.search.includes('status=3'))
+            {
+                if(location.search.includes('status=4'))
+                {
+                window.location.href = '?status=1&status=3&status=4'
+                }
+                else
+                {
+                window.location.href = '?status=1&status=3'
+                }
+            }
+            else if(location.search.includes('status=4'))
+            {
+            window.location.href = '?status=1&status=4'
+            }
+            else
+            {
+            alert("1")
+            window.location.href = '?status=1'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === '?status=1'){
+                window.location.href = "/Dashboard/Cooks/"
+            }
+            if(location.search.includes('status=1')){
+                var text2 = location.search;
+                var result = text2.replace("status=1", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+<script>
+    $('#approved_cook').change(function() {
+
+        if (this.checked) {
+            if(location.search.includes('status=1'))
+            {
+              if(location.search.includes('status=3'))
+                {
+                    if(location.search.includes('status=4'))
+                        {
+                        window.location.href = '?status=1&status=2&status=3&status=4'
+                        }
+                    else
+                    {
+
+                        window.location.href = '?status=1&status=2&status=3'
+                    }
+                }
+              else if(location.search.includes('status=4'))
+                {
+                window.location.href = '?status=1&status=2&status=4'
+                }
+            else
+            {
+            window.location.href = '?status=1&status=2'
+            }
+
+            }
+            else if(location.search.includes('status=3'))
+            {
+                if(location.search.includes('status=4'))
+                {
+                    window.location.href = '?status=2&status=3&status=4'
+                }
+                else
+                {
+                    window.location.href = '?status=2&status=3'
+                }
+            }
+            else if(location.search.includes('status=4'))
+            {
+            window.location.href = '?status=2&status=4'
+            }
+
+            else{
+            window.location.href = '?status=2'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === '?status=2'){
+                window.location.href = "/Dashboard/Cooks/"
+            }
+            if(location.search.includes('&status=2')){
+                var text2 = location.search;
+                var result = text2.replace("&status=2", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+<script>
+    $('#pending_fsc').change(function() {
+
+        if (this.checked) {
+<!--        alert(location.search)-->
+
+            if(location.search.includes('status=2'))
+            {
+                if(location.search.includes('status=1'))
+                    {
+                        if(location.search.includes('status=4'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                         else
+                            {
+                             window.location.href = '?status=1&status=2&status=3'
+                            }
+                    }
+                else if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=2&status=3&status=4'
+                    }
+                else
+                    {
+    <!--                alert("else")-->
+                    window.location.href = '?status=2&status=3'
+                    }
+            }
+            else if(location.search.includes('status=1'))
+            {
+                if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=1&status=3&status=4'
+                    }
+                else
+                    {
+
+                    window.location.href = '?status=1&status=3'
+                    }
+            }
+            else if(location.search.includes('status=4'))
+            {
+               window.location.href = '?status=3&status=4'
+            }
+            else
+            {
+            window.location.href = '?status=3'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === 'status=3'){
+                window.location.href = "/Dashboard/Cooks/"
+            }
+            if(location.search.includes('status=3')){
+                var text2 = location.search;
+                var result = text2.replace("status=3", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+</script>
+<script>
+    $('#approved_fsc').change(function() {
+
+        if (this.checked) {
+
+            if(location.search.includes('status=1'))
+                {
+                  if(location.search.includes('status=2'))
+                    {
+
+                        if(location.search.includes('status=3'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                        else
+                            {
+
+                            window.location.href = '?status=1&status=2&status=4'
+                            }
+                    }
+                  else if(location.search.includes('status=3'))
+                    {
+                        if(location.search.includes('status=2'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                        else
+                            {
+                            window.location.href = '?status=1&status=3&status=4'
+                            }
+                    }
+                  else
+                    {
+
+                    window.location.href = '?status=1&status=4'
+                    }
+                }
+
+            else if(location.search.includes('status=2'))
+                {
+                    if(location.search.includes('status=3'))
+                        {
+                        window.location.href = '?status=2&status=3&status=4'
+                        }
+                    else
+                    {
+                    window.location.href = '?status=2&status=4'
+                    }
+                }
+            else if(location.search.includes('status=3'))
+                {
+
+                window.location.href = '?status=3&status=4'
+
+                }
+
+
+            else{
+            window.location.href = '?status=4'
+            }
+
+
+        } else {
+
+            let text = window.location.href;
+            if (location.search === '?status=4'){
+                window.location.href = "/Dashboard/Cooks/"
+            }
+            if(location.search.includes('&status=4')){
+                var text2 = location.search;
+                var result = text2.replace("&status=4", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+
+
+
+<!--    CUSTOMER MANAGEMENT FILTER SCRIPT-->
+<script>
+    $('#all').change(function() {
+
+        if (this.checked) {
+        window.location.href = '/Dashboard/Customers/'
+        }
+         else {
+            let text = window.location.href;
+            if (location.search === '?status=0'){
+                window.location.href = "/Dashboard/Customers/"
+            }
+            if(location.search.includes('status=0')){
+                var text2 = location.search;
+                var result = text2.replace("status=0", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+<script>
+    $('#block').change(function() {
+
+        if (this.checked) {
+            if(location.search.includes('status=2'))
+            {
+                 if(location.search.includes('status=3'))
+                    {
+                        if(location.search.includes('status=4'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                        else
+                            {
+                            window.location.href = '?status=1&status=2&status=3'
+                            }
+                    }
+
+                 else if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=1&status=2&status=4'
+                    }
+                 else
+                    {
+                    window.location.href = '?status=1&status=2'
+                    }
+            }
+            else if(location.search.includes('status=3'))
+            {
+                if(location.search.includes('status=4'))
+                {
+                window.location.href = '?status=1&status=3&status=4'
+                }
+                else
+                {
+                window.location.href = '?status=1&status=3'
+                }
+            }
+            else if(location.search.includes('status=4'))
+            {
+            window.location.href = '?status=1&status=4'
+            }
+            else{
+            window.location.href = '?status=1'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === '?status=1'){
+                window.location.href = "/Dashboard/Customers/"
+            }
+            if(location.search.includes('status=1')){
+                var text2 = location.search;
+                var result = text2.replace("status=1", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+<script>
+    $('#active').change(function() {
+
+        if (this.checked) {
+            if(location.search.includes('status=1'))
+            {
+              if(location.search.includes('status=3'))
+                {
+                    if(location.search.includes('status=4'))
+                        {
+                        window.location.href = '?status=1&status=2&status=3&status=4'
+                        }
+                    else
+                    {
+
+                        window.location.href = '?status=1&status=2&status=3'
+                    }
+                }
+              else if(location.search.includes('status=4'))
+                {
+                window.location.href = '?status=1&status=2&status=4'
+                }
+            else
+            {
+            window.location.href = '?status=1&status=2'
+            }
+
+            }
+            else if(location.search.includes('status=3'))
+            {
+                if(location.search.includes('status=4'))
+                {
+                    window.location.href = '?status=2&status=3&status=4'
+                }
+                else
+                {
+                    window.location.href = '?status=2&status=3'
+                }
+            }
+            else if(location.search.includes('status=4'))
+            {
+            window.location.href = '?status=2&status=4'
+            }
+
+            else{
+            window.location.href = '?status=2'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === '?status=2'){
+                window.location.href = "/Dashboard/Customers/"
+            }
+            if(location.search.includes('&status=2')){
+                var text2 = location.search;
+                var result = text2.replace("&status=2", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+<script>
+    $('#registered').change(function() {
+
+        if (this.checked) {
+<!--        alert(location.search)-->
+
+            if(location.search.includes('status=2'))
+            {
+                if(location.search.includes('status=1'))
+                    {
+                        if(location.search.includes('status=4'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                         else
+                            {
+                             window.location.href = '?status=1&status=2&status=3'
+                            }
+                    }
+                else if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=2&status=3&status=4'
+                    }
+                else
+                    {
+    <!--                alert("else")-->
+                    window.location.href = '?status=2&status=3'
+                    }
+            }
+            else if(location.search.includes('status=1'))
+            {
+                if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=1&status=3&status=4'
+                    }
+                else
+                    {
+
+                    window.location.href = '?status=1&status=3'
+                    }
+            }
+            else if(location.search.includes('status=4'))
+            {
+               window.location.href = '?status=3&status=4'
+            }
+            else
+            {
+            window.location.href = '?status=3'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === 'status=3'){
+                window.location.href = "/Dashboard/Customers/"
+            }
+            if(location.search.includes('status=3')){
+                var text2 = location.search;
+                var result = text2.replace("status=3", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+</script>
+<script>
+    $('#guest').change(function() {
+
+        if (this.checked) {
+
+            if(location.search.includes('status=1'))
+                {
+                  if(location.search.includes('status=2'))
+                    {
+
+                        if(location.search.includes('status=3'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                        else
+                            {
+
+                            window.location.href = '?status=1&status=2&status=4'
+                            }
+                    }
+                  else if(location.search.includes('status=3'))
+                    {
+                        if(location.search.includes('status=2'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                        else
+                            {
+                            window.location.href = '?status=1&status=3&status=4'
+                            }
+                    }
+                  else
+                    {
+
+                    window.location.href = '?status=1&status=4'
+                    }
+                }
+
+            else if(location.search.includes('status=2'))
+                {
+                    if(location.search.includes('status=3'))
+                        {
+                        window.location.href = '?status=2&status=3&status=4'
+                        }
+                    else
+                    {
+                    window.location.href = '?status=2&status=4'
+                    }
+                }
+            else if(location.search.includes('status=3'))
+                {
+
+                window.location.href = '?status=3&status=4'
+
+                }
+
+
+            else{
+            window.location.href = '?status=4'
+            }
+
+
+        } else {
+
+            let text = window.location.href;
+            if (location.search === '?status=4'){
+                window.location.href = "/Dashboard/Customers/"
+            }
+            if(location.search.includes('&status=4')){
+                var text2 = location.search;
+                var result = text2.replace("&status=4", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+
+<!--Order Management-->
+
+<script>
+    $('#all_order').change(function() {
+
+        if (this.checked) {
+        window.location.href = '/Dashboard/Orders/'
+        }
+         else {
+            let text = window.location.href;
+            if (location.search === '?status=0'){
+                window.location.href = "/Dashboard/Orders/"
+            }
+            if(location.search.includes('status=0')){
+                var text2 = location.search;
+                var result = text2.replace("status=0", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+
+<script>
+    $('#In').change(function() {
+
+        if (this.checked) {
+        alert("i am her")
+            if(location.search.includes('status=2'))
+            {
+                 if(location.search.includes('status=3'))
+                    {
+                        if(location.search.includes('status=4'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                        else
+                            {
+                            window.location.href = '?status=1&status=2&status=3'
+                            }
+                    }
+
+                 else if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=1&status=2&status=4'
+                    }
+                 else
+                    {
+                    window.location.href = '?status=1&status=2'
+                    }
+            }
+            else if(location.search.includes('status=3'))
+            {
+                if(location.search.includes('status=4'))
+                {
+                window.location.href = '?status=1&status=3&status=4'
+                }
+                else
+                {
+                window.location.href = '?status=1&status=3'
+                }
+            }
+            else if(location.search.includes('status=4'))
+            {
+            window.location.href = '?status=1&status=4'
+            }
+            else
+            {
+            alert("1")
+            window.location.href = '?status=1'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === '?status=1'){
+                window.location.href = "/Dashboard/Orders/"
+            }
+            if(location.search.includes('status=1')){
+                var text2 = location.search;
+                var result = text2.replace("status=1", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+
+<script>
+    $('#En').change(function() {
+
+        if (this.checked) {
+            if(location.search.includes('status=1'))
+            {
+              if(location.search.includes('status=3'))
+                {
+                    if(location.search.includes('status=4'))
+                        {
+                        window.location.href = '?status=1&status=2&status=3&status=4'
+                        }
+                    else
+                    {
+
+                        window.location.href = '?status=1&status=2&status=3'
+                    }
+                }
+              else if(location.search.includes('status=4'))
+                {
+                window.location.href = '?status=1&status=2&status=4'
+                }
+            else
+            {
+            window.location.href = '?status=1&status=2'
+            }
+
+            }
+            else if(location.search.includes('status=3'))
+            {
+                if(location.search.includes('status=4'))
+                {
+                    window.location.href = '?status=2&status=3&status=4'
+                }
+                else
+                {
+                    window.location.href = '?status=2&status=3'
+                }
+            }
+            else if(location.search.includes('status=4'))
+            {
+            window.location.href = '?status=2&status=4'
+            }
+
+            else{
+            window.location.href = '?status=2'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === '?status=2'){
+                window.location.href = "/Dashboard/Orders/"
+            }
+            if(location.search.includes('&status=2')){
+                var text2 = location.search;
+                var result = text2.replace("&status=2", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+<script>
+    $('#Delivered').change(function() {
+
+        if (this.checked) {
+<!--        alert(location.search)-->
+
+            if(location.search.includes('status=2'))
+            {
+                if(location.search.includes('status=1'))
+                    {
+                        if(location.search.includes('status=4'))
+                            {
+                            window.location.href = '?status=1&status=2&status=3&status=4'
+                            }
+                         else
+                            {
+                             window.location.href = '?status=1&status=2&status=3'
+                            }
+                    }
+                else if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=2&status=3&status=4'
+                    }
+                else
+                    {
+    <!--                alert("else")-->
+                    window.location.href = '?status=2&status=3'
+                    }
+            }
+            else if(location.search.includes('status=1'))
+            {
+                if(location.search.includes('status=4'))
+                    {
+                    window.location.href = '?status=1&status=3&status=4'
+                    }
+                else
+                    {
+
+                    window.location.href = '?status=1&status=3'
+                    }
+            }
+            else if(location.search.includes('status=4'))
+            {
+               window.location.href = '?status=3&status=4'
+            }
+            else
+            {
+            window.location.href = '?status=3'
+            }
+
+
+        } else {
+            let text = window.location.href;
+            if (location.search === 'status=3'){
+                window.location.href = "/Dashboard/Orders/"
+            }
+            if(location.search.includes('status=3')){
+                var text2 = location.search;
+                var result = text2.replace("status=3", "");
+                window.location.href = result;
+            }
+
+
+        }
+    });
+
+</script>
+
+
+<script>
+    $('[data-target="#editMarketingFeeRate"]').click(function(){
+    var id= $(this).attr('data-id');
+    var action = '/Dashboard/app-configurations-parameters-update/'+id+'/';
+    $('#editMarket').attr('action',action);
+    var country = $(this).attr('data-country');
+    var percentage = $(this).attr('data-percentage');
+	$('.select-country').val(country).change();
+    $('#editMarketingFeeRate').find('.percentage').val(percentage)
+
+});
+</script>
+
+<script>
+    $('[data-target="#editDeliveryFeePAIDByCook"]').click(function(){
+    var id= $(this).attr('data-id');
+    var action = '/Dashboard/app-configurations-parameters-update/'+id+'/';
+    $('#editDeliveryFeeByCook').attr('action',action);
+    var cost_per_mile = $(this).attr('data-mile');
+    var country = $(this).attr('data-country');
+    var state = $(this).attr('data-state');
+	$('.select-country').val(country).change();
+	$('.select-state').val(state).change();
+    $('#editDeliveryFeePAIDByCook').find('.cost_per_mile').val(cost_per_mile)
+
+});
+</script>
+
+<script>
+    $('[data-target="#editFoodCategoryDetails"]').click(function(){
+    var id= $(this).attr('data-id');
+    var action = '/Dashboard/app-configurations-parameters-update/'+id+'/';
+    $('#editFoodCategory').attr('action',action);
+    var country = $(this).attr('data-country');
+    var category = $(this).attr('data-category');
+    $('.select-country').val(country).change();
+    $('#editFoodCategoryDetails').find('.category').val(category)
+        
+    });
+</script>
+
+<script>
+        $('[data-target="#editFrequentKitchenOperations"]').click(function(){
+        var id= $(this).attr('data-id');
+        var action = '/Dashboard/app-configurations-parameters-update/'+id+'/';
+        $('#editKitchenOperations').attr('action', action);
+        var activity = $(this).attr('data-activity');
+        var to_perform = $(this).attr('data-to-perform');
+        $('.select-action').val(to_perform).change();
+        $('#editFrequentKitchenOperations').find('.activity').val(activity)
+    });
+</script>
+
+<script>
+        $('[data-target="#editKitchenEquipments"]').click(function(){
+        var id= $(this).attr('data-id');
+        var action = '/Dashboard/app-configurations-parameters-update/'+id+'/';
+        $('#editKitchenItem').attr('action', action);
+        var item = $(this).attr('data-item');
+        var obj_attr = $(this).attr('data-obj-attr');
+        var data_media = $(this).attr('data-media-type');
+        var fsc = $(this).attr('data-fsc-sec');
+        $('.select-obj-attr').val(obj_attr).change();
+        $('.select-media-type').val(data_media).change();
+        $('.select-fsc-sec').val(fsc).change();
+        $('#editKitchenEquipments').find('.items').val(item)
+    });
+</script>
+
+<script>
+        $('[data-target="#editFSCManualQuestions"]').click(function(){
+        var id= $(this).attr('data-id');
+        var action = '/Dashboard/app-configurations-parameters-update/'+id+'/';
+        $('#editMa').attr('action', action);
+        var item = $(this).attr('data-item');
+        var obj_attr = $(this).attr('data-obj-attr');
+        var data_media = $(this).attr('data-media-type');
+        var fsc = $(this).attr('data-fsc-sec');
+        $('.select-obj-attr').val(obj_attr).change();
+        $('.select-media-type').val(data_media).change();
+        $('.select-fsc-sec').val(fsc).change();
+        $('#editFSCManualQuestions').find('.items').val(item)
+    });
+</script>
+
+<script>
+        $('[data-target="#editfscRegulationRulesBook"]').click(function(){
+        var id= $(this).attr('data-id');
+        var action = '/Dashboard/app-configurations-parameters-update/'+id+'/';
+        $('#editfscRegulation').attr('action', action);
+        var country = $(this).attr('data-country');
+        var state = $(this).attr('state');
+        var regulation_rule = $(this).attr('data-regulation-rule');
+        var status = $(this).attr('data-status');
+        $('.select-country').val(obj_attr).change();
+        $('.select-state').val(data_media).change();
+        $('#editfscRegulationRulesBook').find('.regulation_rule').val(regulation_rule)
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#menu_category_table').DataTable();
+        $('#kicf_table').DataTable();
+        $('#market_fee_table').DataTable();
+        $('#delivery_fee_table').DataTable();
+        $('#food_category_table').DataTable();
+        $('#kitchen_operations_table').DataTable();
+        $('#kitchen_equipments_table').DataTable();
+        $('#regulations_table').DataTable();
+        $('#manual_answers_table').DataTable();
+
+        $('#facial_rec_table').DataTable();
+        $('#def_search_radius_table').DataTable();
+        $('#payment_processing_table').DataTable();
+        $('#min_delivery_rate_table').DataTable();
+        $('#buffer_duration_table').DataTable();
+        $('#mileage_loctores_table').DataTable();
+        $('#mileage_restocus_table').DataTable();
+        $('#courier_positioning_table').DataTable();
+        $('#constant_pay_table').DataTable();
+        $('#constant_range_table').DataTable();
+        $('#aggregated_order_table').DataTable();
+        $('#min_search_range_table').DataTable();
+        $('#hot_zone_table').DataTable();
+
+        $('#item_filter_table').DataTable();
+        $('#delivery_fee_transit_table').DataTable();
+        $('#tips_table').DataTable();
+        $('#sales_tax_table').DataTable();
+        $('#config_top_dish_table').DataTable();
+        $('#config_top_cook_table').DataTable();
+        $('#config_feat_cook_table').DataTable();
+        $('#config_nearby_cook_table').DataTable();
+        $('#customer_misc_table').DataTable();
+
+        $('#app_avail_table').DataTable();
+        $('#payment_constant_table').DataTable();
+        $('#payout_constant_table').DataTable();
+        $('#message_texts_table').DataTable();
+        $('#cook_grade_explain_table').DataTable();
+        $('#sos_contact_table').DataTable();
+    });
+</script> 
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+{% load static %}
+</div>
+
+<!-- Reset Password Modal -->
+<div class="modal" id="resetPassword">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal body -->
+      <div class="modal-body p-0">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div class="card login-wrapper common_box">
+  <div class="card-header common_box_header">
+      <img src="{% static 'assets/image/logo.png' %}" class="img-fluid" />
+  </div>
+  <div class="card-body common_box_body">
+    <form  class="custom_form">
+        <div class="form-group">
+            <label for="email" class="cf_label">Email</label>
+            <div class="pos-r">
+              <input type="email" class="form-control cf_input" id="email" value="random@email.com">
+              <img src="{% static 'assets/image/icon-check.png' %}" class="img-fluid" />
+            </div>
+        </div>
+        <button type="submit" onClick="event.preventDefault();" data-dismiss="modal" data-toggle="modal" data-target="#resetOtpPassword" class="btn btn-primary login-btn">Send Verification Code</button>
+        </form>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Reset Password OTP Modal -->
+<div class="modal" id="resetOtpPassword">
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <!-- Modal body -->
+      <div class="modal-body p-0">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <div class="card login-wrapper common_box">
+  <div class="card-header common_box_header">
+      <img src="{% static 'assets/image/logo.png' %}" class="img-fluid" />
+  </div>
+  <div class="card-body common_box_body">
+  <p class="verification-msg">Please Enter The Verification Code Sent To Your Email Address</p>
+  <form action="/Dashboard/change-password/" class="custom_form">
+        <div class="form-group otp-group">
+            <input type="number" class="form-control cf_input" id="email">
+            <input type="number" class="form-control cf_input" id="email">
+            <input type="number" class="form-control cf_input" id="email">
+            <input type="number" class="form-control cf_input" id="email">
+            <input type="number" class="form-control cf_input" id="email">
+            <input type="number" class="form-control cf_input" id="email">
+          </div>
+        <button type="submit" class="btn btn-primary login-btn">Submit</button>
+        </form>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Inspection Grade Modal -->
+<div class="modal" id="inspection-grade-modal">
+<div class="modal-dialog modal-dialog-centered modal-custom-sm">
+    <div class="modal-content">
+
+
+      <div class="modal-body p-0">
+      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      <div class="card sig-card common_box">
+  <div class="card-body common_box_body">
+  <p class="modalTitle text-center">Set Inspection Grade</p>
+  <form action="#" class="custom_form">
+        <div class="form-group otp-group">
+            <input type="text" class="form-control cf_input has-value" id="code" value="A">
+            <input type="text" class="form-control cf_input" id="code">
+            <input type="text" class="form-control cf_input" id="code">
+            <input type="text" class="form-control cf_input" id="code">
+          </div>
+        <div class="btn-groups-horizontal text-center">
+          <button type="submit" class="btn btn-primary btn-thin btn-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-thin">Update</button>
+        </div>
+        </form>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- expiration-date-modal -->
+<div class="modal" id="expiration-date-modal">
+<div class="modal-dialog modal-dialog-centered modal-custom-sm">
+    <div class="modal-content">
+
+
+      <div class="modal-body p-0">
+      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      <div class="card sig-card common_box">
+  <div class="card-body common_box_body">
+  <p class="modalTitle text-center">Set Expiration Date</p>
+  <form action="#" class="custom_form">
+
+    <div class="input-group date-range-group">
+      <input type="text" class="form-control border-right-0" value="12-Jan-2022">
+      <div class="input-group-append bg-transparent dropleft">
+          <button class="border bg-white" data-toggle="dropdown"><i class="material-icons">date_range</i></button>
+          <div class="dropdown-menu selectDate-dropdown-menu p-0">
+            <div class="card selectDate-card p-0 bg-transparent">
+              <div class="card-header selectDate-header bg-transparent">
+                <h3>Select Date</h3>
+                <p class="mb-0">Lorem ipsum dolor metsffer loremsim plorem</p>
+                <a href="#"><i class="material-icons">refresh</i></a>
+              </div>
+              <div class="card-body selectDate-body bg-transparent">
+                <div id="date-range"></div>
+              </div>
+              <div class="card-footer selectDate-footer bg-transparent">
+                <button type="submit" class="btn btn-primary btn-thin btn-cancel">Cancel</button>
+                <button type="submit" class="btn btn-primary btn-thin">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+        <div class="btn-groups-horizontal text-center">
+          <button type="submit" class="btn btn-primary btn-thin btn-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-thin">Update</button>
+        </div>
+        </form>
+
+      </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Logout-modal -->
+<div class="modal" id="logout-modal">
+<div class="modal-dialog modal-dialog-centered modal-custom-sm">
+    <div class="modal-content">
+
+
+      <div class="modal-body p-0">
+      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      <div class="card logout-card common_box">
+  <div class="card-body common_box_body">
+  <p class="modalTitle text-center">Do Your Really Want To<br/>Logout</p>
+  <hr>
+  <form action="/Dashboard/login/" class="custom_form">
+        <div class="btn-groups-horizontal text-center mt-1">
+          <button type="submit" class="btn btn-primary btn-thin btn-cancel">No</button>
+          <button type="submit" class="btn btn-primary btn-thin">Yes</button>
+        </div>
+        </form>
+  </div>
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Edit Payment Percentage Modal -->
+
+<div class="modal" id="edit-payment-percentage-modal">
+<div class="modal-dialog modal-dialog-centered modal-custom-sm">
+    <div class="modal-content">
+
+
+      <div class="modal-body p-0">
+      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      <div class="card sig-card common_box">
+  <div class="card-body common_box_body">
+  <p class="modalTitle text-center">Edit Payment Percentage</p>
+  <form action="#" class="custom_form">
+          <div class="form-group">
+            <label for="cook" class="cf_label">For Cook</label>
+            <input type="text" class="form-control cf_input text-left" id="cook" value="3.2%">
+          </div>
+          <div class="form-group mb-3">
+            <label for="courier" class="cf_label">For Courier</label>
+            <input type="text" class="form-control cf_input text-left" id="courier" value="3.2%">
+          </div>
+          <div class="form-group mb-0 d-flex justify-content-between admin-reserv">
+            <label for="courier" class="cf_label">Admin Reserved</label>
+            <label for="courier" class="cf_label">1.34%</label>
+          </div>
+
+        <div class="btn-groups-horizontal text-center">
+          <button type="submit" class="btn btn-primary btn-thin btn-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-thin">Update</button>
+        </div>
+        </form>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+<script src="{% static 'assets/js/lightbox-plus-jquery.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+  jQuery(function() {
+
+jQuery(".progresss").each(function() {
+
+  var value = jQuery(this).attr('data-value');
+  var left = jQuery(this).find('.progresss-left .progresss-bar');
+  var right = jQuery(this).find('.progresss-right .progresss-bar');
+
+  if (value > 0) {
+    if (value <= 50) {
+      right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+    } else {
+      right.css('transform', 'rotate(180deg)')
+      left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+    }
+  }
+
+})
+
+function percentageToDegrees(percentage) {
+
+  return percentage / 100 * 360
+
+}
+
+});
+</script>
+<script>
+  // $(document).ready(function() {
+
+  //   $('#customerManagment, #cookManagment, #newRegisterManagment, #coolTransData, #kitchen-operation, #food-origin').DataTable();
+
+  // });
+</script>
+<script>
+  // jQuery(document).ready(function(){
+  //   jQuery("#expiration-date-modal").modal('show');
+  // });
+</script>
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script type="text/javascript">
+  $(document).ready(function() {
+    $('textarea#summernote,textarea#summernote2').summernote({
+      height: 550,   //set editable area's height
+    });
+
+  });
+
+
+  jQuery('.custom-radio-box input').on('click',function(){
+         if(jQuery(this).val() == 'Country Specific'){
+             jQuery('.form-group.filters-wrap').css('display','flex')
+         }else{
+            jQuery('.form-group.filters-wrap').css('display','none')
+         }
+  })
+
+  $('#date-range,#date-range-2,#date-range-3,#date-range-4').datepicker({
+    todayHighlight: true
+  });
+  if(window.scrollY > 300){
+    jQuery('.navbar-brand').css('display','none')
+  }
+
+
+jQuery('.cook-tabs a.nav-link').on('click',function(){
+  if(jQuery(this).hasClass('show-upload')){
+      jQuery('.upload-doc').css('display','block')}else{
+          jQuery('.upload-doc').css('display','none')
+      }
+  })
+$(document).ready(function() {
+    $('.js-example-basic-single').select2({
+      minimumResultsForSearch: -1
+    });
+});
+jQuery('a.notification-bell').on('click',function(){
+    jQuery('.notification-bell-dm').toggle()
+})
+
+$(".hide-show-pass").click(function() {
+    $(this).children().toggleClass("fa-eye fa-eye-slash");
+    input = $(this).parent().find("input");
+    if (input.attr("type") == "password") {
+        input.attr("type", "text");
+    } else {
+        input.attr("type", "password");
+    }
+});
+
+jQuery(function() {
+    let pageName = location.pathname.split('/').slice(-1)[0];
+    let currentLink = jQuery('.navbar-nav > .nav-item > .nav-link[href="' + pageName + '"]');
+    if (pageName) {
+    if (currentLink) {
+      jQuery('.navbar-nav > .nav-item > .nav-link').removeClass('active');
+      currentLink.addClass('active');
+    }
+    }
+  });
+</script>
+<script>
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /*look for any elements with the class "custom-select":*/
+    x = document.getElementsByClassName("custom-select");
+    l = x.length;
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /*for each element, create a new DIV that will act as the selected item:*/
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+      /*for each element, create a new DIV that will contain the option list:*/
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < ll; j++) {
+        /*for each option in the original select element,
+        create a new DIV that will act as an option item:*/
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+            /*when an item is clicked, update the original select box,
+            and the selected item:*/
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+              if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                yl = y.length;
+                for (k = 0; k < yl; k++) {
+                  y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+              }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function(e) {
+          /*when the select box is clicked, close any other select boxes,
+          and open/close the current select box:*/
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+          this.classList.toggle("select-arrow-active");
+        });
+    }
+    function closeAllSelect(elmnt) {
+      /*a function that will close all select boxes in the document,
+      except the current select box:*/
+      var x, y, i, xl, yl, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+    /*if the user clicks anywhere outside the select box,
+    then close all select boxes:*/
+    document.addEventListener("click", closeAllSelect);
+</script>
+</body>
+</html>

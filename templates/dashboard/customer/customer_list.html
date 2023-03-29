@@ -1,0 +1,130 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% load url_tag %}
+
+{% block content-header-heading %}Customer Management{% endblock content-header-heading %}
+{% block content %}
+
+<div class="cm-wrapper" xmlns="http://www.w3.org/1999/html">
+
+    <div class="text-right mb-3">
+        <div class="dropdown dropleft checkbox-drop">
+            <a href="#" data-toggle="dropdown" aria-expanded="false">
+                <img src="{% static 'assets/image/filter.png' %}">
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <!--                <a class="dropdown-item" href="{% if request.GET.urlencode %}?{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='' checked /> All</a>-->
+                <!--                <a class="dropdown-item" href="?status=0{% if request.GET.urlencode %}&{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='block' /> Blocked</a>-->
+                <!--                <a class="dropdown-item" href="?status=1{% if request.GET.urlencode %}&{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='active' /> Active</a>-->
+                <!--                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox' value='register' /> Registered User</a>-->
+                <!--                <a class="dropdown-item" href="#"><input class='select-style' type='checkbox' value='guest' /> Guest User</a>-->
+
+                <a class="dropdown-item" ><input class='select-style' name="status" type='checkbox' value='all' id="all" {{ object_list.all }} /> All</a>
+                <a class="dropdown-item" id="blocked_box"><input class='select-style' name="status" type="checkbox" id="block" {{ object_list.blocked }} /> Blocked</a>
+                <a class="dropdown-item" ><input class='select-style' name="status" type='checkbox' value='active' id="active" {{ object_list.active }} /> Active</a>
+                <a class="dropdown-item" ><input class='select-style' name="status" type='checkbox' value='register' id="registered" {{ object_list.registered }} /> Registered User</a>
+                <a class="dropdown-item" ><input class='select-style' name="status" type='checkbox' value="guest" id='guest' {{ object_list.guest }} /> Guest User</a>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class="filters-wrap">
+        <div class="filter-left">
+            <div class="common-select-wrap">
+                <select class="common-select filter-btn" name="state">
+                    <option value="">Country</option>
+                    <option value="">Argentina</option>
+                    <option value="">Albama</option>
+                    <option value="">Belgium</option>
+                    <option value="">China</option>
+                    <option value="">Denmark</option>
+                    <option value="">Europe</option>
+                    <option value="">France</option>
+                    <option value="">Argentina</option>
+                </select>
+            </div>
+
+            <div class="common-select-wrap">
+                <select class="common-select filter-btn" name="state">
+                    <option value="">State</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                </select>
+            </div>
+            <div class="common-select-wrap">
+                <select class="common-select filter-btn" name="state">
+                    <option value="">Town</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                    <option value="">Lorem</option>
+                </select>
+            </div>
+            <div class="common-select-wrap">
+                <select class="common-select filter-btn" name="state">
+                    <option value="">All</option>
+                    <option value="">Blocked</option>
+                    <option value="">Active</option>
+                </select>
+            </div>
+        </div>
+
+        {% include 'dashboard/includes/search_form.html' %}
+
+    </div>
+
+    <div class="common-table-wrapper">
+        <table id="customerManagment" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Mobile Number</th>
+                    <!-- {% comment %} <th>Customer Type</th> {% endcomment %} -->
+                    <th>Email id</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in object_list.queryset %}
+                <tr>
+                    <td>{{ i.customer.customer_id }}</td>
+                    <td>{{ i.username }}</td>
+                    <td>{{ i.mobile_number }}</td>
+                    <!-- {% comment %} <td>{{i.user.role}}</td> {% endcomment %} -->
+                    <td>{{ i.email }}</td>
+                    <td>{{ i.customer.status.upper }}</td>
+                    <td class="action-tab">
+                        <a class="action-icon view-info" href="{% url 'dashboard:customers-detail' i.pk %}">
+                            <img src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid" /></a>
+                        {% if i.customer.status == "active" %}
+                        <a class="action-icon delete-info" href="{% url 'dashboard:customer-status' 'deactivate' i.pk %}">
+                            <img src="{% static 'assets/image/cancel-icon.png' %}" class="img-fluid" /></a>
+                        {% else %}
+                        <a class="action-icon delete-info" href="{% url 'dashboard:customer-status' 'activate' i.pk %}">
+                            <img src="{% static 'assets/image/active-icon.png' %}" class="img-fluid" /></a>
+
+                        {% endif %}
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
+

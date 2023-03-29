@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" />
+<title>Save state of checkbox on refresh using JavaScript</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/custom.css" rel="stylesheet" />
+<style type="text/css">
+</style>
+</head>
+<body>
+<!--<input id="s_item1" type="checkbox">-->
+<!--<input id="s_item2" type="checkbox">-->
+<!--<input id="s_item3" type="checkbox">-->
+
+<!--<script>-->
+<!--document.addEventListener("DOMContentLoaded", function(){-->
+
+<!--   var checkbox = document.querySelectorAll("input[type='checkbox']");-->
+
+<!--   for(var item of checkbox){-->
+<!--      item.addEventListener("click", function(){-->
+<!--         localStorage.s_item ? // verifico se existe localStorage-->
+<!--            localStorage.s_item = localStorage.s_item.indexOf(this.id+",") == -1 // verifico de localStorage contém o id-->
+<!--            ? localStorage.s_item+this.id+"," // não existe. Adiciono a id no loaclStorage-->
+<!--            : localStorage.s_item.replace(this.id+",","") : // já existe, apago do localStorage-->
+<!--         localStorage.s_item = this.id+",";  // não existe. Crio com o id do checkbox-->
+<!--      });-->
+<!--   }-->
+
+<!--   if(localStorage.s_item){ // verifico se existe localStorage-->
+<!--      for(var item of checkbox){ // existe, percorro as checkbox-->
+<!--         item.checked = localStorage.s_item.indexOf(item.id+",") != -1 ? true : false; // marco true nas ids que existem no localStorage-->
+<!--      }-->
+<!--   }-->
+<!--});-->
+<!--</script>-->
+<!--<input type="checkbox" id="chk">-->
+
+<!--<script>-->
+
+<!--window.addEventListener('load', function() {-->
+<!--    document.querySelector("#chk").addEventListener('change', function(el) {-->
+<!--        console.log(el.target.checked);-->
+<!--        localStorage.setItem('input_checked', el.target.checked );-->
+<!--    });-->
+
+<!--    if ( localStorage.getItem('input_checked') !== null ) {-->
+<!--        document.querySelector('#chk').checked = localStorage.getItem('input_checked') === 'true';-->
+<!--    }-->
+<!--});-->
+
+<!--</script>-->
+<a onclick='newwin()'>Anchor</a>
+<script>
+function newwin() {
+ myWindow=window.open('lead_data.php?leadid=1')
+}
+</script>
+</body>
+</html>
+

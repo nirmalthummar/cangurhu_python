@@ -1,0 +1,141 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+<div class="columnWrapper">
+
+{% block content %}
+   {% include "dashboard/left-sidebar.html" %}
+
+   {% for i in courier_order_data %}
+   {% for c in order_menu_data %}
+<div id="mainPart" class="main-content">
+  <div class="main-content-header">
+    <h2 class="mch-heading mb-0">Details Of {{c.order_menu_item.menu_item.title.upper}}</h2>
+    <div class="mch-right-items">
+        <a class="notification-bell">
+          <img src="{% static 'assets/image/notification-bell.png' %}" class="img-fluid" />
+        </a>
+        <div class="dropdown user-menu">
+          <button type="button" class="dropdown-toggle user-btn" data-toggle="dropdown">
+            <img src="{% static 'assets/image/user-i.png' %}" class="img-fluid" />
+          </button>
+          <div class="dropdown-menu user-dropmenu">
+          <a class="dropdown-item" href="/Dashboard/logout/" data-toggle="modal" data-target="#logout-modal">Logout</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content-body">
+
+  <!-- First dashboard Section -->
+    <div class="orderDetails-wrapper">
+
+    <div class="commonRow">
+        <div class="cust-3">
+<!--            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>-->
+
+            <a href="/Dashboard/view-courier/" class="btn btn-primary btn-thin">Back</a>
+        </div>
+    </div>
+                <!-- vlow first -->
+                <div class="vlow vlow-1">
+
+                  <div class="vlow-content courier-order-detail-wrapper">
+                    <div class="vlow-title">
+                      <h4>{{c.order_menu_item.menu_item.title.upper}}</h4>
+                      <a href="#" class="btn btn-outline-pri">{{c.menu_sub_item.title.upper}}</a>
+                      <span class="deact-text text-uppercase">
+                        {% if i.order.status == "PE" %}
+                        PENDING
+                        {% elif i.order.status == "ACR" %}
+                        ACCEPTED_BY_COURIER
+                        {% elif i.order.status == "CCR" %}
+                        CANCELED_BY_COURIER
+                        {% elif i.order.status == "PIU" %}
+                        PICKED_UP
+                        {% elif i.order.status == "OTW" %}
+                        ON_THE_WAY
+                        {% elif i.order.status == "DE" %}
+                        DELIVERED
+                        {% else %}
+                        N/A
+                        {% endif %}
+                      </span>
+                    </div>
+                    <div class="vlow-order-info">
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Order ID</p>
+                        <p class="vlow-order-detil mb-0">{{i.order.order_id}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Courier Name</p>
+                        <p class="vlow-order-detil mb-0">{{i.courier.user.username}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Phone Number</p>
+                        <p class="vlow-order-detil mb-0">{{i.courier.user.isd_code}} {{i.courier.user.mobile_number}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Order Final Status</p>
+                        <p class="vlow-order-detil mb-0">{{i.order.status}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Date</p>
+                        <p class="vlow-order-detil mb-0">{{i.created_at.date}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Time</p>
+                        <p class="vlow-order-detil mb-0">{{i.created_at.time}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Transit Pay</p>
+                        <p class="vlow-order-detil mb-0">$345 USD</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Hot Zone Incentive</p>
+                        <p class="vlow-order-detil mb-0">${% for j in hot_zone %}{{j.incentive}}{% endfor %} USD</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Transit Pay Bonus</p>
+                        <p class="vlow-order-detil mb-0">$345 USD</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Tips</p>
+                        <p class="vlow-order-detil mb-0">${{i.order.tip_amount}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Payment Amount</p>
+                        <p class="vlow-order-detil mb-0">${{i.order.total}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Total Courier Pay</p>
+                        <p class="vlow-order-detil mb-0">$345 USD</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Transaction Type</p>
+                        <p class="vlow-order-detil mb-0">Pay</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Cook Name</p>
+                        <p class="vlow-order-detil mb-0">{{c.order_menu_item.menu_item.cook.user.username}}</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Total Distance</p>
+                        <p class="vlow-order-detil mb-0">34 Km</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Address</p>
+                        <p class="vlow-order-detil mb-0">{{i.order.address.house_no}} {{i.order.address.landmark}} {{i.order.address.town}} {{i.order.address.state}} {{i.order.address.country_id}} {{i.order.address.zipcode}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+  </div>
+
+
+
+</div>
+
+{% endblock content %}

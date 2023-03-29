@@ -1,0 +1,50 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+
+{% block content-header-heading %}Static Content Management{% endblock content-header-heading %}
+{% block content %}
+<!-- First dashboard Section -->
+<div class="static-cont-manag-wrapper">
+    <!-- Nav tabs -->
+    {% include 'dashboard/contents/tabs.html' %}
+    <!-- Tab panes -->
+    <div class="tab-content scm-tabs">
+        <div class="tab-pane scm-pane fade active show" id="term-cond">
+            <div class="scm-edit">
+                <form class="stcw-form w-100" method="post" action="{% url 'dashboard:term-condition-update' term.pk %}">
+                    {% csrf_token %}
+
+                    <div class="form-group stcw-form-group">
+                        <label class="cf_label stcw-label">Enter text</label>
+                        <textarea id="summernote" class="form-control cf_input text-left" name="term_body_text">
+                            {{ form.term_body_text.value|safe|default_if_none:"" }}
+                        </textarea>
+                    </div>
+
+                    <div class="btn-groups-horizontal text-right">
+                        <button type="submit" class="btn btn-primary btn-thin btn-cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-thin">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+{% block js %}
+
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('textarea#summernote').summernote({
+        height: 550,
+    });
+});
+</script>
+{% endblock js %}

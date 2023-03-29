@@ -1,0 +1,141 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+{% block content-header-heading %}New Courier Validation{% endblock content-header-heading %}
+{% block content %}
+
+
+  <!-- First dashboard Section -->
+    <div class="viewCust-wrapper">
+
+    <div class="commonRow">
+        <div class="cust-3">
+<!--            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>-->
+
+            <a href="/Dashboard/Couriers/" class="btn btn-primary btn-thin">Back</a>
+        </div>
+        <div class="cust-6">
+               <div class="user-box text-center">
+                   <div class="user-box-img mx-auto">
+                       <img src="{% static 'assets/image/user-image.png' %}" />
+                   </div>
+                   <div class="user-box-content">
+                       <h4 class="user-box-name">John Deo</h4>
+                       <div class="btn-groups-horizontal">
+                            <a href="#" class="btn btn-primary btn-thin"><i class="material-icons">check</i> Approve</a>
+                            <a href="#" class="btn btn-primary btn-thin"><i class="material-icons">close</i> Reject</a>
+                        </div>
+
+                   </div>
+                </div>
+        </div>
+        <div class="cust-3">
+
+        </div>
+    </div>
+    <div class="box-shadow-3">
+        <div class="user-box-details">
+            <div class="ubd-item">
+                <p class="ubd-name">Mobile Number</p>
+                <p class="ubd-info">+1 12345 54731</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Email id</p>
+                <p class="ubd-info">Johndoe@Gmail.Com</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Country</p>
+                <p class="ubd-info">India</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Date Of Birth</p>
+                <p class="ubd-info">25/Aug/1980</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">House/ Flat No</p>
+                <p class="ubd-info">A-9830</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Address</p>
+                <p class="ubd-info">Lorem ipsum dolor, Loremispum</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Landmark</p>
+                <p class="ubd-info">Stonybrook Lane,</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">State / Province / Region</p>
+                <p class="ubd-info">Lorem Ipsum</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Postal Code / Zip Code / Pincode</p>
+                <p class="ubd-info">1321314</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Bank Account</p>
+                <p class="ubd-info">Acc no. XXXXXX XXXX XXX</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Work Permit</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> Work Permit.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Government Issued Id</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> govtID.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Driver License</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> Driverlic.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Contract E-Signature</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> contsig.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">E-Signed Contract</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> esign.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-shadow-3">
+        <div class="common-head">
+            <h4 class="text-uppercase">VEHICLE DETAILS</h4>
+        </div>
+        <div class="user-box-details">
+            <div class="ubd-item">
+                <p class="ubd-name">Vehicle</p>
+                <p class="ubd-info">Bike</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Vehicle Registration</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> Vehicle_reg.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Vehicle Insurance</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> vehicle_ins.pdf <a class="download-icon" href="#"><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+
+
+</div>
+
+
+
+
+{% endblock content %}

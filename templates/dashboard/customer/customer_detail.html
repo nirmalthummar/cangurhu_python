@@ -1,0 +1,142 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% get_media_prefix as MEDIA_URL %}
+{% block content-header-heading %}View Customer{% endblock content-header-heading %}
+{% block content %}
+<!-- First dashboard Section -->
+<div class="viewCust-wrapper">
+    {% for i in customer_data %}
+    <div class="commonRow">
+        <div class="cust-3">
+            <a href="{% url 'dashboard:customers-list' %}" class="btn btn-primary btn-thin">Back</a>
+        </div>
+        <div class="cust-6">
+            <div class="user-box text-center">
+                <div class="user-box-img mx-auto">
+                    <img src="{% get_media_prefix %}{{i.customer.image}}"/>
+                </div>
+                <div class="user-box-content">
+                    <h4 class="user-box-name">{{ i.username }} <span>(Offline)</span></h4>
+                    <p class="user-box-status">{% if i.has_email_verified and i.has_mobile_verified %}(Registered){% else %}(Guest){% endif %}</p>
+                    {% comment %} <a href="javascript:void(0)" class="btn btn-cancel">
+                        <i class="material-icons">block</i> {% endcomment %}
+                        {% if i.customer.status == "active" %}
+                        <a class="btn btn-secondary btn-danger btn-thin" href="{% url 'dashboard:customer-status' 'deactivateID' i.pk %}"><i class="material-icons">block</i> Block</a>
+                        {% else %}
+                        <a class="btn btn-cancel btn-thin" href="{% url 'dashboard:customer-status' 'activateID' i.pk %}">Unblock</a>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="cust-3">
+                       <a href="{% url 'dashboard:communicate' user.pk %}" class="btn btn-secondary btn-thin"><img src="{% static 'assets/image/icon-chat.png' %}" />Communicate</a>
+        </div>
+
+
+    </div>
+    
+    <div class="box-shadow-3">
+        <div class="user-box-details">
+            <div class="ubd-item">
+                <p class="ubd-name">Customer Id</p>
+                <p class="ubd-info">{{ i.customer.customer_id }}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Mobile Number</p>
+                <p class="ubd-info">{{ i.mobile_number }}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Status</p>
+                <p class="ubd-info">{{ i.customer.status }}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Email Id</p>
+                <p class="ubd-info">{{ i.email }}</p>
+            </div>
+            {% for j in customer_address_data %}
+            <div class="ubd-item">
+                <p class="ubd-name">Address</p>
+                <p class="ubd-info">{{j.house_no}} {{j.landmark}} {{j.town}} {{j.state}} {{j.country_id}} {{j.zipcode}}</p>
+            </div>
+            {% endfor %}
+            <div class="ubd-item">
+                <p class="ubd-name">Payment Method</p>
+                <p class="ubd-info"><img src="{% static 'assets/image/visa-icon.png' %}"  class="mr-1 img-thumbnail border-0 p-0" /> XXXX XXXX XXXX XXXX</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Country</p>
+                <p class="ubd-info">{{ i.customer.country.country_name }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="box-shadow-3">
+        <div class="common-head dropleft">
+            <h4>Customer Orders</h4>
+            <a href="#" data-toggle="dropdown" aria-expanded="false">
+                <img src="{% static 'assets/image/filter.png' %}"/></a>
+            <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                <div class="card selectDate-card p-0 bg-transparent">
+                    <div class="card-body selectDate-body bg-transparent">
+                        <div id="date-range"></div>
+                        <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">
+                            Apply
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="common-table-wrapper m-0">
+            <table id="customerManagment" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Restaurant/Cook</th>
+                        {% comment %} <th>Quantity</th> {% endcomment %}
+                        <th>Date</th>
+                        <th>Order Status</th>
+                        <th>Courier ID</th>
+                        <th>Total Amount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for i in order_data %}
+                    <tr>
+                        <td>{{i.order_menu_item.order.order_id}}</td>
+                        
+                        <td>{{i.order_menu_item.menu_item.cook.user.username}}</td>
+                        
+                        {% comment %} <td>
+                            {% for q in i.order_menu_item.quantity %}
+                            {{q.count}}, {{q.size}}
+                            {% endfor %}
+                        </td> {% endcomment %}
+                         
+                        <td>{{i.order_menu_item.order.created_at.date}}</td>
+
+                        <td>{{i.order_menu_item.order.status}}</td>
+
+                        <td>{% for c in courier_data %}
+                        {% if c.order.order_id == i.order_menu_item.order.order_id %}
+                        {{c.courier.courier_id}}
+                        {% endif %}
+                        {% endfor %}</td>
+
+                        <td class="grey-font">${{i.order_menu_item.order.grand_total}}</td>
+
+                        <td class="action-tab text-center">
+                            <a class="action-icon" href="{% url 'dashboard:customer-order-details' i.pk %}">
+                                <img src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid"/>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

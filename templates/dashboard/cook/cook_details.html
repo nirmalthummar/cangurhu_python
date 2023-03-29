@@ -1,0 +1,475 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% get_media_prefix as MEDIA_URL %}
+{% block content-header-heading %}View Cook{% endblock content-header-heading %}
+
+{% block content %}
+    <!-- First dashboard Section -->
+    <div class="viewCust-wrapper">
+
+                <div class="commonRow">
+                    <div class="cust-3">
+                        <!--            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>-->
+                        <a href="{% url 'dashboard:cook-list' %}" class="btn btn-primary btn-thin">Back</a>
+                    </div>
+                    <div class="cust-6">
+                        <div class="user-box text-center">
+                            <ul class="user-box-ul">
+                                <li><p><span>Status</span> : {{ cook_data.status }}</p></li>
+                                <li><p>Unavailable : <span>(Friday 12 Mar - Monday 13 mar)</span></p></li> 
+                            </ul>
+                            <div class="user-box-img mx-auto">
+                                <img src="{% get_media_prefix %}{{cook_data.image}}"/>
+                            </div>
+
+                            <div class="user-box-content">
+                                <h4 class="user-box-name">{{ cook_data.user.username }}</h4>
+                                {% comment %} <a href="javascript:void(0)" class="btn btn-cancel"> {% endcomment %}
+                                {% if cook_data.status == "active" %}
+                                <a class="btn btn-secondary btn-danger btn-thin" href="{% url 'dashboard:cook-status' 'deactivateID' cook_data.user.pk %}">Block</a>
+                                {% else %}
+                                <a class="btn btn-secondary btn-primary btn-thin" href="{% url 'dashboard:cook-status' 'activateID' cook_data.user.pk %}">Unblock</a>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="cust-3">
+                        <div class="btn-groups">
+                            <!--                <a href="/dashboard/communicate-with-cook/" class="btn btn-secondary btn-thin"><img src="{% static 'assets/image/icon-chat.png' %}" />Communicate</a>-->
+                            <a href="{% url 'dashboard:menu-catalog' cook_data.user.pk %}" class="btn btn-primary btn-thin">View Menu Catalogue</a>
+                            <a href="{% url 'dashboard:FSC' cook_data.user.pk %}" class="btn btn-primary btn-thin">FSC Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-shadow-3">
+                    <div class="user-box-details">
+                        <div class="ubd-item">
+                            <p class="ubd-name">Cook id</p>
+                            <p class="ubd-info">{{ cook_data.cook_id }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Mobile Number</p>
+                            <p class="ubd-info">{{ cook_data.user.mobile_number }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Email id</p>
+                            <p class="ubd-info">{{ cook_data.user.email }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Country</p>
+                            <p class="ubd-info">{{ cook_data.country }}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Date Of Birth</p>
+                            <p class="ubd-info">{{ cook_data.dob }}</p>
+                        </div>
+                        {% for j in cook_address %}
+                        <div class="ubd-item">
+                            <p class="ubd-name">House/ Flat No</p>
+                            <p class="ubd-info">{{j.house_no}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Address</p>
+                            <p class="ubd-info">{{j.address}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Landmark</p>
+                            <p class="ubd-info">{{j.landmark}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">State / Province / Region</p>
+                            <p class="ubd-info">{{j.state}}</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Postal Code / Zip Code / Pincode</p>
+                            <p class="ubd-info">{{j.zipcode}}</p>
+                        </div>
+                        {% endfor %}
+                        <div class="ubd-item">
+                            <p class="ubd-name">Bank Account</p>
+                            <!--                <p class="ubd-info">Acc no. XXXXXX XXXX XXX</p>-->
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Work Permit</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> {{ cook_data.work_permit }}<a class="download-icon" href="{% get_media_prefix %}{{ cook_data.work_permit }}" download><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Government Issued Id</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> {{ cook_data.govt_cert }}<a class="download-icon" href="{% get_media_prefix %}{{ cook_data.govt_cert }}" download><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Insurance Certificate</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}" class="img-fluid mr-2" /> {{ cook_data.insurance_cert }}<a class="download-icon" href="{% get_media_prefix %}{{ cook_data.insurance_cert }}" download><img src="{% static 'assets/image/download.png' %}" class="img-fluid" /></a></p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="box-shadow-3">
+                    <div class="common-head">
+                        <h4 class="text-uppercase">Cook Orders</h4>
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}"/></a>
+                        <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                            <div class="card selectDate-card p-0 bg-transparent">
+                                <div class="card-body selectDate-body bg-transparent">
+                                    <div id="date-range"></div>
+                                    <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="common-table-wrapper m-0">
+                        <table id="customerManagment" class="display" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Order Amount</th>
+                                <th>Order Date</th>
+                                <th>Courier Assigned</th>
+                                <th>Order Last Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in cook_order_data %}
+                            <tr>
+                                <td>{{i.order.order_id}}</td>
+                                <td>${{i.order.grand_total}}</td>
+                                <td>{{i.order.created_at.date}}</td>
+                                <td>
+                                    {% for key, value in courier_order_data.items %}
+                                    {% if i.order.order_id == key %}
+                                    {{value}}
+                                    {% endif %}
+                                    {% endfor %}
+                                </td>
+                                <td>{{i.order.status}}</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="box-shadow-3">
+                    <div class="common-head">
+                        <h4 class="text-uppercase">COOK TRANSACTION/PAY DATA</h4>
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}"/></a>
+                        <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                            <div class="card selectDate-card p-0 bg-transparent">
+                                <div class="card-body selectDate-body bg-transparent">
+                                    <div id="date-range-4"></div>
+                                    <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="common-table-wrapper m-0">
+                        <table id="coolTransData" class="display" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Payment Amount</th>
+                                <th>Completion Status</th>
+                                <th>Pay Date</th>
+                                <th>Bank Name</th>
+                                <th>Bank Account</th>
+                                <th>Business Transaction Type</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in '12345'|make_list %}
+                            <tr>
+                                <td>$873</td>
+                                <td>Completed</td>
+                                <td>12-Mar-2022</td>
+                                <td>Lorem Ipsum</td>
+                                <td>XXXXXXXX1234</td>
+                                <td>Lorem Ipsum</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="box-shadow-3">
+                    <div class="common-head">
+                        <h4 class="text-uppercase">KITCHEN OPERATIONS</h4>
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}"/></a>
+                        <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                            <div class="card selectDate-card p-0 bg-transparent">
+                                <div class="card-body selectDate-body bg-transparent">
+                                    <div id="date-range-2"></div>
+                                    <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="common-table-wrapper m-0">
+                        <table id="kitchen-operation" class="display" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Activity</th>
+                                <th>Activity Execution Date</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in '12345'|make_list %}
+                            <tr>
+                                <td>Lorem Ipsum Dolor</td>
+                                <td>12-Mar-2022</td>
+                                <td>Pending</td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="box-shadow-3">
+                    <div class="common-head">
+                        <h4 class="text-uppercase">FOOD SAFETY COMPLIANCE DATA</h4>
+                    </div>
+
+                    <div class="ubd-img-pdf">
+                        <div class="ubd-item">
+                            <p class="ubd-name">Food Safety: Medical Clearance</p>
+                            <div class="four-img-group">
+                                {% comment %} {% for fci in premises %} {% endcomment %}
+                                <img src=""/>
+                                {% comment %} {% endfor %} {% endcomment %}
+                            </div>
+                            <p class="mb-0 text-center status-text">Status: Approved</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Food Safety: Medical Clearance</p>
+                            <p class="ubd-info">
+                                <img src="{% static 'assets/image/pdf-img.png' %}"
+                                                     class="img-fluid mr-2"> {{ cook_data.medical_clearance }}
+                                <a class="download-icon" href="{% get_media_prefix %}{{ cook_data.medical_clearance }}" download><img
+                                    src="{% static 'assets/image/download.png' %}" class="img-fluid"></a></p>
+                            <p class="mb-0 text-center status-text">Status: Approved</p>
+                        </div>
+                        <div class="ubd-item">
+                            <p class="ubd-name">Food Handling: Certification</p>
+                            <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}"
+                                                     class="img-fluid mr-2"> {{ cook_data.food_cert }} <a
+                                    class="download-icon" href="{% get_media_prefix %}{{ cook_data.food_cert }}">
+                                <img src="{% static 'assets/image/download.png' %}"
+                                                                        class="img-fluid"></a></p>
+                            <p class="mb-0 text-center status-text">Status: Approved</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="box-shadow-3">
+                    <div class="common-head">
+                        <h4 class="text-uppercase">FOOD ORIGIN TRACING</h4>
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}"/></a>
+                        <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                            <div class="card selectDate-card p-0 bg-transparent">
+                                <div class="card-body selectDate-body bg-transparent">
+                                    <div id="date-range-3"></div>
+                                    <button type="submit" class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">
+                                        Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="common-table-wrapper m-0">
+                        <table id="food-origin" class="display" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Food Type</th>
+                                <th>Food Merchant</th>
+                                <th>Purchase Date</th>
+                                <th>Receipts Photos</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Lorem Ipsum</td>
+                                <td>Lorem Ipsum</td>
+                                <td>12-Mar-2022</td>
+                                <td>
+                                    <div class="four-img-group size-30">
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click the right half of the image to move forward."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Or press the right arrow on your keyboard."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="The next image in the set is preloaded as you're viewing."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click anywhere outside the image or the X to the right to close."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum</td>
+                                <td>Lorem Ipsum</td>
+                                <td>12-Mar-2022</td>
+                                <td>
+                                    <div class="four-img-group size-30">
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click the right half of the image to move forward."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Or press the right arrow on your keyboard."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="The next image in the set is preloaded as you're viewing."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click anywhere outside the image or the X to the right to close."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum</td>
+                                <td>Lorem Ipsum</td>
+                                <td>12-Mar-2022</td>
+                                <td>
+                                    <div class="four-img-group size-30">
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click the right half of the image to move forward."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Or press the right arrow on your keyboard."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="The next image in the set is preloaded as you're viewing."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click anywhere outside the image or the X to the right to close."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lorem Ipsum</td>
+                                <td>Lorem Ipsum</td>
+                                <td>12-Mar-2022</td>
+                                <td>
+                                    <div class="four-img-group size-30">
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click the right half of the image to move forward."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Or press the right arrow on your keyboard."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="The next image in the set is preloaded as you're viewing."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                        <a class="example-image-link" href="{% static 'assets/image/food-image.jpg' %}"
+                                           data-lightbox="example-set"
+                                           data-title="Click anywhere outside the image or the X to the right to close."><img
+                                                class="example-image" src="{% static 'assets/image/indoor-img.jpg' %}"
+                                                alt=""/></a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="box-shadow-3">
+
+
+                    <div class="ubd-headinside-div">
+                        <div class="ubd-headinside-col">
+                            <div class="common-head">
+                                <h4 class="text-uppercase">INSPECTION CERTIFICATE</h4>
+                            </div>
+                            <div class="ubd-item m-0">
+                                <p class="ubd-info"><img src="{% static 'assets/image/pdf-img.png' %}"
+                                                         class="img-fluid mr-2"> inspectioncertificate.pdf <a
+                                        class="download-icon" href="#"><img
+                                        src="{% static 'assets/image/download.png' %}" class="img-fluid"></a></p>
+                            </div>
+                        </div>
+                        <div class="ubd-headinside-col">
+                            <div class="common-head">
+                                <h4 class="text-uppercase">INSPECTION GRADE</h4>
+                            </div>
+                            <div class="ubd-item m-0">
+                                <p class="ubd-info"><img src="{% static 'assets/image/a-alp.png' %}"
+                                                         class="img-fluid mr-2"> <a class="download-icon" href="#"
+                                                                                    data-toggle="modal"
+                                                                                    data-target="#inspection-grade-modal"><img
+                                        src="{% static 'assets/image/edit.png' %}" class="img-fluid"></a></p>
+                            </div>
+                        </div>
+                        <div class="ubd-headinside-col">
+                            <div class="common-head">
+                                <h4 class="text-uppercase">EXPIRATION DATE</h4>
+                            </div>
+                            <div class="ubd-item m-0">
+                                <p class="ubd-info">12-Janurary-2025 <a class="download-icon" href="#"
+                                                                        data-toggle="modal"
+                                                                        data-target="#expiration-date-modal"><img
+                                        src="{% static 'assets/image/edit.png' %}" class="img-fluid"></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+{% endblock content %}

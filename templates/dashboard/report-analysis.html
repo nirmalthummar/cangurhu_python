@@ -1,0 +1,974 @@
+{% extends "dashboard/base_site.html" %}
+{% load static %}
+{% block content-header-heading %}Reports & Analytics{% endblock content-header-heading %}
+{% block content %}
+            <!-- First dashboard Section -->
+            <div class="report-analytics-wrapper">
+                <div class="filters-wrap">
+                    <ul class="nav scm-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#cook1">Cook</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#courier1">Courier</a>
+                        </li>
+                    </ul>
+
+                    <div class="filter-left">
+
+                        <div class="common-select-wrap filter-menu">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap filter-menu">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap filter-menu">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Postal Code</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="tab-content pt-5">
+                    <div class="tab-pane active" id="cook1">
+
+                        <ul class="nav scm-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#earning">Earning</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#revenue-deposit">Revenue Deposit</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#more-analytics">More Analytics</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="earning">
+                                <div class="common-table-wrapper">
+                                    <table id="customerManagment" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Cook ID</th>
+                                                <th>Name</th>
+                                                <th>Today's<br>Earning</th>
+                                                <th>This Week's<br>Earning</th>
+                                                <th>This Month's<br>Earning</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>05</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>06</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="revenue-deposit">
+                                <div class="common-table-wrapper">
+                                    <table id="customerManagment" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Cook ID</th>
+                                                <th>Name</th>
+                                                <th>This Week's<br>Revenue Deposit</th>
+                                                <th>This Month's<br>Revenue Deposit</th>
+                                                <th>This Year's<br>Revenue Deposit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>05</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>06</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade pt-4" id="more-analytics">
+                                <div class="ai-object-status border-gray mb-5">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">KITCHEN OPERATION REPORT</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="list-group ai-ul">
+                                        <li class="list-group-item ai-li">
+                                            <span class="ai-title">Activity_name</span>
+                                            <span class="ai-status text-uppercase activee">Passed</span>
+                                        </li>
+                                        <li class="list-group-item ai-li">
+                                            <span class="ai-title">Activity_name</span>
+                                            <span class="ai-status text-uppercase failed">Failed</span>
+                                        </li>
+                                        <li class="list-group-item ai-li">
+                                            <span class="ai-title">Activity_name</span>
+                                            <span class="ai-status text-uppercase activee">Passed</span>
+                                        </li>
+                                        <li class="list-group-item ai-li">
+                                            <span class="ai-title">Activity_name</span>
+                                            <span class="ai-status text-uppercase activee">Passed</span>
+                                        </li>
+
+                                        <li class="list-group-item ai-li">
+                                            <span class="ai-title">Activity_name</span>
+                                            <span class="ai-status text-uppercase failed">Failed</span>
+                                        </li>
+                                        <li class="list-group-item ai-li">
+                                            <span class="ai-title">Space between Cooking Range</span>
+                                            <span class="ai-status text-uppercase activee">Passed</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">DISHES EVALUATION GRADE</h4>
+                                    </div>
+                                    <div class="box-shadow-4 dish-eval-grade">
+                                        <div class="box-first">
+                                            <h5 class="text-grade text-uppercase">Taste grading</h5>
+                                            <div class="plain-circle d-flex gradeing-box">
+                                                <div class="pl-cs pl-circle-box color-black border-red">
+                                                    <img src="{% static 'assets/image/disappointed.svg' %}"
+                                                        class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-yellow">
+                                                    <img src="{% static 'assets/image/neutral.svg' %}" class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                                    <img src="{% static 'assets/image/happy.svg' %}" class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-green">
+                                                    <img src="{% static 'assets/image/savouring-delicious-food.svg' %}"
+                                                        class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span
+                                                        class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="box-second">
+                                            <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                                            <div class="plain-circle d-flex gradeing-box">
+                                                <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                                        <canvas id="myPieChart" style="width:100%;"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-shadow-4 dish-eval-grade">
+                                        <div class="box-first">
+                                            <h5 class="text-grade text-uppercase">USE OF INGREDIENTS</h5>
+                                            <div class="plain-circle d-flex gradeing-box">
+                                                <div class="pl-cs pl-circle-box color-black border-red">
+                                                    <img src="{% static 'assets/image/disappointed.svg' %}"
+                                                        class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-yellow">
+                                                    <img src="{% static 'assets/image/neutral.svg' %}" class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                                    <img src="{% static 'assets/image/happy.svg' %}" class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-green">
+                                                    <img src="{% static 'assets/image/savouring-delicious-food.svg' %}"
+                                                        class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span
+                                                        class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="box-second">
+                                            <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                                            <div class="plain-circle d-flex gradeing-box">
+                                                <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                                    <canvas id="myPieChart2" style="width:100%;"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-shadow-4 dish-eval-grade">
+                                        <div class="box-first">
+                                            <h5 class="text-grade text-uppercase">PRESENTATION / ORIGANILITY</h5>
+                                            <div class="plain-circle d-flex gradeing-box">
+                                                <div class="pl-cs pl-circle-box color-black border-red">
+                                                    <img src="{% static 'assets/image/disappointed.svg' %}"
+                                                        class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-yellow">
+                                                    <img src="{% static 'assets/image/neutral.svg' %}" class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                                    <img src="{% static 'assets/image/happy.svg' %}" class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                                </div>
+                                                <div class="pl-cs pl-circle-box color-black border-green">
+                                                    <img src="{% static 'assets/image/savouring-delicious-food.svg' %}"
+                                                        class="img-fluid size-40" />
+                                                    <span class="pl-circle-no text-uppercase">50</span>
+                                                    <span
+                                                        class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="box-second">
+                                            <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                                            <div class="plain-circle d-flex gradeing-box">
+                                                <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                                    <canvas id="myPieChart3" style="width:100%;"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">REVENUE BY DISH</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box-shadow-4 m-0 mb-4">
+                                        <h5 class="text-grade text-uppercase">TOP 6 EARNINGS BY ITEMS/DISHES</h5>
+                                        <div class="dish-items-wrapper d-flex flex-wrap">
+                                            <div class="dish-item flex-vertical">
+                                                <h4 class="dish-price color-black flex-vertical">$520</h4>
+                                                <span class="dish-name">Italian<br>Bacon</span>
+                                            </div>
+                                            <div class="dish-item flex-vertical">
+                                                <h4 class="dish-price color-black flex-vertical">$220</h4>
+                                                <span class="dish-name">Baco<br>Pizza</span>
+                                            </div>
+                                            <div class="dish-item flex-vertical">
+                                                <h4 class="dish-price color-black flex-vertical">$112</h4>
+                                                <span class="dish-name">Ham<br>Cake</span>
+                                            </div>
+                                            <div class="dish-item flex-vertical">
+                                                <h4 class="dish-price color-black flex-vertical">$112</h4>
+                                                <span class="dish-name">Ham<br>Cake</span>
+                                            </div>
+                                            <div class="dish-item flex-vertical">
+                                                <h4 class="dish-price color-black flex-vertical">$520</h4>
+                                                <span class="dish-name">Italian<br>Bacon</span>
+                                            </div>
+                                            <div class="dish-item flex-vertical">
+                                                <h4 class="dish-price color-black flex-vertical">$220</h4>
+                                                <span class="dish-name">Baco<br>Pizza</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">6 BEST DISHES</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dish-items-wrapper d-flex flex-wrap">
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$520</h4>
+                                            <span class="dish-name">Italian<br>Bacon</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$220</h4>
+                                            <span class="dish-name">Baco<br>Pizza</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$112</h4>
+                                            <span class="dish-name">Ham<br>Cake</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$112</h4>
+                                            <span class="dish-name">Ham<br>Cake</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$520</h4>
+                                            <span class="dish-name">Italian<br>Bacon</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$220</h4>
+                                            <span class="dish-name">Baco<br>Pizza</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">3 WORST DISHES</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dish-items-wrapper d-flex flex-wrap">
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$520</h4>
+                                            <span class="dish-name">Italian<br>Bacon</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$220</h4>
+                                            <span class="dish-name">Baco<br>Pizza</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$112</h4>
+                                            <span class="dish-name">Ham<br>Cake</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">COOK TAXES REPORT</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dish-items-wrapper d-flex flex-wrap">
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">$520</h4>
+                                            <span class="dish-name">YTD Tax</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">TOP SALES CATEGORY</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="dish-items-wrapper d-flex flex-wrap">
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">Lorem</h4>
+                                            <span class="dish-name">Top Category</span>
+                                        </div>
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">435</h4>
+                                            <span class="dish-name">Net Sales</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">COOK RATING</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Start progress bar here -->
+                                    <div>
+                                        <canvas id="myChart"></canvas>
+                                    </div>
+                                    <!-- End progress bar here -->
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">NUMBER OF ORDERS</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dish-items-wrapper d-flex flex-wrap">
+                                        <div class="dish-item flex-vertical">
+                                            <h4 class="dish-price color-black flex-vertical">325K</h4>
+                                            <span class="dish-name">Total Orders</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">AVERAGE SPEND PER ORDER</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="common-table-wrapper">
+                                        <table id="customerManagment" class="display" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Order Name</th>
+                                                    <th>Average<br>Customer Spent</th>
+                                                    <th>Customer<br>Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Lorem Ipsum</td>
+                                                    <td>$123</td>
+                                                    <td>John</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lorem Ipsum</td>
+                                                    <td>$123</td>
+                                                    <td>John</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lorem Ipsum</td>
+                                                    <td>$123</td>
+                                                    <td>John</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Lorem Ipsum</td>
+                                                    <td>$123</td>
+                                                    <td>John</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="border-gray p-3 mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">COOK RATION</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dish-items-wrapper d-flex flex-wrap">
+                                        <div class="cook-ration-item flex-vertical">
+                                            <h4 class="cook-ration-count color-black">4534</h4>
+                                            <span class="cook-ration-name text-uppercase text-center">COOK
+                                                RELIABILITY<br>RATION</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="courier1">
+                        <ul class="nav scm-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#earning2">Earning</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#revenue-deposit2">Revenue Deposit</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#more-analytics2">More Analytics</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="earning2">
+                                <div class="common-table-wrapper">
+                                    <table id="customerManagment" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Cook ID</th>
+                                                <th>Name</th>
+                                                <th>Today's<br>Earning</th>
+                                                <th>This Week's<br>Earning</th>
+                                                <th>This Month's<br>Earning</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>05</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>06</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="revenue-deposit2">
+                                <div class="common-table-wrapper">
+                                    <table id="customerManagment" class="display" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Cook ID</th>
+                                                <th>Name</th>
+                                                <th>This Week's<br>Revenue Deposit</th>
+                                                <th>This Month's<br>Revenue Deposit</th>
+                                                <th>This Year's<br>Revenue Deposit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>01</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>02</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>03</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>04</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>05</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>06</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                            <tr>
+                                                <td>07</td>
+                                                <td>John Doe</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                                <td>$423</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade pt-4" id="more-analytics2">
+
+                                <div class="c-ma-wrapper d-flex flex-wrap">
+                                    <div class="c-ma-item flex-vertical">
+                                        <h3 class="c-ma-count">4534</h3>
+                                        <span class="c-ma-name text-uppercase">AVERAGE<br>DELIVERY/HR</span>
+                                    </div>
+                                    <div class="c-ma-item flex-vertical">
+                                        <h3 class="c-ma-count">4534</h3>
+                                        <span class="c-ma-name text-uppercase">COURIER RELIABILITY<br>RATION</span>
+                                    </div>
+                                    <div class="c-ma-item flex-vertical">
+                                        <h3 class="c-ma-count">55</h3>
+                                        <span class="c-ma-time">Minutes</span>
+                                        <span class="c-ma-name text-uppercase">AVERAGE DELIVERY<br>DURATION</span>
+                                    </div>
+                                    <div class="c-ma-item flex-vertical">
+                                        <h3 class="c-ma-count">80%</h3>
+                                        <span class="c-ma-name text-uppercase">% OF DRIVER<br>ON ORDER</span>
+                                    </div>
+                                    <div class="c-ma-item flex-vertical">
+                                        <h3 class="c-ma-count">20%</h3>
+                                        <span class="c-ma-name text-uppercase">% OF DRIVER<br>ON IDLE</span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="common-head">
+                                        <h4 class="text-uppercase">CUSTOMER RATING</h4>
+                                        <div class="dropdown date-menu">
+                                            <a type="button" class="dropdown-toggle date-btn" data-toggle="dropdown">
+                                                <img src="{% static 'assets/image/filter.png' %}">
+                                            </a>
+                                            <div class="dropdown-menu date-drop-btn dropdown-menu-right">
+                                                <a class="dropdown-item date-drop-item" href="#">Daily</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Weekly</a>
+                                                <a class="dropdown-item date-drop-item" href="#">Monthly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comments-wrapper">
+                                        <div class="rrm-tab-item">
+                                            <div class="rrm-box">
+                                                <div class="rrm-img-box">
+                                                    <img src="{% static 'assets/image/user-i.png' %}">
+                                                    <div class="name-with-rating">
+                                                        <p class="mb-0">Carlos Ward</p>
+                                                        <div class="rating-group">
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star_half</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="rrm-date">20 April</span>
+                                            </div>
+                                            <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know
+                                                Lorem Ipsum, Or
+                                                Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime
+                                                On Lorem
+                                                Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is
+                                                Sometime
+                                                This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                                        </div>
+                                        <div class="rrm-tab-item">
+                                            <div class="rrm-box">
+                                                <div class="rrm-img-box">
+                                                    <img src="{% static 'assets/image/user-i.png' %}">
+                                                    <div class="name-with-rating">
+                                                        <p class="mb-0">Carlos Ward</p>
+                                                        <div class="rating-group">
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star_half</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="rrm-date">20 April</span>
+                                            </div>
+                                            <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know
+                                                Lorem Ipsum, Or
+                                                Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime
+                                                On Lorem
+                                                Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is
+                                                Sometime
+                                                This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                                        </div>
+                                        <div class="rrm-tab-item">
+                                            <div class="rrm-box">
+                                                <div class="rrm-img-box">
+                                                    <img src="{% static 'assets/image/user-i.png' %}">
+                                                    <div class="name-with-rating">
+                                                        <p class="mb-0">Carlos Ward</p>
+                                                        <div class="rating-group">
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star_half</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="rrm-date">20 April</span>
+                                            </div>
+                                            <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know
+                                                Lorem Ipsum, Or
+                                                Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime
+                                                On Lorem
+                                                Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is
+                                                Sometime
+                                                This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                                        </div>
+                                        <div class="rrm-tab-item">
+                                            <div class="rrm-box">
+                                                <div class="rrm-img-box">
+                                                    <img src="{% static 'assets/image/user-i.png' %}">
+                                                    <div class="name-with-rating">
+                                                        <p class="mb-0">Carlos Ward</p>
+                                                        <div class="rating-group">
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star</i>
+                                                            <i class="material-icons">star_half</i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <span class="rrm-date">20 April</span>
+                                            </div>
+                                            <p class="mb-0 rrm-desc">Lorem Ipsum, Or Lipsum As It Is Sometimes Know
+                                                Lorem Ipsum, Or
+                                                Lipsum As It Is Sometime This Lorem Ipsum, Or Lipsum As It Is Sometime
+                                                On Lorem
+                                                Ipsum, Or Lipsum As It Is Sometimes Know Lorem Ipsum, Or Lipsum As It Is
+                                                Sometime
+                                                This Lorem Ipsum, Or Lipsum As It Is Sometime On</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+{% endblock content %}

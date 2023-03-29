@@ -1,0 +1,71 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+{% block content-header-heading %}Banner Management{% endblock content-header-heading %}
+{% block content %}
+<div class="cook-m-wrapper">
+    <div class="filters-wrap">
+        <div class="filter-left">
+ <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Postal Code</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                                <option value="">123456</option>
+                            </select>
+                        </div>
+        </div>
+            <a href="{% url 'dashboard:banner-upload' %}" class="btn btn-secondary btn-thin">Create New +</a>
+    </div>
+    <div class="banner-manag-flex">
+
+        {% for banner in object_list %}
+        <div class="banner-manag-item">
+            <img src="{{ MEDIA_URL}}{{ banner.banner_image.url }}" class="img-fluid" />
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

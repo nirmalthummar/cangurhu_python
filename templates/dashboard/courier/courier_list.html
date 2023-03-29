@@ -1,0 +1,340 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% load url_tag %}
+
+{% block content-header-heading %}Courier Management{% endblock content-header-heading %}
+
+{% block content %}
+    <div class="cooktabs-flex">
+        <ul class="nav  cook-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#courier-list">Courier List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#new-courier">New Courier Validation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link show-upload" data-toggle="tab" href="#kits-training">Kits & Training
+                    Docs.</a>
+            </li>
+        </ul>
+
+        <div class="dropdown dropleft checkbox-drop  courier-drop-list">
+            <a href="#" data-toggle="dropdown" aria-expanded="false"><img src="{% static 'assets/image/filter.png' %}"></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{% if request.GET.urlencode %}?{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='option1' /> All</a>
+                <a class="dropdown-item" href="?status=pending{% if request.GET.urlencode %}&{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='option1' /> Pending Courier</a>
+                <a class="dropdown-item" href="?status=active{% if request.GET.urlencode %}&{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='option1' /> Approved Courier</a>
+
+                <h6 class="px-4 pt-3">Vehicle Type</h6>
+                <a class="dropdown-item" href="{% if request.GET.urlencode %}?{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='option1' /> All</a>
+                <a class="dropdown-item" href="?vehicle=motorbike{% if request.GET.urlencode %}&{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='option1' /> Motorbike</a>
+                <a class="dropdown-item" href="?vehicle=bike{% if request.GET.urlencode %}&{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='option1' /> Bike</a>
+                <a class="dropdown-item" href="?vehicle=by_foot{% if request.GET.urlencode %}&{% query_transform request %}{% endif %}"><input class='select-style' type='checkbox' value='option1' /> By Foot</a>
+            </div>
+        </div>
+        <a href="#" class="btn btn-secondary btn-thin upload-doc">+ Upload Doc</a>
+    </div>
+    <div class="tab-content courier-new-list-tab-content">
+        <div class="tab-pane active" id="courier-list">
+            <div class="cook-m-wrapper">
+                <div class="filters-wrap">
+                    <div class="filter-left">
+                                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">All</option>
+                                <option value="">Blocked</option>
+                                <option value="">Active</option>
+                            </select>
+                        </div>
+        </div>
+
+                    {% include 'dashboard/includes/search_form.html' %}
+
+                </div>
+
+                <div class="common-table-wrapper">
+                    <table id="cookManagment" class="display" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Courier ID</th>
+                            <th>Name</th>
+                            {% comment %} <th>Availability</th> {% endcomment %}
+                            <th>Mobile Number</th>
+                            <th>Vehicle Type</th>
+                            <th>Email Id</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in object_list %}
+                        <tr>
+                            <td>{{ user.courier.courier_id }}</td>
+                            <td>{{ user.username }}</td>
+                            {% comment %} <td class="status-gray">Available</td> {% endcomment %}
+                            <td>{{ user.mobile_number }}</td>
+                            <td>{{ user.courier.vehicle_type }}</td>
+                            <td>{{ user.email }}</td>
+                            <td class="status-gray">{{ user.courier.status.upper }}</td>
+                            <td class="action-tab">
+                                <a class="action-icon view-info" href="{% url 'dashboard:courier-details' user.pk %}"><img
+                                        src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid"/></a>
+                                {% if user.courier.status == "active" %}
+                                <a class="action-icon delete-info" href="{% url 'dashboard:courier-status' 'deactivate' user.pk %}">
+                                    <img src="{% static 'assets/image/cancel-icon.png' %}" class="img-fluid" /></a>
+                                {% else %}
+                                <a class="action-icon" href="{% url 'dashboard:courier-status' 'activate' user.pk %}">
+                                    <img src="{% static 'assets/image/active-icon.png' %}" class="img-fluid" /></a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="new-courier">
+            <div class="cook-m-wrapper">
+                <div class="filters-wrap">
+                    <div class="filter-left">
+                                                <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+        <div class="common-select-wrap">
+                            <select class="common-select filter-btn" name="state">
+                                <option value="">All</option>
+                                <option value="">Blocked</option>
+                                <option value="">Active</option>
+                            </select>
+                        </div>
+        </div>
+
+                    <form class="search-form">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                    <span class="input-group-text bg-transparent">
+                        <img src="{% static 'assets/image/icon-search.png' %}" class="img-fluid"/>
+                    </span>
+                            </div>
+                            <input type="text" class="form-control cf_input border-left-0"
+                                   placeholder="Search customer">
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="common-table-wrapper">
+                    <table id="newRegisterManagment" class="display" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Cook ID</th>
+                            <th>Name</th>
+                            <th>Email Id</th>
+                            <th>Mobile Number</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in object_list %}
+                        <tr>
+                            <td>{{ user.courier.courier_id }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{ user.mobile_number }}</td>
+                            <td>Pending</td>
+                            <td class="action-tab">
+                                <a class="action-icon view-info"
+                                   href="/Dashboard/view-admin-validates-courier-information/"><img
+                                        src="{% static 'assets/image/eye-icon.png' %}" class="img-fluid"/></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="kits-training">
+            <div class="kits-training-wrapper">
+                <ul class="nav tabs-menu">
+                    <li class="nav-item">
+                        <a class="active" data-toggle="tab" href="#uploaded-doument">Uploaded Documents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" data-toggle="tab" href="#send-to-courier">Send to courier</a>
+                    </li>
+                </ul>
+                <div class="tab-content tabs-area">
+                    <div class="tab-pane active" id="uploaded-doument">
+                        <div class="upload-document-wrapper">
+                            <div class="upload-document-item">
+                                <p class="mb-0"><img src="{% static 'assets/image/pdf-img.png'%}"/>
+                                    Mailing_Of_Kit_Recorded.Doc</p>
+                                <a class="delete-item" href="#"><img
+                                        src="{% static 'assets/image/trash.png' %}"/></a>
+                            </div>
+                            <div class="upload-document-item">
+                                <p class="mb-0"><img src="{% static 'assets/image/pdf-img.png'%}"/>
+                                    Delivery_Kit.Doc</p>
+                                <a class="delete-item" href="#"><img
+                                        src="{% static 'assets/image/trash.png' %}"/></a>
+                            </div>
+                            <div class="upload-document-item">
+                                <p class="mb-0"><img src="{% static 'assets/image/pdf-img.png'%}"/>
+                                    Debit_In_Accounting.Doc</p>
+                                <a class="delete-item" href="#"><img
+                                        src="{% static 'assets/image/trash.png' %}"/></a>
+                            </div>
+                            <div class="upload-document-item">
+                                <p class="mb-0"><img src="{% static 'assets/image/pdf-img.png' %}"/>
+                                    Signed_Contract.Doc</p>
+                                <a class="delete-item" href="#"><img
+                                        src="{% static 'assets/image/trash.png' %}"/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="send-to-courier">
+
+                        <div class="send-to-courier-wrapper">
+                            <form class="stcw-form">
+                                <div class="form-group stcw-form-group">
+                                    <label for="courier-email" class="cf_label stcw-label">Enter courier
+                                        email</label>
+                                    <input type="email" class="form-control cf_input stcw-input" value="John"/>
+                                </div>
+                                <ul class="email-list-ul">
+                                    <li class="email-list-li">random@Mail.com <a class="email-close"
+                                                                                 href="#"><img
+                                            src="{% static 'assets/image/cross-icon.png' %}"/></a></li>
+                                    <li class="email-list-li">jhon@Mail.com <a class="email-close" href="#"><img
+                                            src="{% static 'assets/image/cross-icon.png' %}"/></a></li>
+                                </ul>
+                                <div class="common-head stcw-head">
+                                    <h4 class="text-uppercase">Choose document to send</h4>
+                                </div>
+                                <div class="ai-object-status stcw-list border-gray">
+                                    <ul class="list-group ai-ul">
+                                        <li class="list-group-item ai-li stcw-li">
+                                            <p class="ubd-info"><img
+                                                    src="{% static 'assets/image/pdf-img.png' %}"
+                                                    class="img-fluid mr-2"> Mailing_Of_Kit_Recorded.Doc</p>
+                                            <input type="checkbox" class="checkbox-style"/>
+                                        </li>
+                                        <li class="list-group-item ai-li stcw-li">
+                                            <p class="ubd-info"><img
+                                                    src="{% static 'assets/image/pdf-img.png' %}"
+                                                    class="img-fluid mr-2"> Delivery_Kit.Doc</p>
+                                            <input type="checkbox" class="checkbox-style" checked/>
+                                        </li>
+                                        <li class="list-group-item ai-li stcw-li">
+                                            <p class="ubd-info"><img
+                                                    src="{% static 'assets/image/pdf-img.png' %}"
+                                                    class="img-fluid mr-2"> Mailing_Of_Kit_Recorded.Doc</p>
+                                            <input type="checkbox" class="checkbox-style"/>
+                                        </li>
+                                        <li class="list-group-item ai-li stcw-li">
+                                            <p class="ubd-info"><img
+                                                    src="{% static 'assets/image/pdf-img.png' %}"
+                                                    class="img-fluid mr-2"> Delivery_Kit.Doc</p>
+                                            <input type="checkbox" class="checkbox-style"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="btn-groups-horizontal text-right">
+                                    <button type="submit" class="btn btn-primary1 btn-thin btn-c">Cancel</button>
+                                    <button type="submit" class="btn btn-primary btn-thin ">Send</button>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,292 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+
+<!--<?php include('left-sidebar.php')?>-->
+{% block content-header-heading %}Review & Rating Management{% endblock content-header-heading %}
+{% block content %}
+
+        <div class="main-content-body">
+
+            <!-- First dashboard Section -->
+            <div class="rrm-wrapper">
+                <div class="mb-4 text-right">
+                    <div class="dropleft">
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"><img
+                                src="{% static 'assets/image/filter.png' %}" /></a>
+                        <div class="dropdown-menu selectDate-dropdown-menu p-0" style="">
+                            <div class="card selectDate-card p-0 bg-transparent">
+                                <div class="card-body selectDate-body bg-transparent">
+                                    <div id="date-range"></div>
+                                    <button type="submit"
+                                        class="btn btn-primary btn-thin mt-3 w-75 mx-auto d-block">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filters-wrap align-items-center">
+                    <div class="filter-left">
+
+                        <div class="common-select-wrap">
+                            <select class="common-select" name="state">
+                                <option value="">Country</option>
+                                <option value="">Argentina</option>
+                                <option value="">Albama</option>
+                                <option value="">Belgium</option>
+                                <option value="">China</option>
+                                <option value="">Denmark</option>
+                                <option value="">Europe</option>
+                                <option value="">France</option>
+                                <option value="">Argentina</option>
+                            </select>
+                        </div>
+
+                        <div class="common-select-wrap">
+                            <select class="common-select" name="state">
+                                <option value="">State</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select" name="state">
+                                <option value="">Town</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                                <option value="">Lorem</option>
+                            </select>
+                        </div>
+                        <div class="common-select-wrap">
+                            <select class="common-select" name="state">
+                                <option value="">Postal Code</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                                <option value="">123123</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-right d-flex align-items-center">
+                        <ul class="nav rrm-tabs-link box-shadow-3 mt-0">
+                            <li class="nav-item mb-0">
+                                <a class="nav-link active text-center dish-tab"
+                                    href="review-rating-management_dish.php">Dish</a>
+                            </li>
+                            <li class="nav-item mb-0">
+                                <a class="nav-link text-center" href="review-rating-management_cook.php">Cook</a>
+                            </li>
+                            <li class="nav-item mb-0">
+                                <a class="nav-link text-center" href="review-rating-management_courier.php">Courier</a>
+                            </li>
+                        </ul>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="rrm-flex">
+                    <div class="rrm-col rrm-first box-shadow-3 dishtab-show">
+                        <div class="rrm-starrating">
+                            <h2>4.8 <i class="material-icons">star</i></h2>
+                            <p class="mb-0">886 Rating</p>
+                        </div>
+                        <div class="rrm-progressbar">
+                            <ul class="rrm-progressbar-ul">
+                                <li>
+                                    <span class="rrm-numStar">5 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width:70%"></div>
+                                    </div>
+                                    <span class="rrm-numbers">7000</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">4 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">200</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">3 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">300</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">2 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">20</span>
+                                </li>
+                                <li>
+                                    <span class="rrm-numStar">1 <i class="material-icons">star</i></span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="rrm-numbers">10</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rrm-col rrm-second">
+
+                    </div>
+                </div>
+
+
+                <div class="rrm-tabswrapper">
+                    <div class="tab-content rrm-tab-content">
+                        <div class="tab-pane active" id="dish">
+                            <div class="box-shadow-4">
+                                <div class="box-first">
+                                    <h5 class="text-grade text-uppercase">Taste grading</h5>
+                                    <div class="plain-circle d-flex gradeing-box">
+                                        <div class="pl-cs pl-circle-box color-black border-red">
+                                            <img src="{% static 'assets/image/disappointed.svg'%}" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-yellow">
+                                            <img src="{% static 'assets/image/neutral.svg' %}" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                            <img src="{% static 'assets/image/happy.svg'%}" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-green">
+                                            <img src="{% static 'assets/image/savouring-delicious-food.svg"
+                                                class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="box-second">
+                                    <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                                    <div class="plain-circle d-flex gradeing-box">
+                                        <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                            <canvas id="myPieChart" style="width:100%;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-shadow-4">
+                                <div class="box-first">
+                                    <h5 class="text-grade text-uppercase">USE OF INGREDIENTS</h5>
+                                    <div class="plain-circle d-flex gradeing-box">
+                                        <div class="pl-cs pl-circle-box color-black border-red">
+                                            <img src="{% static 'assets/image/disappointed.svg" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-yellow">
+                                            <img src="{% static 'assets/image/neutral.svg" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                            <img src="{% static 'assets/image/image/happy.svg" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-green">
+                                            <img src="{% static 'assets/image/image/savouring-delicious-food.svg"
+                                                class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="box-second">
+                                    <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                                    <div class="plain-circle d-flex gradeing-box">
+                                        <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                            <canvas id="myPieChart2" style="width:100%;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-shadow-4">
+                                <div class="box-first">
+                                    <h5 class="text-grade text-uppercase">PRESENTATION / ORIGANILITY</h5>
+                                    <div class="plain-circle d-flex gradeing-box">
+                                        <div class="pl-cs pl-circle-box color-black border-red">
+                                            <img src="{% static 'assets/image/image/disappointed.svg" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">Bad</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-yellow">
+                                            <img src="{% static 'assets/image/image/neutral.svg" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">okay</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-semi-green">
+                                            <img src="{% static 'assets/image/image/happy.svg" class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">good</span>
+                                        </div>
+                                        <div class="pl-cs pl-circle-box color-black border-green">
+                                            <img src="{% static 'assets/image/image/savouring-delicious-food.svg"
+                                                class="img-fluid size-40" />
+                                            <span class="pl-circle-no text-uppercase">50</span>
+                                            <span class="pl-circle-mood text-uppercase text-center">very<br>good</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="box-second">
+                                    <h5 class="text-grade text-uppercase">GRADING PIE CHART</h5>
+                                    <div class="plain-circle d-flex gradeing-box">
+                                        <div class="pl-cs pl-circle-box color-black p-0 border-0">
+                                            <canvas id="myPieChart3" style="width:100%;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <?php include('footer.php')?>

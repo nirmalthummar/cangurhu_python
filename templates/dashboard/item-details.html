@@ -1,0 +1,106 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+<div class="columnWrapper">
+
+<!--<?php include('left-sidebar.php')?>-->
+{% block content %}
+   {% include "dashboard/left-sidebar.html" %}
+
+<div id="mainPart" class="main-content">
+  <div class="main-content-header">
+    <h2 class="mch-heading mb-0">Details Of ITALIAN BACON WITH GRILLED LEAF</h2>
+    <div class="mch-right-items">
+        <a class="notification-bell">
+          <img src="{% static 'assets/image/notification-bell.png' %}" class="img-fluid" />
+        </a>
+        <div class="dropdown user-menu">
+          <button type="button" class="dropdown-toggle user-btn" data-toggle="dropdown">
+            <img src="{% static 'assets/image/user-i.png ' %}" class="img-fluid" />
+          </button>
+          <div class="dropdown-menu user-dropmenu">
+          <a class="dropdown-item" href="/Dashboard/logout/" data-toggle="modal" data-target="#logout-modal">Logout</a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content-body">
+
+  <!-- First dashboard Section -->
+    <div class="orderDetails-wrapper">
+
+    <div class="commonRow">
+        <div class="cust-3">
+<!--            <a href="javascirpt:void(0)" class="btn btn-primary btn-thin">Back</a>-->
+
+                        <a href="/Dashboard/menu-catalog/" class="btn btn-primary btn-thin">Back</a>
+        </div>
+    </div>
+                <!-- vlow first -->
+                <div class="vlow vlow-1">
+                  <div class="vlow-img">
+                    <img src="{% static 'assets/image/food-image.jpg' %}" />
+                  </div>
+                  <div class="vlow-content">
+                    <div class="vlow-title">
+                      <h4>ITALIAN BACON WITH GRILLED LEAF</h4>
+                      <a href="#" class="btn btn-outline-pri">Extra Bacon</a>
+                      <span class="deact-text text-uppercase">Deactivated</span>
+                    </div>
+                    <div class="vlow-order-info">
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Time</p>
+                        <p class="vlow-order-detil mb-0">15min</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Category</p>
+                        <p class="vlow-order-detil mb-0">Meat</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Calories</p>
+                        <p class="vlow-order-detil mb-0">267</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Small</p>
+                        <p class="vlow-order-detil mb-0">$5</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Medium</p>
+                        <p class="vlow-order-detil mb-0">$10</p>
+                      </div>
+                      <div class="vlow-order-info-list">
+                        <p class="vlow-order-title mb-0">Large</p>
+                        <p class="vlow-order-detil mb-0">$13</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- vlow second -->
+                <div class="vlow vlow-2 border-gray">
+                  <div class="order-detailed">
+                    <p class="vlow-order-title mb-0">Nutritional Information</p>
+                    <p class="vlow-order-detil mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+                  </div>
+                  <div class="order-detailed">
+                    <p class="vlow-order-title mb-0">Cultural Facts About The Dish</p>
+                    <p class="vlow-order-detil mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+                  </div>
+                  <div class="order-detailed">
+                    <p class="vlow-order-title mb-0">Commercial Description</p>
+                    <p class="vlow-order-detil mb-0">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.</p>
+                  </div>
+                </div>
+                <!-- vlow third -->
+
+
+  </div>
+
+
+
+</div>
+
+</div>
+
+
+
+{% endblock content %}

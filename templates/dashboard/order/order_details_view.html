@@ -1,0 +1,161 @@
+{% extends 'dashboard/base_site.html' %}
+{% load static %}
+{% get_media_prefix as MEDIA_URL %}
+{% block content-header-heading %}View Order{% endblock content-header-heading %}
+{% block content %}
+
+    <!-- First dashboard Section -->
+    <div class="orderManagment-wrapper">
+    <div class="commonRow">
+        <div class="cust-3">
+            <a href="{% url 'dashboard:order-list' %}" class="btn btn-primary btn-thin">Back</a>
+        </div>
+
+        <div class="cust-6">
+               <div class="user-box text-center">
+                   <div class="user-box-img mx-auto">
+                       <img src="{% get_media_prefix %}{{ order_details.menu_item.item_img}}"/>
+                   </div>
+                   <div class="user-box-content">
+                       <h4 class="user-box-name">{{order_details.menu_item.title}}</h4>
+                       <p class="user-box-status">({{order_details.order.status}})</p>
+                       <p class="user-box-date mb-0">{{order_details.order.created_at}}</p>
+
+                   </div>
+                </div>
+        </div>
+        <div class="cust-3">
+        </div>
+    </div>
+    <div class="box-shadow-3">
+        <div class="user-box-details">
+            <div class="ubd-item">
+                <p class="ubd-name">Order id</p>
+                <p class="ubd-info">{{order_details.order.order_id}}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Customer Name</p>
+                <p class="ubd-info">{{order_details.order.customer.user.username}}</p>
+            </div>
+            <div class="ubd-item">
+            <p class="ubd-name">Cooking Status</p>
+                <p class="ubd-info">{{cook_details.cook_status}}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Cook id</p>
+                <p class="ubd-info">{{cook_details.cook.cook_id}}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Cook Name</p>
+                <p class="ubd-info">{{cook_details.cook.user.username}}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Courier Assigned</p>
+                <p class="ubd-info">{{courier_details.courier.user.username}}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Courier Status</p>
+                <p class="ubd-info">{{courier_details.courier_status}}</p>
+            </div>
+            <div class="ubd-item">
+                <p class="ubd-name">Courier id</p>
+                <p class="ubd-info">{{courier_details.courier.courier_id}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="vlow vlow-3">
+                  <div class="vlow-inv-time vlow-invoice">
+                    <div class="vlow-title border-0">
+                      <h4 class="text-uppercase">INVOICE DETAILS</h4>
+                      </div>
+                      <table class="table vlow-invoice-table border-0">
+                        <thead>
+                          <tr>
+                            <th class="text-uppercase">Item</th>
+                            <th class="text-uppercase">Qty</th>
+                            <th class="text-uppercase">Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Pizza Pepperoni</td>
+                            <td>2</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td>Spaghetti con Carne</td>
+                            <td>1</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td>Half Chicken with Fries</td>
+                            <td>1</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td>Extra Fries</td>
+                            <td>1</td>
+                            <td><span>$</span>10.2</td>
+                          </tr>
+                          <tr>
+                            <td colspan="5"></td>
+                          </tr>
+
+                          <tr>
+                            <td>Delivery &amp; Chef Fees</td>
+                            <td>20%</td>
+                            <td><span>$</span>4.2</td>
+                          </tr>
+                          <tr>
+                            <td>Sales Tax</td>
+                            <td>13%</td>
+                            <td><span>$</span>2.2</td>
+                          </tr>
+                          <tr>
+                            <td colspan="3"></td>
+                          </tr>
+                        </tbody>
+                        <tfoot class="border-top">
+                          <tr>
+                            <td colspan="2">Total</td>
+                            <td><span>$</span>50.2</td>
+                          </tr>
+                          <tr>
+                            <td colspan="3">Instruction to cook : <span>{{order_details.order.cook_instruction}}</span></td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                  </div>
+                  <div class="vlow-inv-time vlow-timeline">
+                    <div class="vlow-timeline-wrapper">
+                      <h4>Timeline</h4>
+                      <ul class="vlow-timeline-ul">
+                        <li class="vlow-timeline-li order-rec">
+                            <p class="vlow-timeline-title mb-0">Order Received</p>
+                            <p class="vlow-timeline-date mb-0">Today . 4:30 PM</p>
+                        </li>
+                        <li class="vlow-timeline-li active-order">
+                            <p class="vlow-timeline-title mb-0">In The Kitchen . <span class="color-orange">Cooking <img src="{% static 'assets/image/food_cook.gif' %}"style = "position:absolute; left:250px; top:9px;"></span></p>
+                            <p class="vlow-timeline-desc">Finished preparing ingredients</p>
+                            <p class="vlow-timeline-date mb-0">4:30 PM . Est. End Of Cooking</p>
+                          </li>
+                          <li class="vlow-timeline-li active-order">
+                            <p class="vlow-timeline-title mb-0">Pick-Up</p>
+                            <p class="vlow-timeline-date mb-0">4:45 PM . Est. Pick-up time</p>
+                          </li>
+                          <li class="vlow-timeline-li">
+                            <p class="vlow-timeline-title mb-0">En Route</p>
+                            <p class="vlow-timeline-date mb-0">4:55 PM . Est. En Route</p>
+                          </li>
+                          <li class="vlow-timeline-li">
+                            <p class="vlow-timeline-title mb-0">Delivered</p>
+                            <p class="vlow-timeline-date mb-0">5:50 PM . Est. Delivery Time</p>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>
+              </div>
+  </div>
+
+{% endblock content %}
